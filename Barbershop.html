@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>鼠标悬停显示CSS3动画边框</title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+.lanren {
+	width: 188px;
+	padding: 10px;
+	position: relative;
+	float: left;
+}
+.lanren > img {
+	display: block;
+	position: relative;
+	cursor:pointer;
+}
+
+.lanren-hover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	
+	background-size: 30px 30px;
+	
+	
+	
+	background-image: linear-gradient(45deg, red 25%, blue 50%, orange 75%, transparent 75%, transparent);
+	
+
+	animation: barberpole 0.5s linear infinite;
+}
+
+@keyframes barberpole {
+ from {
+ background-position: 0 0;
+}
+to {
+	background-position: 120px 30px;
+}
+}
+
+</style>
+</head>
+<body>
+  <ul>
+    <li class="lanren">
+      <div class="lanren-hover"></div>
+      <img src="images/lanrenzhijia1.jpg" />
+    </li>
+  </ul>
+</body>
+</html>
