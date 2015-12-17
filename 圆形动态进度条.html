@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+body {
+    font-family: "微软雅黑";
+}
+.circle {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    border-radius: 50%;
+    background: #0cc;
+}
+.pie_left,
+.pie_right {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.left,
+.right {
+    width: 200px;
+    height: 200px;
+    background: #0ac;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;	
+	-webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+.pie_right,
+.right {
+    clip: rect(0, auto, auto, 100px);
+}
+.pie_left,
+.left {
+    clip: rect(0, 100px, auto, 0);
+}
+.mask {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    left: 25px;
+    top: 25px;
+    background: #fff;
+    position: absolute;
+    text-align: center;
+    line-height: 150px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #0ac;
+}
+</style>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+$(function() {
+    $('.circle').each(function(index, el) {
+       var num = $(this).find('span').text() * 3.6;
+        if (num <= 180) {
+            $(this).find('.right').css('transform', "rotate(" + num + "deg)");
+        } 
+		else {
+            $(this).find('.right').css('transform', "rotate(180deg)");
+			    var self = this;
+				setTimeout(function(){
+				  $(self).find('.left').css('transform', "rotate(" + (num - 180) + "deg)");
+				}, 900);
+
+			
+		}
+});
+});
+</script>
+</head>
+
+<body>
+
+<div class="circle" style="left:0">
+    <div class="pie_left">
+        <div class="left"></div>
+    </div>
+    <div class="pie_right">
+        <div class="right"></div>
+    </div>
+    <div class="mask"><span>0</span>%</div>
+</div>
+
+<div class="circle" style="left:220px">
+    <div class="pie_left">
+        <div class="left"></div>
+    </div>
+    <div class="pie_right">
+        <div class="right"></div>
+    </div>
+    <div class="mask"><span>15</span>%</div>
+</div>
+<div class="circle" style="left:440px">
+    <div class="pie_left">
+        <div class="left"></div>
+    </div>
+    <div class="pie_right">
+        <div class="right"></div>
+    </div>
+    <div class="mask"><span>30</span>%</div>
+</div>
+<div class="circle" style="left:660px">
+    <div class="pie_left">
+        <div class="left"></div>
+    </div>
+    <div class="pie_right">
+        <div class="right"></div>
+    </div>
+    <div class="mask"><span>60</span>%</div>
+</div>
+<div class="circle" style="left:880px">
+    <div class="pie_left">
+        <div class="left"></div>
+    </div>
+    <div class="pie_right">
+        <div class="right"></div>
+    </div>
+    <div class="mask"><span>100</span>%</div>
+</div>
+</body>
+</html>
