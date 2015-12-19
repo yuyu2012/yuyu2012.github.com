@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+<style>
+
+body {
+    background-color: #212020;
+    color: #3949ab;
+}
+
+.timeline {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 4rem;
+    margin: 3rem auto;
+    background-image: -webkit-linear-gradient(left, #880e4f, #e91e63 50%, #f06292);
+    background-image: linear-gradient(to right, #880e4f, #e91e63 50%, #f06292);
+    background-repeat: no-repeat;
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#FF880E4F', endColorstr='#FFF06292', GradientType=1);
+    border-radius: 5px;
+}
+.timeline--inner {
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 1rem;
+    left: 1rem;
+    height: 6px;
+    margin: 0;
+    margin-top: -3px;
+    border: 0;
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 2px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2) inset;
+    border-radius: 1em;
+    z-index: 1;
+}
+.timeline--inner-pin {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    background-color: ##9C1341;
+    border-radius: 100%;
+    box-shadow: 0 0 0 2px #fff, 0 2px 6px rgba(0, 0, 0, 0.35);
+	width: 8px;
+    height: 8px;
+}
+	
+.timeline--inner-pin:nth-of-type(1) {
+    left: 10%;
+}
+.timeline--inner-pin:nth-of-type(2) {
+    left: 50%;
+}
+.timeline--inner-pin:nth-of-type(3) {
+    left: 90%;
+}
+[data-title] {
+    white-space: nowrap;
+}
+[data-title]:after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    padding: 0.5rem;
+    color: #333;
+    font-size: 0.75rem;
+    font-style: normal;
+    background-color: #eee;
+    border-radius: 5px;
+    opacity: 0;
+    -webkit-transition: 0.25s cubic-bezier(0.905, -0.25, 0.52, 1);
+    transition: 0.25s cubic-bezier(0.905, -0.25, 0.52, 1);
+    -webkit-transform: translateX(-50%) rotate(5deg);
+    -ms-transform: translateX(-50%) rotate(5deg);
+    transform: translateX(-50%) rotate(5deg);
+    pointer-events: none;
+    z-index: 2;
+}
+[data-title]:hover:after {
+    margin-bottom: 18px;
+    opacity: 1;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+[data-title]:before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-bottom: -16px;
+    border: 10px solid transparent;
+    border-top-color: #eee;
+    opacity: 0;
+    -webkit-transition: 0.25s cubic-bezier(0.905, -0.25, 0.52, 1);
+    transition: 0.25s cubic-bezier(0.905, -0.25, 0.52, 1);
+    -webkit-transform: translateX(-50%) rotate(5deg);
+    -ms-transform: translateX(-50%) rotate(5deg);
+    transform: translateX(-50%) rotate(5deg);
+    pointer-events: none;
+    z-index: 3;
+	
+}
+[data-title]:hover:before {
+    margin-bottom: -1px;
+    opacity: 1;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+</style>
+</head>
+
+<body>
+    <section class="timeline">
+        <figure class="timeline--inner">
+        	<i data-title="标签规定独立的流内容" class="timeline--inner-pin "></i>
+            <i data-title="标签规定独立的流内容" class="timeline--inner-pin"></i>
+            <i data-title="标签规定独立的流内容" class="timeline--inner-pin"></i>
+        </figure>
+    </section>
+</body>
+</html>
