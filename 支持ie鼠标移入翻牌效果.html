@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+.flipper {
+	width: 200px;
+    height: 200px;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+}
+.flipper:hover{
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    position: absolute;/*让上下变成重叠*/
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+.front{ z-index:499}
+</style>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+$(document).ready(function(){
+	
+	
+	if(navigator.userAgent.toLowerCase().match(/ie/)!=null){
+		$(".flipper").mouseover(function(){
+  		$(".back").css("z-index","500");
+	});
+		$(".flipper").mouseleave(function(){
+		$(".back").css("z-index","498");
+});
+		}
+		else{
+			$(".flipper").mouseover(function(){
+  		$(".back").css("z-index","500");
+	});
+			$(".back").css("z-index","498");}
+		
+	
+});
+</script>
+</head>
+
+<body>
+    <div class="flipper">
+    	
+        <div class="front"><img src="images/left.jpg" /></div>
+        <div class="back"><img src="images/right.jpg" /></div>
+        
+    </div>
+    
+</body>
+</html>

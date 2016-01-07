@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+body {
+    font-size: 62.5%;
+    min-height: 100%;
+    width: auto;
+    background-color: #313131;
+    text-align: center;
+    color: #fff;
+}
+
+#terms {
+    position: relative;
+    display: block;
+    padding: 0px;
+    width: auto;
+    background-color: #313131;
+    overflow: hidden;
+}
+.terms_bar {
+    position: relative;
+    display: block;
+    margin: 0px auto 0px;
+	height:35px;
+    font: normal 12px/14px arial;
+    color: #b1b1b1;
+    background-color: #2f2f2f;
+    border-top: 1px solid #4a4a4a;
+    border-bottom: 1px solid #000;
+    text-align: left;
+    overflow: hidden;
+    cursor: pointer;
+}
+.terms_bar span{ line-height:35px;}
+.arrow {
+    position: absolute;
+    display: inline-block;
+    *display: inline;
+    right: 10px;
+    height: 35px;
+    width: 35px;
+    background-image:url(images/arrow-up.png);
+    background-repeat: no-repeat;
+    zoom: 1;
+    -webkit-animation: arrow_turn_anticlockwise 0.3s linear;
+    animation: arrow_turn_anticlockwise 0.3s linear;
+}
+@-webkit-keyframes arrow_turn_anticlockwise {
+    0% {
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+    }
+}
+@keyframes arrow_turn_anticlockwise {
+    0% {
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+    }
+}
+#terms .active {
+	background:url(images/arrow-down.png);
+    -webkit-animation: arrow_turn_clockwise 0.3s linear;
+    animation: arrow_turn_clockwise 0.3s linear;
+}
+@-webkit-keyframes arrow_turn_clockwise {
+    0% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(-180deg);
+    }
+}
+@keyframes arrow_turn_clockwise {
+    0% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+</style>
+
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('.arrow').click(function(event) {
+        $(this).toggleClass('active');
+    });
+});
+</script>
+</head>
+
+<body>
+	<div id="terms">
+    <div class="terms_bar">
+        <span>1111</span>
+        <span class="arrow"></span>
+    </div>
+</div>
+
+
+<div id="terms">
+    <div class="terms_bar">
+        <span>2222</span>
+        <span class="arrow"></span>
+    </div>
+</div>
+</body>
+</html>

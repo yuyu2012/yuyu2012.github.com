@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+div{ width:200px; height:200px; background:url(images/left.jpg);
+    }
+
+.noactive{animation: arrow_turn_anticlockwise 0.5s linear;
+}
+
+.active{
+	
+    animation: arrow_turn_anticlockwise1 0.5s linear;
+	background:url(images/right.jpg);
+	}
+	
+	
+	@keyframes arrow_turn_anticlockwise {
+    0% {
+		transform-style: preserve-3d;
+        transform: rotateY(180deg);
+    }
+}
+
+@keyframes arrow_turn_anticlockwise1 {
+    0% {
+		transform-style: preserve-3d;
+        transform: rotateY(-180deg);
+    }
+}
+
+
+</style>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("div").hover(function() {
+		
+		var cc=$("div").attr("class");
+		
+        if(cc=="active"){
+			$(this).attr("class","noactive");
+			}
+		 else if(cc=="noactive"||cc=="cc"){
+			$("div").attr("class","active")
+			}
+    });
+});
+</script>
+
+</head>
+
+<body>
+
+<div class="cc"></div>
+</body>
+</html>
