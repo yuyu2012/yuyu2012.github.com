@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+body {
+    background-color: #08465e;
+}
+#nstar {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    margin: -20px 0 0 -20px;
+}
+#nstar .star {
+    background: white;
+    width: 9px;
+    height: 9px;
+    border-radius: 5px;
+}
+#nstar .star .ring1 {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background: #33c5ff;
+    width: 29px;
+    height: 29px;
+    border-radius: 15px;
+    opacity: 0.2;
+    animation: 3s glow infinite ease-in-out;
+}
+#nstar .star .ring1 .ring2 {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    background: #33c5ff;
+    width: 41px;
+    height: 41px;
+    border-radius: 21px;
+    opacity: 0.5;
+    animation: 3s buzz infinite ease-in-out;
+}
+@keyframes glow {
+    0% {
+        opacity: 0.2;
+    }
+    40% {
+        opacity: 0.1;
+    }
+    80% {
+        opacity: 0.2;
+    }
+}
+@keyframes buzz {
+    0% {
+        opacity: 0.5;
+    }
+    30% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.25;
+    }
+    90% {
+        opacity: 0.5;
+    }
+}
+
+</style>
+</head>
+
+<body>
+	<div id="nstar">
+        <div class="star">
+            <div class="ring1">
+                <div class="ring2"></div>
+            </div>
+        </div>
+	</div>
+</body>
+</html>
