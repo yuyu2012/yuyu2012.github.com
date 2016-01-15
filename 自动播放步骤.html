@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+.step_slider{ width:100%;margin-top: 180px;}
+.end_item,.step-slider-item{ width:20%; height:5px; background:#CCC;float: left;position: relative;}
+.step-slider-item:before{
+	content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    z-index: 1;
+    -webkit-transition: all 0.5s ease-out;
+	}
+.step-slider-item:after{content: "";
+    width: 10px;
+    height: 10px;border:2px solid #e0e0e0;
+    border-radius: 50%;position: absolute; right:0;background: #fff; z-index:2; top:-3px;
+}
+.end_item:after{ display:none;
+}
+.step-slider-item.active:before{width:100%; background-color: #ff8f00;}
+
+.bubble {
+    position: absolute;
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	    width: 200px;
+    height: 80px;
+    margin: 20px;
+	
+	    margin-left: -108px;
+		opacity: 0;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    /*margin-top: -99px;*/
+
+}
+
+.bubble--arrow:before,
+.bubble--arrow:after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    border: 10px solid transparent;
+    border-bottom-color: white;
+    left: 50%;
+    margin-left: -10px;
+}
+.bubble--arrow:before {
+    border-width: 11px;
+    border-bottom-color: #ddd;
+    margin-left: -11px;
+}
+.bubble--arrow-s:after,
+.bubble--arrow-s:before {
+    bottom: auto;
+    top: 100%;
+    border-bottom-color: transparent;
+    border-top-color: #fff;
+}
+.bubble--arrow-s:before {
+    border-top-color: #ddd;
+    -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.05));
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.05));
+}
+
+</style>
+
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+	$(document).ready(function(){
+	    var t = 0;
+		var t2=0;
+				$('.step-slider-item').each(function(k,v) {
+					setTimeout(function() {
+						$(v).addClass('active');
+					}, t += 3000);
+				});
+				
+				$('.bubble').each(function(k,v) {
+					setTimeout(function() {
+						$(v).css({ "opacity": "1", "margin-top": "-99px" });
+					}, t2 += 3000);
+				});
+
+	});
+</script>
+</head>
+
+<body>
+	<div class="step_slider">
+        <div id="step0" class="step-slider-item"></div>
+        <div class="bubble bubble--arrow bubble--arrow-s"></div>
+        
+        <div id="step1" class="step-slider-item"></div>
+        <div class="bubble bubble--arrow bubble--arrow-s"></div>
+        
+        <div id="step2" class="step-slider-item"></div>
+        <div class="bubble bubble--arrow bubble--arrow-s"></div>
+        
+        <div id="step3" class="step-slider-item"></div>
+        <div class="bubble bubble--arrow bubble--arrow-s"></div>
+        
+        <div class="step-slider-item end_item"></div>
+    </div>
+    
+    
+</body>
+</html>
