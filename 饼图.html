@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="js/echarts-all.js"></script>
+</head>
+
+<body>
+<div id="main" style="width: 600px;height:400px;"></div>
+<script>
+var myChart = echarts.init(document.getElementById('main'));
+
+option = {
+	color:['#00448a','#0580b9','#28c6b9'], 
+    legend: {
+        orient: 'horizontal',
+        left: 'center',
+        data: ['直接访问','邮件营销','搜索引擎'],
+    },
+    series : [
+        {
+            type: 'pie',
+            radius : '55%',
+            center: ['50%', '60%'],
+            data:[
+                {value:335, name:'直接访问'},
+                {value:310, name:'邮件营销'},
+                {value:1548, name:'搜索引擎'}
+            ],
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+myChart.setOption(option);
+</script>
+</body>
+</html>
