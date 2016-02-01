@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>perfect-scrollbar example</title>
+      <link href="css/perfect-scrollbar.css" rel="stylesheet">
+      <script src="jquery-1.10.2.js"></script>
+      <script src="js/jquery.mousewheel.js"></script>
+      <script src="js/perfect-scrollbar.js"></script>
+      <style>
+        .contentHolder { position:relative; margin:0px auto; padding:0px; width: 600px; height: 400px; overflow: hidden; }
+        .contentHolder .content { background-image:url(images/azusa.jpg); width: 600px; height: 720px; }
+      </style>
+    <script>
+	$(document).ready(function(){
+  		$('#Default').perfectScrollbar();
+	});
+    </script>
+  </head>
+  <body>
+    <div id="Default" class="contentHolder ps-container">
+      <div class="content">
+      </div>
+    </div>
+  </body>
+</html>
