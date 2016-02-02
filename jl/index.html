@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>基本信息</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css" >
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script>
+		/*左侧高度*/
+		function leftHeight(){
+			var screenHeight=$(window).height();			
+			$(".left").css("height",screenHeight+"px");
+		}
+		/*赋ID*/
+		function giveID(x){
+			var className=x.substring(1);
+			$(x).each(function(i) {
+                this.id=className+i;
+            });
+		}
+    	$(document).ready(function(){
+			leftHeight();
+			/*左侧滑动*/
+			giveID(".ml_li");
+			giveID(".actbg");
+			$(".ml_li").hover(function () {
+					var ids=$(this).attr("id");
+					var idLength=ids.length-1;
+					var nos=ids.substring(5);
+    				$("#actbg"+nos).addClass("actbgact");
+		        },
+				function () {
+    				var ids=$(this).attr("id");
+					var idLength=ids.length-1;
+					var nos=ids.substring(5);
+    				$("#actbg"+nos).removeClass("actbgact");
+  				}
+			);
+			/*时间判断*/
+			now = new Date();
+			hour = now.getHours();
+			var dre=".mytip div span" 
+			if(hour<6){ $(dre).text("凌晨好");}
+			else if(hour<9) {$(dre).text("早上好");}
+			else if(hour<12){$(dre).text("上午好");}
+			else if(hour<14){$(dre).text("中午好");}
+			else if(hour<17){$(dre).text("下午好");}
+			else if(hour<19){$(dre).text("傍晚好");}
+			else if(hour<22){$(dre).text("晚上好");}
+			else{$(dre).text("深夜好");} 
+			/*打招呼出现*/
+			$(".photo,.mytip").hover(function () {
+    				$(".mytip").addClass("mytiphover");
+		        },
+				function () {
+    				$(".mytip").removeClass("mytiphover");
+  				}
+			);
+			/*图标翻转*/
+			$(".ltit_noactive").hover(function() {
+				//alert();
+				var cc=$(this).attr("class");
+        		if(cc=="ltit_active"){
+					$(this).attr("class","ltit_noactive");
+				}
+		 		else if(cc=="ltit_noactive"){
+					$(this).attr("class","ltit_active")
+				}
+    		});
+			/*工作经历*/
+			var t = 0;
+			var t2=0;
+				$('.step-slider-item').each(function(k,v) {
+					setTimeout(function() {
+						$(v).addClass('active');
+					}, t += 1500);
+				});
+				
+				$('.bubble').each(function(k,v) {
+					setTimeout(function() {
+						$(v).css({ "opacity": "1", "margin-top": "-70px" });
+					}, t2 += 1700);
+				});
+
+
+
+
+			
+		});
+		$(window).resize(function(){
+  			leftHeight();
+		});
+    </script>
+  </head>
+  <body>
+	<div class="left">
+    
+    	<div class="mytip">
+        	<div>Hi，<span></span>。<br>我是<a>网页前端工程师</a>，<a>邱莉</a>。感谢您百忙之中浏览我的简历。</div>
+        </div>
+        
+    	<div class="photo">
+        	<img src="images/photo.png">
+        </div>
+        
+        
+        
+        <ul class="myname">
+        	<li class="mn_name">邱莉</li>
+            <li class="mn_profession">网页制作</li>
+        </ul>
+        
+        <ul class="mainlist">
+        	<a class="actbgact1"></a>
+        	<li class="ml_li1"><a href="index.html"><img src="images/jbxx.png"/><span>基本信息</span></a></li>
+            <a class="actbg"></a>
+        	<li class="ml_li"><a href="professional.html"><img src="images/zyjn.png"/><span>专业技能</span></a></li>
+            <a class="actbg"></a>
+            <li class="ml_li"><a href="production.html"><img src="images/zpzs.png"/><span>作品展示</span></a></li>
+            <a class="actbg"></a>
+            <li class="ml_li"><a href="hobby.html"><img src="images/xqah.png"/><span>兴趣爱好</span></a></li>
+            <a class="actbg"></a>
+            <li class="ml_li"><a href="statement.html"><img src="images/tbsm.png"/><span>特别说明</span></a></li>
+        </ul>
+    	
+    </div>
+    
+    <div id="layers">
+       <div class="layer"></div>
+       <div class="layer"></div>
+       <div class="layer"></div>
+       <div class="layer"></div>
+       <div class="layer"></div>
+   </div>
+    
+    <div class="right">
+    	<div class="ltit">
+        	<img src="images/grxx.png" class="ltit_noactive">
+            <span>个人信息</span>
+        </div>
+        
+        <ul class="grxx">
+        	<li><span class="grxx_tit">姓名：</span><span>邱莉</span></li>
+            <li><span class="grxx_tit">出生日期：</span><span>1987.10.06</span></li>
+            <li><span class="grxx_tit">学历：</span><span>大专</span></li>
+            <li><span class="grxx_tit">现住地：</span><span>上海市普陀区</span></li>
+            <li><span class="grxx_tit">期望薪资：</span><span>6000-7000</span></li>
+        </ul>
+        <ul class="grxx w38p">
+        	<li><span class="grxx_tit">性别：</span><span>女</span></li>
+            <li><span class="grxx_tit">婚姻状况：</span><span>已婚</span></li>
+            <li><span class="grxx_tit">户籍：</span><span>上海</span></li>
+            <li><span class="grxx_tit">电子邮件：</span><span>601971198@qq.com</span></li>
+            <li><span class="grxx_tit">联系电话：</span><span>15901819254</span></li>
+        </ul>
+        <div id="tagscloud">
+            <a href="#" class="tagc1">Html5</a>
+            <a href="#" class="tagc2">CSS3</a>
+            <a href="#" class="tagc5">JQuery</a>
+            <a href="#" class="tagc2">JS</a>
+            <a href="#" class="tagc2">BootStrap</a>
+            <a href="#" class="tagc1">PhotoShop</a>
+            <a href="#" class="tagc2">Dreanwever</a>
+            <a href="#" class="tagc5">80后</a>
+            <a href="#" class="tagc2">WEB前端工程师</a>
+            <a href="#" class="tagc2">网页制作</a>
+            <a href="#" class="tagc5">网页设计</a>
+            <a href="#" class="tagc1">Html5</a>
+            <a href="#" class="tagc2">CSS3</a>
+            <a href="#" class="tagc5">JQuery</a>
+            <a href="#" class="tagc2">JS</a>
+            <a href="#" class="tagc2">bootstrap</a>
+            <a href="#" class="tagc1">photoshop</a>
+            <a href="#" class="tagc2">dreanwever</a>
+            <a href="#" class="tagc5">80后</a>
+            <a href="#" class="tagc2">WEB前端工程师</a>
+            <a href="#" class="tagc2">网页制作</a>
+            <a href="#" class="tagc5">网页设计</a>
+        </div>
+
+        
+        <div class="ltit">
+        	<img src="images/gzjl.png" class="ltit_noactive">
+            <span>工作经历</span>
+        </div>
+      
+      <div class="gzjl">  
+        <div class="step_slider">
+            <div id="step0" class="step-slider-item"></div>
+            <div class="bubble bubble--arrow bubble--arrow-s">2010年 毕业于<br> 上海电机学院 软件专业</div>
+            
+            <div id="step1" class="step-slider-item"></div>
+            <div class="bubble bubble--arrow bubble--arrow-s">2010年-2012年 任职于<br> 双美教育机构 网页制作</div>
+            
+            <div id="step2" class="step-slider-item"></div>
+            <div class="bubble bubble--arrow bubble--arrow-s">2012年-2016年 任职于<br> 盘石软件有限公司 网页制作</div>
+            
+            <div class="step-slider-item end_item"></div>
+    	</div>
+      </div>
+    
+    </div>
+    
+    <script type="text/jscript">
+// JavaScript Document
+
+var radius = 90;
+var d = 300;
+var dtr = Math.PI / 180;
+var mcList = [];
+var lasta = 1;
+var lastb = 1;
+var distr = true;
+var tspeed = 11;
+var size = 1000;
+var mouseX = 0;
+var mouseY = 10;
+var howElliptical = 1;
+var aA = null;
+var oDiv = null;
+window.onload=function ()
+{
+	var i=0;
+	var oTag=null;
+	oDiv=document.getElementById('tagscloud');
+	aA=oDiv.getElementsByTagName('a');
+	for(i=0;i<aA.length;i++)
+	{
+		oTag={};		
+		
+		oTag.offsetWidth = aA[i].offsetWidth;
+		oTag.offsetHeight = aA[i].offsetHeight;
+		mcList.push(oTag);
+	}
+	sineCosine( 0,0,0 );
+	positionAll();
+	(function () {
+            update();
+            setTimeout(arguments.callee, 40);
+        })();
+};
+function update()
+{
+	var a, b, c = 0;
+        a = (Math.min(Math.max(-mouseY, -size), size) / radius) * tspeed;
+        b = (-Math.min(Math.max(-mouseX, -size), size) / radius) * tspeed;
+        lasta = a;
+        lastb = b;
+        if (Math.abs(a) <= 0.01 && Math.abs(b) <= 0.01) {
+            return;
+        }
+        sineCosine(a, b, c);
+        for (var i = 0; i < mcList.length; i++) {
+            if (mcList[i].on) {
+                continue;
+            }
+            var rx1 = mcList[i].cx;
+            var ry1 = mcList[i].cy * ca + mcList[i].cz * (-sa);
+            var rz1 = mcList[i].cy * sa + mcList[i].cz * ca;
+
+            var rx2 = rx1 * cb + rz1 * sb;
+            var ry2 = ry1;
+            var rz2 = rx1 * (-sb) + rz1 * cb;
+
+            var rx3 = rx2 * cc + ry2 * (-sc);
+            var ry3 = rx2 * sc + ry2 * cc;
+            var rz3 = rz2;
+
+            mcList[i].cx = rx3;
+            mcList[i].cy = ry3;
+            mcList[i].cz = rz3;
+
+            per = d / (d + rz3);
+
+            mcList[i].x = (howElliptical * rx3 * per) - (howElliptical * 2);
+            mcList[i].y = ry3 * per;
+            mcList[i].scale = per;
+            var alpha = per;
+            alpha = (alpha - 0.6) * (10 / 6);
+            mcList[i].alpha = alpha * alpha * alpha - 0.2;
+            mcList[i].zIndex = Math.ceil(100 - Math.floor(mcList[i].cz));
+        }
+        doPosition();
+}
+function positionAll()
+{
+	var phi = 0;
+    var theta = 0;
+    var max = mcList.length;
+    for (var i = 0; i < max; i++) {
+        if (distr) {
+            phi = Math.acos(-1 + (2 * (i + 1) - 1) / max);
+            theta = Math.sqrt(max * Math.PI) * phi;
+        } else {
+            phi = Math.random() * (Math.PI);
+            theta = Math.random() * (2 * Math.PI);
+        }
+        //坐标变换
+        mcList[i].cx = radius * Math.cos(theta) * Math.sin(phi);
+        mcList[i].cy = radius * Math.sin(theta) * Math.sin(phi);
+        mcList[i].cz = radius * Math.cos(phi);
+
+        aA[i].style.left = mcList[i].cx + oDiv.offsetWidth / 2 - mcList[i].offsetWidth / 2 + 'px';
+        aA[i].style.top = mcList[i].cy + oDiv.offsetHeight / 2 - mcList[i].offsetHeight / 2 + 'px';
+    }
+}
+function doPosition()
+{
+	var l = oDiv.offsetWidth / 2;
+        var t = oDiv.offsetHeight / 2;
+        for (var i = 0; i < mcList.length; i++) {
+            if (mcList[i].on) {
+                continue;
+            }
+            var aAs = aA[i].style;
+            if (mcList[i].alpha > 0.1) {
+                if (aAs.display != '')
+                    aAs.display = '';
+            } else {
+                if (aAs.display != 'none')
+                    aAs.display = 'none';
+                continue;
+            }
+            aAs.left = mcList[i].cx + l - mcList[i].offsetWidth / 2 + 'px';
+            aAs.top = mcList[i].cy + t - mcList[i].offsetHeight / 2 + 'px';
+            aAs.zIndex = mcList[i].zIndex;
+            aAs.opacity = mcList[i].alpha;
+        }
+}
+function sineCosine( a, b, c)
+{
+	sa = Math.sin(a * dtr);
+    ca = Math.cos(a * dtr);
+    sb = Math.sin(b * dtr);
+    cb = Math.cos(b * dtr);
+	sc = Math.sin(c * dtr);
+	cc = Math.cos(c * dtr);
+}
+</script>
+
+  </body>
+</html>
