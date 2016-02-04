@@ -76,6 +76,14 @@
 						
 					}
 			});
+			/*打招呼出现*/
+			$(".photo,.mytip").hover(function () {
+    				$(".mytip").addClass("mytiphover");
+		        },
+				function () {
+    				$(".mytip").removeClass("mytiphover");
+  				}
+			);
 			
 		});
 		$(window).resize(function(){
