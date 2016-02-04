@@ -22,8 +22,8 @@ body {
     top: 0;
     left: 0;
 }
-.left,
-.right {
+.cic_left,
+.cic_right {
     width: 200px;
     height: 200px;
     background: #0ac;
@@ -38,11 +38,11 @@ body {
     transition: all 1s ease-in-out;
 }
 .pie_right,
-.right {
+.cic_right {
     clip: rect(0, auto, auto, 100px);
 }
 .pie_left,
-.left {
+.cic_left {
     clip: rect(0, 100px, auto, 0);
 }
 .mask {
@@ -66,13 +66,13 @@ $(function() {
     $('.circle').each(function(index, el) {
        var num = $(this).find('span').text() * 3.6;
         if (num <= 180) {
-            $(this).find('.right').css('transform', "rotate(" + num + "deg)");
+            $(this).find('.cic_right').css('transform', "rotate(" + num + "deg)");
         } 
 		else {
-            $(this).find('.right').css('transform', "rotate(180deg)");
+            $(this).find('.cic_right').css('transform', "rotate(180deg)");
 			    var self = this;
 				setTimeout(function(){
-				  $(self).find('.left').css('transform', "rotate(" + (num - 180) + "deg)");
+				  $(self).find('.cic_left').css('transform', "rotate(" + (num - 180) + "deg)");
 				}, 900);
 
 			
@@ -86,47 +86,47 @@ $(function() {
 
 <div class="circle" style="left:0">
     <div class="pie_left">
-        <div class="left"></div>
+        <div class="cic_left"></div>
     </div>
     <div class="pie_right">
-        <div class="right"></div>
+        <div class="cic_right"></div>
     </div>
     <div class="mask"><span>0</span>%</div>
 </div>
 
 <div class="circle" style="left:220px">
     <div class="pie_left">
-        <div class="left"></div>
+        <div class="cic_left"></div>
     </div>
     <div class="pie_right">
-        <div class="right"></div>
+        <div class="cic_right"></div>
     </div>
     <div class="mask"><span>15</span>%</div>
 </div>
 <div class="circle" style="left:440px">
     <div class="pie_left">
-        <div class="left"></div>
+        <div class="cic_left"></div>
     </div>
     <div class="pie_right">
-        <div class="right"></div>
+        <div class="cic_right"></div>
     </div>
     <div class="mask"><span>30</span>%</div>
 </div>
 <div class="circle" style="left:660px">
     <div class="pie_left">
-        <div class="left"></div>
+        <div class="cic_left"></div>
     </div>
     <div class="pie_right">
-        <div class="right"></div>
+        <div class="cic_right"></div>
     </div>
     <div class="mask"><span>60</span>%</div>
 </div>
 <div class="circle" style="left:880px">
     <div class="pie_left">
-        <div class="left"></div>
+        <div class="cic_left"></div>
     </div>
     <div class="pie_right">
-        <div class="right"></div>
+        <div class="cic_right"></div>
     </div>
     <div class="mask"><span>100</span>%</div>
 </div>

@@ -50,14 +50,6 @@
 			else if(hour<19){$(dre).text("傍晚好");}
 			else if(hour<22){$(dre).text("晚上好");}
 			else{$(dre).text("深夜好");} 
-			/*打招呼出现*/
-			$(".photo,.mytip").hover(function () {
-    				$(".mytip").addClass("mytiphover");
-		        },
-				function () {
-    				$(".mytip").removeClass("mytiphover");
-  				}
-			);
 			/*图标翻转*/
 			$(".ltit_noactive").hover(function() {
 				//alert();
@@ -69,24 +61,21 @@
 					$(this).attr("class","ltit_active")
 				}
     		});
-			/*工作经历*/
-			var t = 0;
-			var t2=0;
-				$('.step-slider-item').each(function(k,v) {
-					setTimeout(function() {
-						$(v).addClass('active');
-					}, t += 1500);
-				});
-				
-				$('.bubble').each(function(k,v) {
-					setTimeout(function() {
-						$(v).css({ "opacity": "1", "margin-top": "-70px" });
-					}, t2 += 1700);
-				});
-
-
-
-
+			/*圆形进度*/
+			$('.circle').each(function(index, el) {
+				   var num = $(this).find('span').text() * 3.6;
+					if (num <= 180) {
+						$(this).find('.cic_right').css('transform', "rotate(" + num + "deg)");
+					} 
+					else {
+						$(this).find('.cic_right').css('transform', "rotate(180deg)");
+							var self = this;
+							setTimeout(function(){
+							  $(self).find('.cic_left').css('transform', "rotate(" + (num - 180) + "deg)");
+							}, 1000);
+						
+					}
+			});
 			
 		});
 		$(window).resize(function(){
@@ -144,26 +133,79 @@
         <div class="zyjn_top">
         	<div class="pross">
             	<span>HTML5</span>
-                <div><div></div></div>
+                <div class="progress_bg"><div class="progress" id="html5"></div></div>
             </div>
             <div class="pross">
             	<span>CSS3</span>
-                <div><div></div></div>
+                <div class="progress_bg"><div class="progress" id="css3"></div></div>
             </div>
             <div class="pross">
             	<span>JavaScript</span>
-                <div><div></div></div>
+                <div class="progress_bg"><div class="progress" id="javascript"></div></div>
             </div>
             <div class="pross">
             	<span>JQuery</span>
-                <div><div></div></div>
+                <div class="progress_bg"><div class="progress" id="jquery"></div></div>
             </div>
             <div class="pross">
             	<span>BootStrap</span>
-                <div><div></div></div>
+                <div class="progress_bg"><div class="progress" id="boorstrap"></div></div>
             </div>
         </div>
-        <div class="zyjn_bom"></div>
+        
+        <div class="zyjn_bom">
+        
+            <div class="circle" id="dw" style="left:25%">
+                <div class="pie_left">
+                    <div class="cic_left"></div>
+                </div>
+                <div class="pie_right">
+                    <div class="cic_right"></div>
+                </div>
+                <div class="mask">
+                	<div>DW<br/><span>100</span>%</div>
+                </div>
+			</div>
+            
+            <div class="circle" id="ps" style="left:43%">
+                <div class="pie_left">
+                    <div class="cic_left"></div>
+                </div>
+                <div class="pie_right">
+                    <div class="cic_right"></div>
+                </div>
+                <div class="mask">
+                	<div>PS<br/><span>100</span>%</div>
+                </div>
+			</div>
+            
+            <div class="circle" id="ai" style="left:62%">
+                <div class="pie_left">
+                    <div class="cic_left"></div>
+                </div>
+                <div class="pie_right">
+                    <div class="cic_right"></div>
+                </div>
+                <div class="mask">
+                	<div>AI<br/><span>50</span>%</div>
+                </div>
+			</div>
+            
+            <div class="circle" style="left: 81%;">
+                <div class="pie_left">
+                    <div class="cic_left"></div>
+                </div>
+                <div class="pie_right">
+                    <div class="cic_right"></div>
+                </div>
+                <div class="mask">
+                	<div>Design<br/><span>50</span>%</div>
+                </div>
+			</div>
+
+            
+         
+        </div>
         
     
     </div>
