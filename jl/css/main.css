@@ -1,19 +1,6 @@
 @charset "utf-8";
-/* CSS Document */
 
 
-/*768-1023*/
-
-
-/*1280-1599*/
-@media screen and (min-width:1280px) and(max-width:1599px){
-	
-}
-/*1600-1920*/
-@media screen and (min-width:1600px){
-	
-}
-html{ height:100%;}
 body{ color:#00a8bf; font-size:18px; padding:0; margin:0; font-family:"helvetica neue","微软雅黑",arial,sans-serif; overflow-x:hidden; background:#0e394c;
 background: linear-gradient(0deg, #0F455D, #0e394c 90%) no-repeat #0e394c;
 }
@@ -419,7 +406,25 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndC
 	#dw{ background:#fb4128}
 	#ps{ background:#f58823}
 	#ai{ background:#84b311}
+.zpzsul{ border-left: solid 2px #fff; margin:12px 0 0 26px}
+.zpzsul span{ display:inline-block; width:25px; height:25px; background:url(../images/proy.png);float: left;
+    margin-left: -14px; margin-right:18px;}
+.zpzsul li{ padding-top:27px;}
+.zpzsul li img{ max-width:88%; height:auto}
 
+#rocketmeluncur {
+    position: fixed;
+    top: 758px;
+    z-index: 7;
+    display: none;
+    width: 26px;
+    height: 48px;
+    right: 25px;
+    background:url(../images/rocket.png) no-repeat 50% 0;
+}
+#rocketmeluncur:hover {
+    background-position: 50% -62px;
+}
 
 @media screen and (max-width:1024px){
 	.grxx_tit{ margin-left:0%; margin-right:0px}
@@ -427,7 +432,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndC
 	#dw{left: 30% !important;}
 	#ps{ left: 47% !important;}
 	#ai{ left: 64% !important;}
-	
+	#rocketmeluncur{ right:15px}
 }
 
 @media screen and (min-width:1025px) and (max-width:1280px){

@@ -9,11 +9,10 @@
     <script src="js/jquery-1.10.2.min.js"></script>
     <script>
 		/*左侧高度*/
+		
 		function leftHeight(){
 			var screenHeight=$(window).height();
-			//alert(screenHeight);			
 			$(".left").css("height",screenHeight+"px");
-			$(".right").css("height",screenHeight+"px");
 		}
 		/*赋ID*/
 		function giveID(x){
@@ -87,13 +86,38 @@
   				}
 			);
 			
+			/*返回顶部*/
+			$(window).scroll( function() {
+			 var screenHeight=$(window).height()-100;
+			  var getscrollTop=$(document).scrollTop();
+			   
+			  if(getscrollTop>100){
+			  $('#rocketmeluncur').show();
+			  
+			  }
+			  else{
+			  $('#rocketmeluncur').hide();
+			  $("#rocketmeluncur").css("top",screenHeight+"px");
+			  };
+			 } );
+			 
+			 $("#rocketmeluncur").click( function() {
+			  $("html, body").animate({scrollTop:0},"slow"); 
+			  $("#rocketmeluncur").animate({top:0},"slow");
+			 } );
+			
 		});
 		$(window).resize(function(){
   			leftHeight();
 		});
+		
+		
     </script>
+    
+    
   </head>
   <body>
+  <a href="javascript:void(0);" id="rocketmeluncur" class="showrocket" ><i></i></a>
 	<div class="left">
     
     	<div class="mytip">
@@ -114,10 +138,10 @@
         <ul class="mainlist">
         	<a class="actbg"></a>
         	<li class="ml_li"><a href="index.html"><img src="images/jbxx.png"/><span>基本信息</span></a></li>
-            <a class="actbgact1"></a>
-        	<li class="ml_li1"><a href="professional.html"><img src="images/zyjn.png"/><span>专业技能</span></a></li>
             <a class="actbg"></a>
-            <li class="ml_li"><a href="production.html"><img src="images/zpzs.png"/><span>作品展示</span></a></li>
+        	<li class="ml_li"><a href="professional.html"><img src="images/zyjn.png"/><span>专业技能</span></a></li>
+            <a class="actbgact1"></a>
+            <li class="ml_li1"><a href="production.html"><img src="images/zpzs.png"/><span>作品展示</span></a></li>
             <a class="actbg"></a>
             <li class="ml_li"><a href="hobby.html"><img src="images/xqah.png"/><span>兴趣爱好</span></a></li>
             <a class="actbg"></a>
@@ -136,86 +160,23 @@
     
     <div class="right">
     	<div class="ltit">
-        	<img src="images/zyjnb.png" class="ltit_noactive">
-            <span>专业技能</span>
+        	<img src="images/zpzs1.png" class="ltit_noactive">
+            <span>作品展示</span>
         </div>
         
-        <div class="zyjn_top">
-        	<div class="pross">
-            	<span>HTML5</span>
-                <div class="progress_bg"><div class="progress" id="html5"></div></div>
-            </div>
-            <div class="pross">
-            	<span>CSS3</span>
-                <div class="progress_bg"><div class="progress" id="css3"></div></div>
-            </div>
-            <div class="pross">
-            	<span>JavaScript</span>
-                <div class="progress_bg"><div class="progress" id="javascript"></div></div>
-            </div>
-            <div class="pross">
-            	<span>JQuery</span>
-                <div class="progress_bg"><div class="progress" id="jquery"></div></div>
-            </div>
-            <div class="pross">
-            	<span>BootStrap</span>
-                <div class="progress_bg"><div class="progress" id="boorstrap"></div></div>
-            </div>
-        </div>
+        <ul class="zpzsul">
+        	<li><span></span><img src="images/9.jpg"></li>
+        	<li><span></span><img src="images/8.jpg"></li>
+        	<li><span></span><img src="images/5.jpg"></li>
+        	<li><span></span><img src="images/1.jpg"></li>
+            <li><span></span><img src="images/2.png"></li>
+            <li><span></span><img src="images/3.png"></li>
+            <li><span></span><img src="images/6.jpg"></li>
+            <li><span></span><img src="images/7.png"></li>
+            <li><span></span><img src="images/4.jpg"></li>
+        </ul>
         
-        <div class="zyjn_bom">
-        
-            <div class="circle" id="dw" style="left:25%">
-                <div class="pie_left">
-                    <div class="cic_left"></div>
-                </div>
-                <div class="pie_right">
-                    <div class="cic_right"></div>
-                </div>
-                <div class="mask">
-                	<div>DW<br/><span>100</span>%</div>
-                </div>
-			</div>
-            
-            <div class="circle" id="ps" style="left:43%">
-                <div class="pie_left">
-                    <div class="cic_left"></div>
-                </div>
-                <div class="pie_right">
-                    <div class="cic_right"></div>
-                </div>
-                <div class="mask">
-                	<div>PS<br/><span>100</span>%</div>
-                </div>
-			</div>
-            
-            <div class="circle" id="ai" style="left:62%">
-                <div class="pie_left">
-                    <div class="cic_left"></div>
-                </div>
-                <div class="pie_right">
-                    <div class="cic_right"></div>
-                </div>
-                <div class="mask">
-                	<div>AI<br/><span>50</span>%</div>
-                </div>
-			</div>
-            
-            <div class="circle" style="left: 81%;">
-                <div class="pie_left">
-                    <div class="cic_left"></div>
-                </div>
-                <div class="pie_right">
-                    <div class="cic_right"></div>
-                </div>
-                <div class="mask">
-                	<div>Design<br/><span>50</span>%</div>
-                </div>
-			</div>
-
-            
-         
-        </div>
+      
         
     
     </div>
