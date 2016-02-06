@@ -406,9 +406,10 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndC
 	#dw{ background:#fb4128}
 	#ps{ background:#f58823}
 	#ai{ background:#84b311}
-.zpzsul{ border-left: solid 2px #fff; margin:12px 0 0 26px}
-.zpzsul span{ display:inline-block; width:25px; height:25px; background:url(../images/proy.png);float: left;
-    margin-left: -14px; margin-right:18px;}
+.zpzsul{    border-right: solid 2px #fff;
+    margin: 12px 0 0 26px;
+    width: 48%; float:left;}
+.zpzsul span{ display:inline-block; width:25px; height:25px; background:url(../images/proy.png);float: left;margin-right:-13px;}
 .zpzsul li{ padding-top:27px;}
 .zpzsul li img{ max-width:88%; height:auto}
 
@@ -425,6 +426,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndC
 #rocketmeluncur:hover {
     background-position: 50% -62px;
 }
+.rpp{ border-right:none;}
 
 @media screen and (max-width:1024px){
 	.grxx_tit{ margin-left:0%; margin-right:0px}
