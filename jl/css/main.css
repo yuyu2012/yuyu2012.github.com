@@ -444,6 +444,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndC
 @media screen and (min-width:1281px) and (max-width:1366px){
 	.grxx_tit{ margin-left:25%; margin-right:0px}
 }
-
+@media screen and (max-width:1680px){
+	.zpzsul{ width:46%}
+} 
 
 
