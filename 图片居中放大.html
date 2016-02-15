@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    position: relative;
+    height: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+img {
+    display: block;
+    max-width: 100%;
+    cursor: pointer;
+}
+.gallery,
+h1,
+h3 {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
+.gallery li {
+    display: inline-block;
+    width: 6em;
+    height: 4em;
+    overflow: hidden;
+    cursor: pointer;
+}
+.gallery li img,
+img {
+    width: 6em;
+    height: 4em;
+}
+.close {
+    position: absolute;
+    top: 0em;
+    right: 0.5em;
+    font-size: 2.5em;
+    text-decoration: none;
+    color: #fff;
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    z-index: 99999;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.51);
+}
+.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    width: 100vw !important;
+    height: 100vh !important;
+    margin: auto;
+    -webkit-animation: in 200ms 1 ease;
+    animation: in 200ms 1 ease;
+    overflow: hidden;
+    background: #333;
+}
+.inactive {
+    -webkit-animation: out 200ms 1 ease;
+    animation: out 200ms 1 ease;
+}
+@-webkit-keyframes in {
+    0% {
+        -webkit-transform: scale(0.2);
+        transform: scale(0.2);
+    }
+}
+@keyframes in {
+    0% {
+        -webkit-transform: scale(0.2);
+        transform: scale(0.2);
+    }
+}
+@-webkit-keyframes out {
+    100% {
+        -webkit-transform: scale(0.05);
+        transform: scale(0.05);
+    }
+}
+@keyframes out {
+    100% {
+        -webkit-transform: scale(0.05);
+        transform: scale(0.05);
+    }
+}
+.active img {
+    width: 100%;
+    height: auto;
+}
+</style>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+$(document).ready(function(){
+  $('.thumbox').on('click', function(e) {
+    e.preventDefault();
+    var id = $(this).attr('data-id');
+    var img = $(this).attr('src');
+   
+        $('body').append('<div class="active"><img src="' + img + '" /><span class="close"">×</span></div>');
+ 
+
+});
+
+$('body').delegate('.close', 'click', function() {
+    $('.active').addClass('inactive');
+    setTimeout(function() {
+        $('.active').remove();
+    }, 200);
+});
+
+});
+</script>
+</head>
+
+<body>
+<ul class="gallery">
+    <li><img class="thumbox" src="https://unsplash.imgix.net/photo-1434139240289-56c519f77cb0?fit=crop&fm=jpg&q=75&w=1050" alt="example" />
+    </li>
+    <li><img class="thumbox" src="https://unsplash.imgix.net/photo-1434077471918-4ea96e6e45d5?fit=crop&fm=jpg&q=75&w=1050" alt="example" />
+    </li>
+    <li><img class="thumbox" src="https://ununsplash.imgix.net/photo-1433959352364-9314c5b6eb0b?fit=crop&fm=jpg&q=75&w=1050" alt="example" />
+    </li>
+    <li><img class="thumbox" src="https://ununsplash.imgix.net/photo-1433838552652-f9a46b332c40?fit=crop&fm=jpg&q=75&w=1050" alt="example" />
+    </li>
+    <li><img class="thumbox" src="https://ununsplash.imgix.net/photo-1430916273432-273c2db881a0?fit=crop&fm=jpg&q=75&w=1050" alt="example" />
+    </li>
+    <li><img class="thumbox" src="https://ununsplash.imgix.net/photo-1429308755210-25a272addeb3?fit=crop&fm=jpg&q=75&w=1050" alt="example" />
+    </li>
+    <li><img class="thumbox" src="https://ununsplash.imgix.net/photo-1429152937938-07b5f2828cdd?fit=crop&fm=jpg&h=800&q=75&w=1050" alt="example" />
+    </li>
+    <li><img class="thumbox" src="https://unsplash.imgix.net/photo-1428278953961-a8bc45e05f72?fit=crop&fm=jpg&h=700&q=75&w=1050" alt="example" />
+        </a>
+    </li>
+    <li><img class="thumbox" src="https://ununsplash.imgix.net/photo-1427805371062-cacdd21273f1?fit=crop&fm=jpg&h=700&q=75&w=1050" alt="example" />
+    </li>
+</ul>
+</body>
+</html>
