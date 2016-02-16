@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>特别说明</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css" >
+    <style>body{ background:#0e394c}</style>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script>
+		/*左侧高度*/
+		
+		function leftHeight(){
+			var screenHeight=$(window).height();
+			$(".left").css("height",screenHeight+"px");
+		}
+		/*赋ID*/
+		function giveID(x){
+			var className=x.substring(1);
+			$(x).each(function(i) {
+                this.id=className+i;
+            });
+		}
+    	$(document).ready(function(){
+			leftHeight();
+			/*左侧滑动*/
+			giveID(".ml_li");
+			giveID(".actbg");
+			$(".ml_li").hover(function () {
+					var ids=$(this).attr("id");
+					var idLength=ids.length-1;
+					var nos=ids.substring(5);
+    				$("#actbg"+nos).addClass("actbgact");
+		        },
+				function () {
+    				var ids=$(this).attr("id");
+					var idLength=ids.length-1;
+					var nos=ids.substring(5);
+    				$("#actbg"+nos).removeClass("actbgact");
+  				}
+			);
+			/*时间判断*/
+			now = new Date();
+			hour = now.getHours();
+			var dre=".mytip div span" 
+			if(hour<6){ $(dre).text("凌晨好");}
+			else if(hour<9) {$(dre).text("早上好");}
+			else if(hour<12){$(dre).text("上午好");}
+			else if(hour<14){$(dre).text("中午好");}
+			else if(hour<17){$(dre).text("下午好");}
+			else if(hour<19){$(dre).text("傍晚好");}
+			else if(hour<22){$(dre).text("晚上好");}
+			else{$(dre).text("深夜好");} 
+			/*图标翻转*/
+			$(".ltit_noactive").hover(function() {
+				//alert();
+				var cc=$(this).attr("class");
+        		if(cc=="ltit_active"){
+					$(this).attr("class","ltit_noactive");
+				}
+		 		else if(cc=="ltit_noactive"){
+					$(this).attr("class","ltit_active")
+				}
+    		});
+			
+			/*打招呼出现*/
+			$(".photo,.mytip").hover(function () {
+    				$(".mytip").addClass("mytiphover");
+					$(".ymb").css({ "z-index": "-1", "position": "relative" });
+		        },
+				function () {
+    				$(".mytip").removeClass("mytiphover");
+					$(".ymb").css({ "z-index": "0", "position": "relative" });
+  				}
+			);
+			
+			
+			 
+			
+				
+		});
+		$(window).resize(function(){
+  			leftHeight();
+		});
+		
+		
+		
+    </script>
+    
+    
+  </head>
+  <body>
+	<div class="left">
+    
+    	<div class="mytip">
+        	<div>Hi，<span></span>。<br>我是<a>网页前端工程师</a>，<a>邱莉</a>。感谢您百忙之中浏览我的简历。</div>
+        </div>
+        
+    	<div class="photo">
+        	<img src="images/photo.png">
+        </div>
+        
+        
+        
+        <ul class="myname">
+        	<li class="mn_name">邱莉</li>
+            <li class="mn_profession">网页制作</li>
+        </ul>
+        
+        <ul class="mainlist">
+        	<a class="actbg"></a>
+        	<li class="ml_li"><a href="index.html"><img src="images/jbxx.png"/><span>基本信息</span></a></li>
+            <a class="actbg"></a>
+        	<li class="ml_li"><a href="professional.html"><img src="images/zyjn.png"/><span>专业技能</span></a></li>
+            <a class="actbg"></a>
+            <li class="ml_li"><a href="production.html"><img src="images/zpzs.png"/><span>作品展示</span></a></li>
+            <a class="actbg"></a>
+            <li class="ml_li"><a href="hobby.html"><img src="images/xqah.png"/><span>兴趣爱好</span></a></li>
+            <a class="actbgact1"></a>
+            <li class="ml_li1"><a href="statement.html"><img src="images/tbsm.png"/><span>特别说明</span></a></li>
+        </ul>
+    	
+    </div>
+    
+    <div id="layers">
+       <div class="layer"></div>
+       <div class="layer"></div>
+       <div class="layer"></div>
+       <div class="layer"></div>
+       <div class="layer"></div>
+   </div>
+    
+    <div class="right">
+    	<div class="ltit">
+        	<img src="images/tbsm1.png" class="ltit_noactive">
+            <span>特别说明</span>
+        </div>
+        
+        <div class="tbsmm">
+        <p>
+        	因为之前所在的公司客户是公安局保密性较强，产品并不是对外开放的，所以并没有可以直接浏览的网站作品。<br>
+            于是我做了这个个人简历网站方便浏览（面试时会带其它作品）<br>
+            这个网站是自己独立设计制作完成。<br>
+            关于设计方面，不是会用设计软件就会做设计，也不是能独立设计作品就能当设计师。<br>
+            我可以做设计，但还当不了能独当一面的设计师。<br>
+        </p>
+        
+        <p>
+        	关于移动端开放，移动端开发和PC端基本上是一样的。<br>
+            之前有做过移动端开发，但是因为局限性大，就一直不曾深入学习了解过。<br>
+            毕竟大环境在，学习移动端开发势在必行，我也是很乐意接触学习移动端开发的。<br>
+            但目前对移动端开发还是菜鸟级别的。
+        </p>
+        
+        <p>
+        	联系方式：<br>
+            <img src="images/phone.png"><span>15901819254</span><br>
+            <img src="images/mail.png"><span>601971198@qq.com</span>
+        </p>
+        
+        <p style=" text-align:center">
+        	<img src="images/ewm.png" width="100" height="100" style="border:solid 2px #fff;"/><br>
+            微简历
+        </p>
+        </div>
+        
+        
+        
+        
+        
+      
+        
+    
+    </div>
+    
+
+  </body>
+</html>
