@@ -114,10 +114,10 @@
 			$(".next").click( function () {
 				$(".prev").css("opacity","0.8");
 				var nowimgsrc = $(".mbimg").attr("src");
-				var numimgsrc=parseInt(nowimgsrc.charAt(10));
+				var numimgsrc=parseInt(nowimgsrc.charAt(9));
 				if(numimgsrc<7){
 					var newnum=1+numimgsrc;
-					$(".mbimg").attr("src","images/tra"+newnum+".jpg");
+					$(".mbimg").attr("src","images/sg"+newnum+".jpg");
 					}
 				if(numimgsrc==6){
 					$(".next").css("opacity","0");
@@ -128,10 +128,10 @@
 			$(".prev").click( function () { 
 				$(".next").css("opacity","0.8");
 				var nowimgsrc = $(".mbimg").attr("src");
-				var numimgsrc=parseInt(nowimgsrc.charAt(10));
+				var numimgsrc=parseInt(nowimgsrc.charAt(9));
 				if(numimgsrc>1){
 					var newnum=numimgsrc-1;
-					$(".mbimg").attr("src","images/tra"+newnum+".jpg");
+					$(".mbimg").attr("src","images/sg"+newnum+".jpg");
 					}
 				if(numimgsrc==2){
 					$(".prev").css("opacity","0");
@@ -198,24 +198,24 @@
         
         <div class="hobbybtn">
         	<div>
-        	<a href="hobby.html" class="hbcheck">旅行摄影</a><span>/</span>
-            <a href="hobby1.html">DIY</a><span>/</span>
+        	<a href="hobby.html">旅行摄影</a><span>/</span>
+            <a href="hobby1.html" class="hbcheck">DIY</a><span>/</span>
             <a href="hobby2.html">绘画</a>
             </div>
         </div>
         
         <div class="hobbyimg">
-        	<img src="images/tra1.jpg" class="ymb" />
-            <img src="images/tra2.jpg"/>
+        	<img src="images/sg1.jpg" class="ymb" />
+            <img src="images/sg2.jpg"/>
         </div>
         <div  class="hobbyimg">
-        	<img src="images/tra3.jpg"/>
-            <img src="images/tra4.jpg"/>
+        	<img src="images/sg3.jpg"/>
+            <img src="images/sg4.jpg"/>
         </div>
         <div class="hobbyimg">
-        	<img src="images/tra5.jpg"/>
-            <img src="images/tra6.jpg"/>
-            <img src="images/tra7.jpg"/>
+        	<img src="images/sg5.jpg"/>
+            <img src="images/sg6.jpg"/>
+            <img src="images/sg7.jpg"/>
         </div>
         
         
