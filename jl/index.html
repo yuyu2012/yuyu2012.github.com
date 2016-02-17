@@ -11,7 +11,7 @@
 		/*左侧高度*/
 		function leftHeight(){
 			var screenHeight=$(window).height();			
-			$(".left").css("height",screenHeight+"px");
+			$(".left,.phone_left").css("height",screenHeight+"px");
 			$(".right").css("height",screenHeight+"px");
 		}
 		/*赋ID*/
@@ -96,7 +96,7 @@
     </script>
   </head>
   <body>
-	<div class="left">
+	<div class="left" >
     
     	<div class="mytip">
         	<div>Hi，<span></span>。<br>我是<a>网页前端工程师</a>，<a>邱莉</a>。感谢您百忙之中浏览我的简历。</div>
@@ -128,6 +128,14 @@
     	
     </div>
     
+    <div class="phone_left">
+    	<a class="pl_checked" href="index.html"><img src="images/jbxx.png"><span>资料</span></a>
+        <a href="professional.html"><img src="images/zyjn.png"><span>技能</span></a>
+        <a href="production.html"><img src="images/zpzs.png"><span>作品</span></a>
+        <a href="hobby.html"><img src="images/xqah.png"><span>爱好</span></a>
+        <a href="statement.html"><img src="images/tbsm.png"><span>声明</span></a>
+    </div>
+    
     <div id="layers">
        <div class="layer"></div>
        <div class="layer"></div>
@@ -153,7 +161,7 @@
         	<li><span class="grxx_tit">性别：</span><span>女</span></li>
             <li><span class="grxx_tit">婚姻状况：</span><span>已婚</span></li>
             <li><span class="grxx_tit">户籍：</span><span>上海</span></li>
-            <li><span class="grxx_tit">电子邮件：</span><span>601971198@qq.com</span></li>
+            <li><span class="grxx_tit">QQ：</span><span>601971198</span></li>
             <li><span class="grxx_tit">联系电话：</span><span>15901819254</span></li>
         </ul>
         <div id="tagscloud">
@@ -164,7 +172,7 @@
             <a href="#" class="tagc2">BootStrap</a>
             <a href="#" class="tagc1">PhotoShop</a>
             <a href="#" class="tagc2">Dreanwever</a>
-            <a href="#" class="tagc5">80后</a>
+            <a href="#" class="tagc5">响应式布局</a>
             <a href="#" class="tagc2">WEB前端工程师</a>
             <a href="#" class="tagc2">网页制作</a>
             <a href="#" class="tagc5">网页设计</a>
@@ -175,7 +183,7 @@
             <a href="#" class="tagc2">bootstrap</a>
             <a href="#" class="tagc1">photoshop</a>
             <a href="#" class="tagc2">dreanwever</a>
-            <a href="#" class="tagc5">80后</a>
+            <a href="#" class="tagc5">响应式布局</a>
             <a href="#" class="tagc2">WEB前端工程师</a>
             <a href="#" class="tagc2">网页制作</a>
             <a href="#" class="tagc5">网页设计</a>
@@ -200,6 +208,12 @@
             
             <div class="step-slider-item end_item"></div>
     	</div>
+      </div>
+      
+      <div class="phone_gzjl">
+      	<span></span><p>2010年<br> 毕业于 上海电机学院软件专业</p>
+        <span></span><p>2010年-2012年<br> 任职于 双美教育机构网页制作</p>
+        <span></span><p>2012年至今<br> 任职于 盘石软件公司网页制作</p>
       </div>
     
     </div>
