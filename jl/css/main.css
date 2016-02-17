@@ -576,8 +576,8 @@ animation: in 200ms 1 ease;
 .phone_left span{ display:inline-block; width:100%}
 .phone_left .pl_checked{ background:#0d3b4f;}
 
-.phone_gzjl{ border-left: solid 9px #305c6f; display:none; float:left; margin-left:21px; padding-top:15px;}
-.phone_gzjl span{ display:inline-block; width:20px; height:20px; background:#00a8bf; border-radius:50%; border: solid 3px #305c6f; position:relative; left:-17px;}
+.phone_gzjl{ border-left: solid 5px #305c6f; display:none; float:left; margin-left:21px; padding-top:15px;}
+.phone_gzjl span{ display:inline-block; width:15px; height:15px; background:#00a8bf; border-radius:50%; border: solid 3px #305c6f; position:relative; left:-14px;}
 
 .phone_gzjl p{
     padding: 15px 13px;
@@ -589,7 +589,7 @@ animation: in 200ms 1 ease;
     font-size: 16px;
 	position:relative;
 	top: -61px;
-    left:34px;
+    left:25px;
 	}
 .phone_gzjl p:before{
 	content: "";
@@ -611,14 +611,19 @@ animation: in 200ms 1 ease;
 	#tagscloud{ float:left; width:100%}
 	.gzjl{ display:none;}
 	.phone_gzjl{ display:block;}
+	.grxx li{
+		width: 223px;
+    	text-align: left;
+    	margin: auto;
+	}
+	
 	
 	
 }
-@media screen and (max-width:320px){
+@media screen and (max-width:400px){
 	.left{ display:none}
 	.phone_left{ display:block}
 	.right {margin-left:70px;}
 	.ltit{ padding-top:15px;}
-	.grxx{ width:100%; text-align:left}	
 	.phone_gzjl p{left: 24px;width:150px;}
 }
