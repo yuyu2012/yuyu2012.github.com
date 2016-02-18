@@ -230,9 +230,11 @@
         
         <div id="phone_pd"></div>
         <script>
-var myChart = echarts.init(document.getElementById('phone_pd'));
-
-var dataStyle = {
+		
+		$(window).resize(function() { 
+			if($(window).width()<=1000){
+				var myChart = echarts.init(document.getElementById('phone_pd'));
+				var dataStyle = {
     normal: {
         label: {show:false},
         labelLine: {show:false}
@@ -337,7 +339,13 @@ option = {
     ]
 };
 myChart.setOption(option);
+
+			}
+		}); 
+		
 $("body").css("background","#0e4056");
+
+
 </script>                   
 
     
