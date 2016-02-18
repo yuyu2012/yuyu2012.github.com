@@ -4,15 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>基本信息</title>
+    <title>专业技能</title>
     <link href="css/main.css" rel="stylesheet" type="text/css" >
     <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/echarts-all.js"></script>
     <script>
 		/*左侧高度*/
 		function leftHeight(){
 			var screenHeight=$(window).height();
 			//alert(screenHeight);			
-			$(".left").css("height",screenHeight+"px");
+			$(".left,.phone_left").css("height",screenHeight+"px");
 			$(".right").css("height",screenHeight+"px");
 		}
 		/*赋ID*/
@@ -126,6 +127,14 @@
     	
     </div>
     
+    <div class="phone_left">
+    	<a href="index.html"><img src="images/jbxx.png"><span>资料</span></a>
+        <a class="pl_checked" href="professional.html"><img src="images/zyjn.png"><span>技能</span></a>
+        <a href="production.html"><img src="images/zpzs.png"><span>作品</span></a>
+        <a href="hobby.html"><img src="images/xqah.png"><span>爱好</span></a>
+        <a href="statement.html"><img src="images/tbsm.png"><span>声明</span></a>
+    </div>
+    
     <div id="layers">
        <div class="layer"></div>
        <div class="layer"></div>
@@ -164,6 +173,7 @@
         </div>
         
         <div class="zyjn_bom">
+        
         
             <div class="circle" id="dw" style="left:25%">
                 <div class="pie_left">
@@ -217,6 +227,119 @@
          
         </div>
         
+        
+        <div id="phone_pd"></div>
+        <script>
+var myChart = echarts.init(document.getElementById('phone_pd'));
+
+var dataStyle = {
+    normal: {
+        label: {show:false},
+        labelLine: {show:false}
+    }
+};
+var placeHolderStyle = {
+    normal : {
+        color: 'rgba(0,0,0,0)',
+        label: {show:false},
+        labelLine: {show:false}
+    },
+    emphasis : {
+        color: 'rgba(0,0,0,0)'
+    }
+};
+option = {
+    color:['#fb4128','#f58823','#84b311','#00cccc'], 
+    legend: {
+		color:'#fff',
+        orient : 'vertical',
+        x : document.getElementById('phone_pd').offsetWidth / 2,
+        y : 10,
+        itemGap:12,
+		textStyle: {
+		color: '#fff',
+		},
+        data:['DW','PS','AI','Design']
+    },
+    series : [
+        {
+            name:'1',
+            type:'pie',
+            clockWise:false,
+            radius : [85, 95],
+            itemStyle : dataStyle,
+            data:[
+                {
+                    value:50,
+                    name:'DW'
+                },
+                {
+                    value:10,
+                    name:'invisible',
+                    itemStyle : placeHolderStyle
+                }
+            ]
+        },
+        {
+            name:'2',
+            type:'pie',
+            clockWise:false,
+            radius : [70, 80],
+            itemStyle : dataStyle,
+            data:[
+                {
+                    value:50, 
+                    name:'PS'
+                },
+                {
+                    value:10,
+                    name:'invisible',
+                    itemStyle : placeHolderStyle
+                }
+            ]
+        },
+        {
+            name:'3',
+            type:'pie',
+            clockWise:false,
+            radius : [55, 65],
+            itemStyle : dataStyle,
+            data:[
+                {
+                    value:100, 
+                    name:'AI'
+                },
+                {
+                    value:100,
+                    name:'invisible',
+                    itemStyle : placeHolderStyle
+                }
+            ]
+        },
+		{
+            name:'4',
+            type:'pie',
+            clockWise:false,
+            radius : [40, 50],
+            itemStyle : dataStyle,
+            data:[
+                {
+                    value:100, 
+                    name:'Design'
+                },
+                {
+                    value:100,
+                    name:'invisible',
+                    itemStyle : placeHolderStyle
+                }
+            ]
+        }
+    ]
+};
+myChart.setOption(option);
+$("body").css("background","#0e4056");
+</script>                   
+
     
     </div>
     
