@@ -622,6 +622,11 @@ animation: in 200ms 1 ease;
 	#phone_pd{ display:block;width:230px;height:200px;margin-left: 30%;}
 	
 }
+
+@media screen and (max-width:550px){
+	#phone_pd{margin-left: 20%; }
+}
+
 @media screen and (max-width:400px){
 	.left{ display:none}
 	.phone_left{ display:block}
