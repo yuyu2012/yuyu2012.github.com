@@ -13,7 +13,7 @@
 		
 		function leftHeight(){
 			var screenHeight=$(window).height();
-			$(".left").css("height",screenHeight+"px");
+			$(".left,.phone_left").css("height",screenHeight+"px");
 		}
 		/*赋ID*/
 		function giveID(x){
@@ -23,6 +23,20 @@
             });
 		}
     	$(document).ready(function(){
+			/*爱好切换*/
+			giveID(".phb_a");
+			giveID(".phone_pimg");
+			$(".phb_a").click( function () {
+				$(".phb_a").removeClass("phone_hb_ck");
+				$(this).addClass("phone_hb_ck");
+				var ids=$(this).attr("id");
+					var idLength=ids.length-1;
+					var nos=ids.substring(idLength);
+					$(".phone_pimg").hide();
+    				$("#phone_pimg"+nos).show();
+			});
+			
+			
 			leftHeight();
 			/*左侧滑动*/
 			giveID(".ml_li");
@@ -182,6 +196,14 @@
     	
     </div>
     
+    <div class="phone_left">
+    	<a href="index.html"><img src="images/jbxx.png"><span>资料</span></a>
+        <a href="professional.html"><img src="images/zyjn.png"><span>技能</span></a>
+        <a href="production.html"><img src="images/zpzs.png"><span>作品</span></a>
+        <a class="pl_checked" href="hobby.html"><img src="images/xqah.png"><span>爱好</span></a>
+        <a href="statement.html"><img src="images/tbsm.png"><span>声明</span></a>
+    </div>
+    
     <div id="layers">
        <div class="layer"></div>
        <div class="layer"></div>
@@ -190,7 +212,7 @@
        <div class="layer"></div>
    </div>
     
-    <div class="right" style="float:left">
+    <div class="right">
     	<div class="ltit">
         	<img src="images/xqah1.png" class="ltit_noactive">
             <span>兴趣爱好</span>
@@ -202,6 +224,10 @@
             <a href="hobby1.html">DIY</a><span>/</span>
             <a href="hobby2.html">绘画</a>
             </div>
+        </div>
+        
+        <div class="phone_hb">
+        	<a style="border-top-left-radius:4px; border-bottom-left-radius:4px;" class="phb_a phone_hb_ck">旅行</a><a class="phb_a" style="border-right:none; border-left:none;">DIY</a><a class="phb_a" style="border-top-right-radius:4px; border-bottom-right-radius:4px;">绘画</a>
         </div>
         
         <div class="hobbyimg">
@@ -217,6 +243,51 @@
             <img src="images/tra6.jpg"/>
             <img src="images/tra7.jpg"/>
         </div>
+       
+       <div class="baobao"> 
+            <div class="phone_pimg">
+                <div>
+                    <img src="images/tra1.jpg" class="ymb" />
+                    <img src="images/tra2.jpg"/>
+                    <img src="images/tra4.jpg"/>
+                    <!--<img src="images/tra7.jpg"/>-->
+                </div>
+                <div>
+                    <img src="images/tra3.jpg"/>
+                    <img src="images/tra5.jpg"/>
+                    <img src="images/tra6.jpg"/>
+                </div>
+            </div>
+            
+            <div class="phone_pimg" style="display:none">
+                <div>
+                    <img src="images/sg1.jpg" class="ymb" />
+                    <img src="images/sg2.jpg"/>
+                    
+                    <img src="images/sg4.jpg"/>
+                </div>
+                <div>
+                <img src="images/sg3.jpg"/>
+                    <img src="images/sg5.jpg"/>
+                    <img src="images/sg6.jpg"/>
+                    <!--<img src="images/sg7.jpg"/>-->
+                </div>
+            </div>
+            
+            <div class="phone_pimg" style="display:none">
+                <div>
+                    <img src="images/hh1.jpg" class="ymb" />
+                    <img src="images/hh2.jpg"/>
+                    <img src="images/hh3.jpg"/>
+                    
+                </div>
+                <div>
+                    <img src="images/hh5.jpg"/>
+                    <img src="images/hh6.jpg"/>
+                    <img src="images/hh4.jpg"/>
+                </div>
+            </div>
+         </div>
         
         
         
