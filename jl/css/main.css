@@ -483,6 +483,7 @@ animation: in 200ms 1 ease;
 .next:hover {
 	opacity: 1;
 }
+
 .close {
     position: absolute;
     top: 0em;
@@ -608,7 +609,11 @@ animation: in 200ms 1 ease;
     float: left;}
 .phone_pro li .dimg{ float:left; width:20px; height:20px; position:relative; left:-10px;}
 .phone_pro li{ margin-bottom:5px;}
-.phone_pro li .zpimg{ width:90%; height:auto;}
+.phone_pro li .zpimg{ max-width:90%; height:auto;}
+.tbsmm table img{ max-width:100%; height:auto; margin-right:15px; }
+
+
+
 @media screen and (max-width:1000px){
 	.left{ display:none}
 	.phone_left{ display:block}
@@ -629,6 +634,7 @@ animation: in 200ms 1 ease;
 	#layers{ display:none}
 	.zpzsul{ display:none;}
 	.phone_pro{ display:block}
+	.showrocket{ display:none}
 }
 .phone_hb{border-radius:5px; display:none; width:90%; margin-bottom:20px}
 .phone_hb a{ display:inline-block; text-align:center; width:33%; padding:5px 0; cursor:pointer;transition: all 0.2s ease-in; border: solid 1px #00a8bf; }
@@ -637,7 +643,7 @@ animation: in 200ms 1 ease;
 .phone_pimg div{ width:46%; margin-right:2%; float:left}
 .phone_pimg div img{ max-width:100%; height:auto; margin-bottom:5px}
 .baobao{ display:none}
-
+}
 @media screen and (max-width:550px){
 	#phone_pd{margin-left: 20%; }
 	.phone_hb{ width:96%; }
@@ -652,7 +658,7 @@ animation: in 200ms 1 ease;
 	.ltit{ padding-top:15px;}
 	.phone_gzjl p{left: 24px;width:150px;}
 	.pross span{width: 100%;text-align: left;}
-	.pross .progress_bg{ width:98%;}
+	.pross .progress_bg{ width:95%;}
 	.pross {margin-bottom: 28px;}
 	#phone_pd{margin-left: 0%; }
 	.phone_pro{ margin-left:10px;}

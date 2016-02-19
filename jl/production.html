@@ -88,6 +88,7 @@
 			
 			/*返回顶部*/
 			$(window).scroll( function() {
+				if($(window).width()>=1024){
 			 var screenHeight=$(window).height()-100;
 			  var getscrollTop=$(document).scrollTop();
 			   
@@ -99,12 +100,15 @@
 			  $('#rocketmeluncur').hide();
 			  $("#rocketmeluncur").css("top",screenHeight+"px");
 			  };
+			 }
 			 } );
 			 
 			 $("#rocketmeluncur").click( function() {
 			  $("html, body").animate({scrollTop:0},"slow"); 
 			  $("#rocketmeluncur").animate({top:0},"slow");
 			 } );
+			 
+			 
 			
 		});
 		$(window).resize(function(){
