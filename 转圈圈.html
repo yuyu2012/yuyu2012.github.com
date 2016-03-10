@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+.z1
+{
+animation: myfirst 3s linear infinite;
+}
+@keyframes myfirst
+{
+0% {-webkit-transform:rotate(0deg);}
+50% {-webkit-transform:rotate(180deg);}
+100% {-webkit-transform:rotate(360deg);}
+}
+
+.z2{position: absolute;
+    left: 18px;
+    top: 18px;
+	animation: nmyfirst 3s linear infinite;
+	}
+@keyframes nmyfirst
+{
+0% {-webkit-transform:rotate(0deg);}
+50% {-webkit-transform:rotate(-180deg);}
+100% {-webkit-transform:rotate(-360deg);}
+}
+
+
+
+</style>
+</head>
+
+<body>
+	<img class="z1" src="images/zhuan1.png" />
+    <img class="z2" src="images/zhuan2.png" />
+</body>
+</html>
