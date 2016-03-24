@@ -24,8 +24,9 @@ $(document).ready(function(){
 	$(this).toggleClass('active');
   });
   
-  $(".tck_tree li :checkbox").click( function () { 
-	if($(this).prop("checked")){
+  $(".tck_tree li label").click( function () { 
+	if($(this).find(":checkbox").prop("checked")){
+		//alert($(this).parent().html());
 		$(this).parent().next("ul").find(":checkbox").each(function(i){
    			$(this).prop("checked",true);
  		});
@@ -44,30 +45,30 @@ $(document).ready(function(){
 
 <body>
 	<ul class="tck_tree">
-	    <li><img src="images/trrearrow.png" /><input type="checkbox" /><span>上海市</span></li>
+	    <li><img src="images/trrearrow.png" /><label><input type="checkbox" /><span>上海市</span></label></li>
         <ul>
-        	<li><img src="images/trrearrow.png" /><input type="checkbox" /><span>黄浦区</span></li>
+        	<li><img src="images/trrearrow.png" /><label><input type="checkbox" /><span>黄浦区</span></label></li>
             <ul>
-            	<li><input type="checkbox" /><span>老西门派出所</span></li>
-                <li><input type="checkbox" /><span>小东门派出所</span></li>
-                <li><input type="checkbox" /><span>南京东路派出所</span></li>
+            	<li><label><input type="checkbox" /><span>老西门派出所</span></label></li>
+                <li><label><input type="checkbox" /><span>小东门派出所</span></label></li>
+                <li><label><input type="checkbox" /><span>南京东路派出所</span></label></li>
             </ul>
                     
-            <li><img src="images/trrearrow.png" /><input type="checkbox" /><span>徐汇区</span></li>
+            <li><img src="images/trrearrow.png" /><label><input type="checkbox" /><span>徐汇区</span></label></li>
             <ul>
-                <li><input type="checkbox" /><span>龙华派出所</span></li>
-                <li><input type="checkbox" /><span>天平路派出所</span></li>
-                <li><input type="checkbox" /><span>虹梅派出所</span></li>
+                <li><label><input type="checkbox" /><span>龙华派出所</span></label></li>
+                <li><label><input type="checkbox" /><span>天平路派出所</span></label></li>
+                <li><label><input type="checkbox" /><span>虹梅派出所</span></label></li>
             </ul>
                     
-            <li><img src="images/trrearrow.png" /><input type="checkbox" /><span>长宁区</span></li>
+            <li><img src="images/trrearrow.png" /><label><input type="checkbox" /><span>长宁区</span></label></li>
             <ul>
-                <li><input type="checkbox" /><span>江苏路派出所</span></li>
-                <li><input type="checkbox" /><span>仙霞路派出所</span></li>
-                <li><input type="checkbox" /><span>华阳派出所</span></li>
+                <li><label><input type="checkbox" /><span>江苏路派出所</span></label></li>
+                <li><label><input type="checkbox" /><span>仙霞路派出所</span></label></li>
+                <li><label><input type="checkbox" /><span>华阳派出所</span></label></li>
             </ul>
         </ul>
-        <li><img src="images/trrearrow.png" /><input type="checkbox" /><span>北京市</span></li>
+        <li><img src="images/trrearrow.png" /><label><input type="checkbox" /><span>北京市</span></label></li>
     </ul>
 </body>
 </html>
