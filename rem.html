@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+    <!--禁用手机号码链接(for iPhone)-->
+    <meta name="format-detection" content="telephone=no" />
+    <!--控制全屏时顶部状态栏的外，默认白色-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--是否允许全屏显，只有在桌面启动时可用-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+<title>无标题文档</title>
+<style>
+body{
+	padding:0; margin:0; font-size:100%;
+	background-color: black;
+    background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
+	background-size: 16px 16px;
+    background-color: #000;
+}
+.container{ background:url(images/qq6and.jpg) no-repeat;background-size:100% auto;
+width: 640px; min-height: 12.40rem;margin: auto;}
+p{
+    font-size:0.4327rem;
+}
+@media screen and (max-width:640px){
+.container{ width:auto;}
+
+
+}
+
+a{font-weight: bold;
+    color: #cc0000;
+    text-decoration: none;display: inline-block;
+    font-size: .5626rem;
+    margin: 9rem auto 0.4rem;
+	margin-left: 2.25rem;
+	}
+</style>
+<script>
+    //auto adaptation
+    var calculate_size = function() {
+        // var BASE_FONT_SIZE = 100;
+        var docEl = document.documentElement,clientWidth = document.querySelector(".container").clientWidth;
+        if (!clientWidth) return;
+        docEl.style.fontSize = (clientWidth / 10) + 'px';
+    };
+    // Abort if browser does not support addEventListener
+    if (document.addEventListener) {
+        var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+        window.addEventListener(resizeEvt, calculate_size, false);
+        document.addEventListener('DOMContentLoaded', calculate_size, false);
+        calculate_size();
+    }
+    </script>
+
+</head>
+
+<body>
+<div class="container">
+	<a href="#">点击下载领取10元红包</a>
+</div>
+<p style="font-size:80%; color:#fff;">
+bbbb
+</p>
+</body>
+</html>
