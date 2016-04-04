@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<div id="form1">
+
+</div>
+<script src="js/sea.js"></script>
+<script type="text/javascript" charset="utf-8" >
+        seajs.config({
+          // 设置别名，以方便调用
+          alias: {'jquery': 'jquery-1.10.2.min.js'},
+		  alias: {'seatext': 'seatest.js'},
+          
+        });
+       //定义模块
+        define(function(require, exports, module){
+           //调用jquery
+           require('jquery');
+		   require('seatext');
+        });
+
+        //调用
+        seajs.use(' ');
+        
+    </script>
+</body>
+</html>
