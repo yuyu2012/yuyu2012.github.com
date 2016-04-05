@@ -1,0 +1,98 @@
+/* This is a compiled file, you should be editing the file in the templates directory */
+@font-face {
+    font-family: 'minijianlinxin412085';
+    src: url('font/minijianlinxin.eot');
+    src: url('font/minijianlinxin.eot?#iefix') format('embedded-opentype'), url('font/minijianlinxin.woff') format('woff'), url('font/minijianlinxin.ttf') format('truetype'), url('font/minijianlinxin.svg#minijianlinxin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@-webkit-keyframes wave-animation {
+  0% {
+    background-position: 0 bottom;
+  }
+  100% {
+    background-position: 200px bottom;
+  }
+}
+
+
+@keyframes wave-animation {
+  0% {
+    background-position: 0 bottom;
+  }
+  100% {
+    background-position: 200px bottom;
+  }
+}
+@-webkit-keyframes loading-animation {
+  0% {
+    background-size: 70px 0px;
+  }
+  100% {
+    background-size: 70px 70px;
+  }
+}
+@keyframes loading-animation {
+  0% {
+    background-size: 70px 0px;
+  }
+  100% {
+    background-size: 70px 70px;
+  }
+}
+
+/* :not(:required) hides this rule from IE9 and below */
+.pace:not(:required) {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  z-index: 2000;
+  position:absolute; top:150px;left:50%;width: 100%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+
+  font-family: 'minijianlinxin412085';
+}
+
+.pace:not(:required)::after {
+  content: '天天基金网';
+  display: block;
+  font-weight: bold;
+  font-size: 40px;  
+
+  background-image: url(../images/loading.png);
+  background-color: #feea00;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-animation: wave-animation 1s infinite linear, loading-animation 4s infinite linear alternate;
+  animation: wave-animation 1s infinite linear, loading-animation 4s infinite linear alternate;
+  -webkit-animation-delay: -1.5s;
+  animation-delay: -1.5s;
+  background-size: 200px 100px;
+  background-repeat: repeat-x;
+  opacity: 1;
+}
+
+.pace .pace-progress:after {
+  content: attr(data-progress-text);
+  position: absolute;
+  top: 50px;
+  left:50%;
+  -webkit-transform:translate(-60%,0);transform:translate(-60%,0);
+  color: #f40;
+  font-weight: bold;
+  text-align: center;
+  padding:0;
+  margin: 0
+}
+
+.pace.pace-inactive {
+  display: none;
+}
