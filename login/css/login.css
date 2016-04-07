@@ -1,0 +1,95 @@
+@charset "utf-8";
+/* CSS Document */
+*:focus{ outline:none}
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+	min-width:1200px;
+	overflow:auto;
+	font-family: "微软雅黑";
+	font-size:16px;
+}
+ul{ margin:0; padding:0}
+ul li{ list-style-type:none;}
+#particle-canvas {
+    width: 100%;
+    height: 100%;
+}
+.cointer{ width:1200px; z-index:9999; position:absolute; top:0;}
+.logo{ margin-top:171px; border-radius: 5px;}
+.login{
+	background-color: #fff;
+	width: 418px;
+	float:right;
+	border-radius: 5px;
+	margin-top:240px;
+	}
+	
+.header{height: 50px;border-bottom: 1px solid #e2e2e2;}
+.header span{display: inline-block;
+height: 50px;
+line-height: 50px; border-bottom:solid 2px #848484; margin-left:15px; width:97px; text-align:center;
+	}
+.login_form{ width:270px; margin:auto}
+.login_form li{ width:100%; margin-bottom:15px;}
+.login_form input[type="text"],.login_form input[type="password"]{ width:100%;font-family: Verdana,Tahoma,Arial;
+font-size: 16px;height: 18px;
+padding: 11px 0 11px 10px;
+line-height: 18px; border-radius:5px; border:solid 1px #d6d6d6;}
+.login_form input[type="password"]{ transition: all 0.5s ease 0.2s; }
+.login_form input[type="password"]:hover{ border:solid 1px #f1ca7f;}
+
+.login_form input[type="text"]{ border:none; width:237px;}
+.login_form .inputOuter{border-radius:5px; border:solid 1px #d6d6d6;width: 280px; transition: all 0.5s ease 0.2s;}
+.login_form .inputOuter:hover{ border:solid 1px #f1ca7f;}
+
+.tips{height: 50px;
+width: 270px;}
+
+.login_form input[type="submit"]{
+	width:283px;
+	height:38px;
+  background: -webkit-linear-gradient(#edd052, #f2be0a); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#edd052, #f2be0a); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#edd052, #f2be0a); /* Firefox 3.6 - 15 */
+  background: linear-gradient(#edd052, #f2be0a); /* 标准的语法 */
+  color:#88411a;
+  font-size: 16px;
+  border: solid 1px #c3ae4f;
+  border-radius: 5px;
+font-weight: bold;
+font-family: "微软雅黑";
+-moz-box-shadow: 1px 1px 0 #F0DB6D;
+-webkit-box-shadow:1px 1px 0 #F0DB6D;
+text-shadow: 1px 1px 0 #F0DB6D;
+
+-webkit-animation-name: orangellowPulse;
+-webkit-animation-duration: 5s;
+-webkit-animation-iteration-count: infinite;
+cursor:pointer; position:relative;
+	}
+.login_form input[type="submit"]:active{ left:1px; top:1px;}
+	
+	@-webkit-keyframes orangellowPulse {
+  from {  -webkit-box-shadow: 0 0 9px #848484;  }
+  50% { -webkit-box-shadow: 0 0 18px #edd052; }
+  to { -webkit-box-shadow: 0 0 9px #848484; }
+}
+.bottom{ float:right;margin-right: 11px;
+margin-top: 20px;
+margin-bottom: 10px;}
+.bottom a{ font-size:13px;color: #666;}
+
+.uin_del{ width:21px; height:21px; cursor:pointer; background:url(../images/loginchacha.png) no-repeat 0 0;display: inline-block;vertical-align: -4px;}
+.uin_del:hover{  background:url(../images/loginchacha.png) no-repeat -23px 0;}
+
+.error_tips{padding: 5px;
+border: 1px solid #dad699;
+background: #f9f5c7;border-radius: 2px;top: 11px;
+left: 78px;position: relative;
+width: 258px;font-size: 13px; display:none;}
+.error_tips img{vertical-align: -5px;}
