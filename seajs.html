@@ -12,21 +12,17 @@
 <script src="js/sea.js"></script>
 <script type="text/javascript" charset="utf-8" >
         seajs.config({
-          // 设置别名，以方便调用
-          alias: {'jquery': 'jquery-1.10.2.min.js'},
-		  alias: {'seatext': 'seatest.js'},
-          
+          alias: {
+			 // 设置别名，方便调用
+            'jquery': 'jquery-1.10.2.min.js'
+          }
         });
-       //定义模块
-        define(function(require, exports, module){
-           //调用jquery
-           require('jquery');
-		   require('seatext');
-        });
-
         //调用
-        seajs.use(' ');
+        seajs.use("./js/seatest") ;
+
         
     </script>
+
+    <div id="form1">455</div>
 </body>
 </html>
