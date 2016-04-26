@@ -1,0 +1,651 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="css/perfect-scrollbar.min.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/blue.css" rel="stylesheet" type="text/css" />
+
+<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+<script src="js/icheck.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/mian.js"></script>
+</head>
+
+<body>
+
+<!--弹出框-->
+
+<!--新增弹出框-->
+<div class="mask"></div>
+<div class="tck" id="add_tck">
+	<div class="tck_top">
+    	<span>新增数据</span><img src="images/close.png"/>
+    </div>
+    <div class="tck_main">
+    	<div>
+        	<p><span>活动名称</span><input type="text" /></p>
+            <p><span>活动基金</span><select><option>招商医药健康产业股票</option></select></p>
+            <p class="pec50"><span>活动类型</span><select><option>内联推广</option><option>外联推广</option></select></p>
+            <p class="pec50"><span>奖励类型</span><select><option>现金红包</option><option>折扣优惠</option></select></p>
+            <p class="pec50"><span>开始时间</span><input type="text" id="tck_stime" /></p>
+            <p class="pec50"><span>截止时间</span><input type="text" id="tck_etime" /></p>
+        </div>
+        <button>提交</button>
+    </div>	
+</div>
+
+<!--确认删除弹出框-->
+<div class="tck smtck" id="del_tck">
+	<div class="tck_top">
+    	<span>删除数据</span><img src="images/close.png"/>
+    </div>
+    <div class="tck_main">
+    	<div class="becent">
+        	确认删除选中数据吗？
+        </div>
+        <button>确认</button><button class="cancelbtn">取消</button>
+    </div>	
+</div>
+
+<!--修改密码弹出框-->
+<div class="tck" id="password_tck">
+	<div class="tck_top">
+    	<span>修改密码</span><img src="images/close.png"/>
+    </div>
+    <div class="tck_main">
+        <div class="error_tips" style="display: block;">
+            <img src="images/errortip.png">
+            <span class="err_m">两次输入的密码不一致!</span>
+        </div>
+    	<div>
+        	<p><span>原密码</span><input type="text" /></p>
+            <p><span>新密码</span><input type="text" /></p>
+            <p><span>确认新密码</span><input type="text" /></p>
+        </div>
+        <button>提交</button>
+    </div>	
+</div>
+
+
+<!--弹出框结束-->
+
+	<div class="left big_left" >
+    <div class="scrollbar_con">
+    	<div class="logo">
+        	<a class="logoa1" href="#"><img src="images/logo.png" /><span>活动推广平台</span></a>
+            <a class="logoa2"><i class="fa fa-bars"  id="bar"></i></a>
+        </div>
+        <a class="llink" id="linkerbtn1" href="#"><i class="fa fa-database"></i><span>数据中心</span><span class="hint"></span><button><i class="fa fa-chevron-down" ></i></button></a>
+        	<div class="llink2" id="linker1">
+            	<a href="#" class="ll2_checked"><span>案件视图</span><span class="hint_number">1,000,000</span></a>
+                <a href="#"><span>对象视图</span></a>
+                <a href="#"><span>设备视图</span></a>
+            </div>
+        <a class="llink" id="linkerbtn2" href="#"><i class="fa fa-plus-square"></i><span>添加证据</span></span><button><i class="fa fa-chevron-down" id="js_arrow"></i></button></a>
+        	<div class="llink2" id="linker2">
+            	<a href="#"><span>案件视图</span></a>
+                <a href="#"><span>对象视图</span></a>
+                <a href="#"><span>设备视图</span></a>
+            </div>
+        <a class="llink" href="#"><i class="fa fa-list-alt"></i><span>任务列表</span><span class="hint_number">1,000,000</span></a> 
+        <a class="llink" href="#"><i class="fa fa-bar-chart"></i><span>数据浏览</span><span class="hint_number">1</span></a>
+        <a class="llink" href="#"><i class="fa fa-pie-chart"></i><span>分析研判</span></a>
+        <a class="llink" href="#"><i class="fa fa-archive"></i><span>工具箱</span></a>
+        <a class="llink" href="#"><i class="fa fa-cogs"></i><span>设置</span></a>
+        <a class="llink" id="linkerbtn3" href="#"><i class="fa fa-search"></i><span>搜索结果</span></span><button><i class="fa fa-chevron-down" id="js_arrow"></i></button></a>
+        	<div class="llink2"  id="linker3">
+            	<a href="#"><span>案件视图</span></a>
+                <a href="#"><span>对象视图</span></a>
+                <a href="#"><span>设备视图</span></a>
+            </div>
+            
+    </div>       
+    </div>
+    
+    <!--简版左侧导航-->
+    <div class="left small_left" style="display:none">
+    	<div class="logo">
+            <a class="logoa2"><i class="fa fa-bars" id="small_bar"></i></a>
+        </div>
+        <a class="llink smalllink_checked" id="linkerbtn1" href="#"><i class="fa fa-database"></i><span class="hint"></span></a>
+        	
+        <a class="llink" id="linkerbtn2" href="#"><i class="fa fa-plus-square"></i></span></a>
+        	
+        <a class="llink" href="#"><i class="fa fa-list-alt"></i></a> 
+        <a class="llink" href="#"><i class="fa fa-bar-chart"></i></a>
+        <a class="llink" href="#"><i class="fa fa-pie-chart"></i></a>
+        <a class="llink" href="#"><i class="fa fa-archive"></i></a>
+        <a class="llink" href="#"><i class="fa fa-cogs"></i></a>
+        <a class="llink" id="linkerbtn3" href="#"><i class="fa fa-search"></i></span></a>
+    </div>
+    <!--简版左侧导航end-->
+           
+    
+    
+    <div class="right">
+    
+    	<div class="fixtop">
+            <div class="top1">
+                <span class="sayhel"><i class="fa fa-user"></i>Admin，您好，上次登录时间 2014-05-06 12：24：05</span>
+                <div class="top_opera">
+                    <a class="passwordtck" href="#"><i class="fa fa-pencil"></i><span>修改密码</span></a>
+                    <a href="#" title="返回首页"><i class="fa fa-home"></i></a>
+                    <a href="#" title="消息"><i class="fa fa-envelope"></i><span class="message_hint"></span></a>
+                    <a href="#" title="退出"><i class="fa fa-sign-out"></i></a>
+                </div>
+            </div>
+            <div class="tab">
+            	<div class="relwidth">
+                <a class="tab_checked"><span>新华行业灵活配置混合A</span><img  class='climg' src="images/delblack.png" /></a>
+                <a><span>长盛电子信息主题灵活配置混合</span></a>
+                <a><span>国金国鑫发起</span></a>
+                <a><span>华商红利优选灵活配置</span></a>
+                <a><span>国泰估值优势混合(LOF)</span></a>
+                <a><span>民生加银城镇化混合</span></a>
+                <a><span>长信量化先锋混合</span></a>
+                <a><span>国泰金龙行业精选</span></a>
+                <a><span>国投瑞银美丽中国混合</span></a>
+                <a><span>华润元大安鑫灵活配置混合</span></a>
+                <a><span>富国中证煤炭指数分级</span></a>
+                <a><span>招商中证煤炭等权指数分级</span></a>
+                <a><span>鹏华钢铁分级</span></a>
+                <a><span>中融国证钢铁行业指数分级</span></a>
+                <a><span>信诚中证800有色指数分级</span></a>
+                <a><span>国投瑞银中证指数</span></a>
+                <a><span>银华资源指数分级</span></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="top2">
+        	<div class="t2_bread">
+            	<a>数据中心</a><span> > </span><a href="#">案件视图</a><span> > </span><a>案件视图13562541236</a>
+            </div>
+            <div class="t2_search">
+            	<input type="search" id="qjss" placeholder="全局搜索" />
+                <!--<span class="ddk"><button style="display:none;" id="textqk"><i  class="fa fa-remove"></i></button></span>-->
+                <button><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+        <div class="main">
+        	<div class="filter">
+            	<div class="f_simple">
+                	<i class="fa fa-filter"></i>
+                    <div class="filterinput_out">
+                    	<input type="text" placeholder="过滤" />
+                    </div>
+                    <button title="执行过滤" class="filter_go" a><i class="fa fa fa-play"></i></button>
+                    <button title="清除过滤" class="filter_clean"><i class="fa fa-remove"></i></button>
+                    <a id="js_advancesz"><span>收起高级过滤</span><i class="fa fa-chevron-up"></i></a>
+                    <div class="fs_btn">
+                        <button class="fsb_add redbutton addtck">添加</button>
+                        <button class="fsb_del deltck">删除</button>
+                        <button class="fsb_prot"><span>导出</span><i class="fa fa-angle-down"></i></button>
+                        <ul class="export_drop">
+                            <ul>
+                                <li style="border-bottom:solid 1px #ddd;">导出选中</li>
+                                <li>导出所有</li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+                <div class="f_advance">
+                	<div>
+                    	<p class="fadp" id="hdlx"><span>活动类型：</span><a class="filterared">不限</a><a>内联推广</a><a>外联推广</a></p>
+                        <p class="fadp" id="tgpt"><span>外联推广平台：</span><a class="filterared">不限</a><a>腾讯</a><a>百度</a></p>
+                        <p><span>活动基金名称：</span><input type="text" /></p>
+                        <p><span>活动基金编号：</span><input type="text" /></p>
+                        <p class="pec25"><span>活动开始时间：</span><input id="activitystarttime" type="text"/></p>
+                        <p class="pec25"><span>活动截止时间：</span><input id="activityendtime" type="text" /></p>
+                        <p class="fadp" id="jllx"><span>奖励类型：</span><a class="filterared">不限</a><a>现金红包</a><a>折扣优惠</a><a>其它</a></p>
+                        <p class="pec25"><span>活动状态：</span><select><option>进行中</option><option>已结束</option></select></p>
+                        <p class="pec25"><span>奖励发放状态：</span><select><option>进行中</option><option>已结束</option></select></p>
+                        <p><span>数据处理状态：</span><select><option>进行中</option><option>已结束</option></select></p>
+                    </div>
+                </div>
+            </div>
+            <div class="mainmessage">
+                	<div class="ms_left" style="width: 80%;float: left;">
+                        <table class="table1" border="0" cellpadding="0" cellspacing="0">
+                        <thead>
+                          <tr>
+                            <td><input type="checkbox" id="checkall"></td>
+                            <td>序号</td>
+                            <td>基金名称</td>
+                            <td>设备型号</td>
+                            <td>本机号码</td>
+                            <td><span>活动时间</span>
+                            <i class="fa fa-caret-up" id="table_up" title="正序"></i>
+                            <i class="fa fa-caret-down" id="table_down" title="倒序"></i>
+                            </td>
+                            <td>采集人</td>
+                            <td>状态</td>
+                            <td>动作</td>
+                          </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                <td><input type="checkbox"></td>
+                               <td>1</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                                <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr class="table1checked">
+                                <td><input type="checkbox"></td>
+                               <td>2</td>
+                               <td><a href="#">汇丰晋信科技先锋</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                               <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>3</td>
+                               <td><a href="#">汇丰晋信中小盘股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                                <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>4</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                                <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>5</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                                <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>6</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                                <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>7</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                                <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>8</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                                <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>9</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                                <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>10</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                               <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>11</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                                <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>12</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                                <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>12</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                               <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>12</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                               <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>12</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                               <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>12</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                               <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>12</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                               <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>12</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                               <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>12</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                               <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>12</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                               <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>12</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                               <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr><tr>
+                                <td><input type="checkbox"></td>
+                               <td>12</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                                <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>12</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                               <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>12</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                               <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                               <td>12</td>
+                               <td><a href="#">招商医药健康产业股票</a></td>
+                               <td>iPhone6S</td>
+                               <td>13562541236</td>
+                                <td>2012/12/12 12:12:12</td>
+                                <td>杨乐</td>
+                                <td>已上传</td>
+                               <td class="table_oper"><img title="删除" src="images/del.png" /><img title="编辑" src="images/edit.png" /><button class="bstar" title="标记"></button></td>
+                            </tr>
+                           
+                         </tbody>
+                    </table>
+                    <div class="table_bottom">
+                    <div class="tb_main">
+                    	<button class="addtck" style="margin-left: 10px;"><i class="fa fa-plus-square-o"></i><span>添加</span></button>
+                        <button class="deltck"><i class="fa fa-minus-square-o"></i><span>删除</span></button>
+                        <button><i class="fa fa-star-o"></i><span>标记</span></button>
+                        <button>导出Excel</button>
+                        <button class="wbtn">↑按时间排序</button>
+                        <button class="wbtn">↓按发放金额排序</button>
+                        <div class="page">
+                        	<span>共1,200条记录</span>
+                            
+                            <span style="padding-right: 0px;">每页显示</span>
+                            <select>
+                            	<option>10</option>
+                                <option>20</option>
+                                <option>30</option>
+                                <option>40</option>
+                                <option>50</option>
+                            </select>
+                            <span>条</span>
+                            
+                            <button>上一页</button>
+                            <button class="greenchecked">1</button>
+                            <button>2</button>
+                            <button>3</button>
+                            <button>4</button>
+                            <button>5</button>
+                            <span>...</span>
+                            <button>10</button>
+                            <button>下一页</button>
+                            </div>
+                        </div>
+                        <div class="bdbodrtbom"></div>
+                    </div>
+                    
+                    </div>
+                    <div class="equ">
+                        <ul class="equ_message">
+                            <li class="em1"><span>设备详情</span></li>
+                            <li><img src="images/phone.png" /></li>
+                            <li class="em2">张三</li>
+                            <li class="em2">512547852365412365</li>
+                            <ul class="becen">
+                            <li class="em3" style="margin-top:30px;">设备名称：iphone</li>
+                            <li class="em3">设备型号：iphone6s</li>
+                            <li class="em3">本机号码：1523289</li>
+                            <li class="em3">数&nbsp;&nbsp;据&nbsp;&nbsp;量：1022条</li>
+                        </ul>
+                        </ul>
+                        
+                        <div class="equchart" id="main">
+                            
+                        </div>
+                        <div class="moxq"><a href="#" class="btnst btnst_sgary">更多详情</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+   <!--时间插件-->
+   <script type="text/javascript" src="js/jedate/jedate.js"></script>
+   <script>
+		jeDate({
+			dateCell:"#activitystarttime",
+			format:"YYYY年MM月DD日 hh:mm:ss",
+			isinitVal:false,
+			isTime:true, //isClear:false,
+			minDate:"2014-09-19 00:00:00",
+		})
+		jeDate({
+			dateCell:"#activityendtime",
+			format:"YYYY年MM月DD日 hh:mm:ss",
+			isinitVal:false,
+			isTime:true, //isClear:false,
+			minDate:"2014-09-19 00:00:00",
+		})
+		jeDate({
+			dateCell:"#tck_stime",
+			format:"YYYY年MM月DD日 hh:mm:ss",
+			isinitVal:false,
+			isTime:true, //isClear:false,
+			minDate:"2014-09-19 00:00:00",
+		})
+		jeDate({
+			dateCell:"#tck_etime",
+			format:"YYYY年MM月DD日 hh:mm:ss",
+			isinitVal:false,
+			isTime:true, //isClear:false,
+			minDate:"2014-09-19 00:00:00",
+		})
+	</script>
+    <script src="js/echarts-all.js" type="text/javascript"></script>
+     <script>
+        var myChart = echarts.init(document.getElementById('main'));
+        option = {
+   color:['#1a9bfc','#1fca6a','#f1794b'], 
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient : 'horizontal',
+        x : 'center',
+        data:['通话记录','联系人','即时通讯']
+    },
+    toolbox: {
+        show : false,
+        feature : {
+            mark : {show: false},
+            dataView : {show: false, readOnly: false},
+            magicType : {
+                show: true, 
+                type: ['pie', 'funnel'],
+                option: {
+                    funnel: {
+                        x: '25%',
+                        width: '50%',
+                        funnelAlign: 'left',
+                        max: 1548
+                    }
+                }
+            },
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : false,
+    series : [
+        {
+            type:'pie',
+            radius : '55%',
+            center: ['50%', '60%'],
+            data:[
+                {value:335, name:'通话记录'},
+                {value:135, name:'联系人'},
+                {value:1548, name:'即时通讯'}
+            ]
+        }
+    ]
+};
+                    
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

@@ -12,14 +12,12 @@ $(document).ready(function(){
   beMiddle(".cointer");
  });
  
-  $("input[type='text']").keypress(function(){
-	  i=0;
-	  i++;
-	  if(i>0){$(".uin_del").show();}
-	  else{
-		  $(".uin_del").hide();
-		  }
-  });
+
+  
+  $(".inputstyle").bind('input propertychange', function() {
+			if($('.inputstyle').val()==""){$(".uin_del").hide();}
+			else{$(".uin_del").show();}
+		});
   
   $(".uin_del").click( function () {
 	  $("input[type='text']").val("");
@@ -80,7 +78,7 @@ var particleCanvas = new ParticleNetwork(canvasDiv, options);
 
 
 <div class="cointer">
-	<img class="logo" src="images/logo.png" />
+	<img class="logo" src="images/login_logo.png" />
     <div class="login">
     	<div class="header"> 
         	<span>系统登陆</span>
