@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+body {
+    font-family: "微软雅黑";
+}
+.circle {
+    width: 86px;
+    height: 86px;
+    position: absolute;
+    border-radius: 50%;
+    background: #ff7474;
+}
+.pie_left,
+.pie_right {
+    width: 86px;
+    height: 86px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.cic_left,
+.cic_right {
+    width: 86px;
+    height: 86px;
+    background: #e4e4e4;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;	
+	/*-webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;*/
+}
+.pie_right,
+.cic_right {
+    clip: rect(0, auto, auto, 43px);/*圆的一半*/
+}
+.pie_left,
+.cic_left {
+    clip: rect(0, 43px, auto, 0);/*圆的一半*/
+}
+.mask {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    left: 15px;
+    top: 15px;
+    background: #fff;
+    position: absolute;
+    text-align: center;
+    line-height: 56px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff7474;
+}
+</style>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+$(function() {
+    $('.circle').each(function(index, el) {
+       var num = $(this).find('span').text() * 3.6;
+        if (num <= 180) {
+            $(this).find('.cic_right').css('transform', "rotate(" + num + "deg)");
+        } 
+		else {
+            $(this).find('.cic_right').css('transform', "rotate(180deg)");
+			    var self = this;
+				setTimeout(function(){
+				  $(self).find('.cic_left').css('transform', "rotate(" + (num - 180) + "deg)");
+				}, 900);
+
+			
+		}
+});
+});
+</script>
+</head>
+
+<body>
+
+<div class="circle" >
+    <div class="pie_left">
+        <div class="cic_left"></div>
+    </div>
+    <div class="pie_right">
+        <div class="cic_right"></div>
+    </div>
+    <div class="mask"><span>25</span>%</div>
+</div>
+
+</body>
+</html>

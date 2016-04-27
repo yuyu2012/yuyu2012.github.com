@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="js/echarts-all.js"></script>
+</head>
+
+<body>
+<div id="main" style="width: 600px;height:400px;"></div>
+<script>
+var myChart = echarts.init(document.getElementById('main'));
+
+option = {
+	color:['#f56800','#00a0e9'], 
+    legend: {
+        data:['组合近1月走势','上证指数近1月走势'],
+    },
+    
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    yAxis: {
+        type: 'value',
+        axisLabel: {
+            formatter: '{value} '
+        }
+    },
+    xAxis: {
+        type: 'category',
+        axisLine: {onZero: false},
+        axisLabel: {
+            formatter: '{value} %'
+        },
+        boundaryGap: false,
+        data: ['0', '5', '10', '15', '20']
+    },
+    series: [
+        {
+            name: '组合近1月走势',
+            type: 'line',
+            smooth: true,
+            lineStyle: {
+                normal: {
+                    width: 3,
+                    shadowColor: '#f56800',
+                    shadowBlur: 10,
+                    shadowOffsetY: 10
+                }
+            },
+            data:[4, 5,3,10,20]
+        },
+		{
+            name: '上证指数近1月走势',
+            type: 'line',
+            smooth: true,
+            lineStyle: {
+                normal: {
+                    width: 3,
+                    shadowColor: '#00a0e9',
+                    shadowBlur: 10,
+                    shadowOffsetY: 10
+                }
+            },
+            data:[2, 4,1,6,14]
+        }
+    ]
+};
+
+myChart.setOption(option);
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="js/echarts-all.js"></script>
+</head>
+
+<body>
+<div id="main" style="width: 600px;height:400px;"></div>
+<script>
+var myChart = echarts.init(document.getElementById('main'));
+
+option = {
+	color:['#ff7474','#7cc3ff','#afec3a','#ffae00','#e880e2','#c9447f'], 
+    title : {
+        x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        x : 'center',
+        y : 'bottom',
+        data:['股票型','混合型','债券型','QDII','货币型','其它']
+    },
+    series : [
+	{
+            type:'pie',
+            radius : [50, 110],
+            center : ['50%', 200],
+            roseType : 'radius',
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {value:150, name:'股票型'},
+                {value:20, name:'混合型'},
+                {value:10, name:'债券型'},
+                {value:10, name:'QDII'},
+                {value:5, name:'货币型'},
+                {value:5, name:'其它'}
+            ]
+        }
+    ]
+};
+
+
+myChart.setOption(option);
+</script>
+</body>
+</html>

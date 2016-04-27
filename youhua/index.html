@@ -1,0 +1,402 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+    <title>天天基金网</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="keywords" content="天天基金优选基金组合" />
+    <meta name="description" content="专业理财，天天优选，为您提供更专业的理财服务" />
+    <!--禁用手机号码链接(for iPhone)-->
+    <meta name="format-detection" content="telephone=no" />
+    <!--控制全屏时顶部状态栏的外，默认白色-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--是否允许全屏显，只有在桌面启动时可用-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.7.1.min.js"  type="text/javascript"></script>
+    <script type="text/javascript">
+    //auto adaptation
+    var calculate_size = function() {
+        var docEl = document.documentElement;
+		var clientWidth1 = document.querySelector("#container").clientWidth; 
+        if (!clientWidth1) return;
+        docEl.style.fontSize = 100*(clientWidth1 /640) + 'px';
+    };
+    // Abort if browser does not support addEventListener
+    if (document.addEventListener) {
+        var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+        window.addEventListener(resizeEvt, calculate_size, false);
+        document.addEventListener('DOMContentLoaded', calculate_size, false);
+        calculate_size();
+    }
+    </script>
+    <script src="js/echarts-all.js"></script>
+
+    
+    <!--圆形进度条-->
+    <script>
+	$(function() {
+		$('.circle').each(function(index, el) {
+		   var num = $(this).find('span').text() * 3.6;
+			if (num <= 180) {
+				$(this).find('.cic_right').css('transform', "rotate(" + num + "deg)");
+			} 
+			else {
+				$(this).find('.cic_right').css('transform', "rotate(180deg)");
+					var self = this;
+					/*setTimeout(function(){*/
+					  $(self).find('.cic_left').css('transform', "rotate(" + (num - 180) + "deg)");
+					/*}, 900);*/
+	
+				
+			}
+	});
+	});
+	</script>
+
+</head>
+
+<body>
+<div id="container">
+	<div class="bg"></div>
+    <div class="text">
+    	历经2015年股市的大起大落，越来越多投资者更深刻地认识到构建合理投资组合的重要性。大量研究数据表明，通过科学的基金组合配置可在降低市场风险的同时提高投资收益，相比投资单个基金和单一品种，基金组合的回报更为稳定。对于不同风险偏好的投资者来说，都可参考不同的比例配置来实现不同的投资目标。
+    </div>
+    <div class="tab">
+    	<div class="tab_head">
+        	<a>积极型投资者</a>
+            <a class="checked">稳健型投资者</a>
+            <a>保守型投资者</a>
+        </div>
+        <div class="tab_main">
+        	<div class="tm_jj">
+            	<div class="tm_jj_left">
+                	<a href="#">景顺长城护身300增强</a>
+                    <ul>
+                    	<li class="fsli">
+                        	<span>近2年</span>
+                            <b>72.22%</b>
+                        </li>
+                        <li>
+                        	<span>购买手续费</span>
+                            <span><del>1.20%</del><a>0.12%</a></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tm_jj_right" >
+                	<span class="qg">1000元起购</span>
+                    <div class="circle">
+                        <div class="pie_left">
+                            <div class="cic_left"></div>
+                        </div>
+                        <div class="pie_right">
+                            <div class="cic_right"></div>
+                        </div>
+                        <div class="mask"><span>25</span>%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tm_jj">
+            	<div class="tm_jj_left">
+                	<a href="#">景顺长城护身300增强</a>
+                    <ul>
+                    	<li class="fsli">
+                        	<span>近2年</span>
+                            <b>72.22%</b>
+                        </li>
+                        <li>
+                        	<span>购买手续费</span>
+                            <span><a>0费率</a></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tm_jj_right" >
+                	<span class="qg">1000元起购</span>
+                    <div class="circle">
+                        <div class="pie_left">
+                            <div class="cic_left"></div>
+                        </div>
+                        <div class="pie_right">
+                            <div class="cic_right"></div>
+                        </div>
+                        <div class="mask"><span>50</span>%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tm_jj">
+            	<div class="tm_jj_left">
+                	<a href="#">景顺长城护身300增强</a>
+                    <ul>
+                    	<li class="fsli">
+                        	<span>近2年</span>
+                            <b>72.22%</b>
+                        </li>
+                        <li>
+                        	<span>购买手续费</span>
+                            <span><del>1.20%</del><a>0.12%</a></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tm_jj_right" >
+                	<span class="qg">1000元起购</span>
+                    <div class="circle">
+                        <div class="pie_left">
+                            <div class="cic_left"></div>
+                        </div>
+                        <div class="pie_right">
+                            <div class="cic_right"></div>
+                        </div>
+                        <div class="mask"><span>72</span>%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tm_jj">
+            	<div class="tm_jj_left">
+                	<a href="#">景顺长城护身300增强</a>
+                    <ul>
+                    	<li class="fsli">
+                        	<span>近2年</span>
+                            <b>72.22%</b>
+                        </li>
+                        <li>
+                        	<span>购买手续费</span>
+                            <span><del>1.20%</del><a>0.12%</a></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tm_jj_right" >
+                	<span class="qg">1000元起购</span>
+                    <div class="circle">
+                        <div class="pie_left">
+                            <div class="cic_left"></div>
+                        </div>
+                        <div class="pie_right">
+                            <div class="cic_right"></div>
+                        </div>
+                        <div class="mask"><span>33</span>%</div>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <div class="ctitle"><span>组合收益率走势</span></div>
+    <div id="qx"></div>
+    
+    <div class="ctitle"><span>基金组合资产配置情况</span></div>
+    <div id="rose"></div>
+    
+    
+    <div class="jjcc">
+    	<span>基金持仓</span>
+    </div>
+    
+    <table class="jjcctable" cellspacing="0" cellpadding="0">
+    <thead>
+      <tr>
+        <td class="left">股票名称</td>
+        <td class="right">持仓基金</td>
+        <td class="red right">涨跌幅</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="left"><a href="#">东方财富</a></td>
+        <td class="right">24.77%</td>
+        <td class="red right">1.09%</td>
+      </tr>
+      <tr>
+        <td class="left"><a href="#">乐视网</a></td>
+        <td class="right">9.58%</td>
+        <td class="green right">-1.09%</td>
+      </tr>
+      <tr>
+        <td class="left"><a href="#">万达信息</a></td>
+        <td class="right">9.58%</td>
+        <td class="red right">1.09%</td>
+      </tr>
+      <tr>
+        <td class="left"><a href="#">机器人</a></td>
+        <td class="right">9.58%</td>
+        <td class="red right">1.09%</td>
+      </tr>
+      <tr>
+        <td class="left"><a href="#">华谊兄弟</a></td>
+        <td class="right">9.58%</td>
+        <td class="red right">1.09%</td>
+      </tr>
+      <tr>
+        <td class="left"><a href="#">碧水源</a></td>
+        <td class="right">9.58%</td>
+        <td class="red right">1.09%</td>
+      </tr>
+      <tr>
+        <td class="left"><a href="#">卫宁软件</a></td>
+        <td class="right">9.58%</td>
+        <td class="red right">1.09%</td>
+      </tr>
+      <tr>
+        <td class="left"><a href="#">蓝色光标</a></td>
+        <td class="right">9.58%</td>
+        <td class="red right">1.09%</td>
+      </tr>
+      <tr>
+        <td class="left"><a href="#">网宿科技</a></td>
+        <td class="right">9.58%</td>
+        <td class="red right">1.09%</td>
+      </tr>
+      <tr>
+        <td class="left"><a href="#">汇川技术</a></td>
+        <td class="right">9.58%</td>
+        <td class="red right">1.09%</td>
+      </tr>
+    </tbody>
+    </table>
+
+    
+    <div class="bottom">
+    数据来源：东方财富Choice数据<br />
+    截止日期：2016-03-21<br />
+    免责声明：收益率数据仅供参考，过往业绩不预示未来表现，不构成投资建议。投资者据此操作，风险自担。市场有风险，投资需谨慎。
+    </div>
+	<!--<a class="text_a"  onclick="CNT(4492)" href="https://fundzt.eastmoney.com/2016/hqb/"></a>
+    <a class="button_a" href="http://ttjj-huodong-hqb">立即抢购</a>-->
+</div>
+  
+       <div class="about" style="    margin-bottom: 0;">        <h2 class="title">关于天天基金网</h2>        <p class="para" style="     text-indent: 0;   text-align: justify;">天天基金是中国A股首家财经门户网站--东方财富网（股票代码：300059）旗下的全资子公司，同时也是证监会批准的首批独立基金销售机构。天天基金网凭借其专业、及时、全面、权威的财经平台优势，为广大投资者提供一站式金融理财服务。截至2015年底，天天基金网基金累计销量超10000亿元。</p>        <ul class="feature">            <li>                <h3><span class="icon icon-1">1</span>安全可靠</h3>                <p>民生银行保障</p>            </li>            <li>                <h3><span class="icon icon-2">2</span>轻松理财</h3>                <p>随时随地交易</p>            </li>            <li>                <h3><span class="icon icon-3">3</span>费率超低</h3>                <p>费率1折起</p>            </li>        </ul>    </div>       
+           
+    
+
+
+<script type="text/javascript" src="https://img.1234567.com.cn/counter.js"></script>
+<script type="text/javascript">
+/*CNT(4492);*/
+function CNT(id) {
+                $.ajax({
+                    url: "https://fundhd.eastmoney.com/fundapiweb/count.ashx?id=" + id + "&t=" +new Date().valueOf(),
+                    data: {},
+                    dataType: "jsonp",
+                    success: function() {}
+                });
+            }
+</script>
+
+<script>
+var myChart = echarts.init(document.getElementById('rose'));
+
+option = {
+	color:['#ff7474','#7cc3ff','#afec3a','#ffae00','#e880e2','#c9447f'], 
+    title : {
+        x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} {b} : {c} ({d}%)"
+    },
+    legend: {
+        x : 'center',
+        y : 'bottom',
+        data:['股票型','混合型','债券型','QDII','货币型','其它']
+    },
+    series : [
+	{
+            type:'pie',
+            radius : [40, 80],
+            center : ['50%', 120],
+            roseType : 'radius',
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {value:50, name:'股票型'},
+                {value:20, name:'混合型'},
+                {value:10, name:'债券型'},
+                {value:10, name:'QDII'},
+                {value:5, name:'货币型'},
+                {value:5, name:'其它'}
+            ]
+        }
+    ]
+};
+
+
+myChart.setOption(option);
+</script>
+
+<script>
+var qxChart = echarts.init(document.getElementById('qx'));
+
+option = {
+	color:['#f56800','#00a0e9'], 
+    legend: {
+        data:['组合近1月走势','上证指数近1月走势'],
+    },
+    
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    yAxis: {
+        type: 'value',
+        axisLabel: {
+            formatter: '{value} %'
+        }
+    },
+    xAxis: {
+        type: 'category',
+        axisLine: {onZero: false},
+        axisLabel: {
+            formatter: '{value} '
+        },
+        boundaryGap: false,
+        data: ['0', '5', '10', '15', '20']
+    },
+    series: [
+        {
+            name: '组合近1月走势',
+            type: 'line',
+            smooth: true,
+            lineStyle: {
+                normal: {
+                    width: 3,
+                    shadowColor: '#f56800',
+                    shadowBlur: 10,
+                    shadowOffsetY: 10
+                }
+            },
+            data:[4, 5,3,10,20]
+        },
+		{
+            name: '上证指数近1月走势',
+            type: 'line',
+            smooth: true,
+            lineStyle: {
+                normal: {
+                    width: 3,
+                    shadowColor: '#00a0e9',
+                    shadowBlur: 10,
+                    shadowOffsetY: 10
+                }
+            },
+            data:[2, 4,1,6,14]
+        }
+    ]
+};
+
+qxChart.setOption(option);
+</script>
+
+ 
+         
+
+</body>
+</html>
