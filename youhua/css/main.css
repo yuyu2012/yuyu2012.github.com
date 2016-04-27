@@ -499,7 +499,7 @@ body {
 #container{ width:auto;}
 }
 
-.bg{ height:2.5rem; background-image:url(../images/bg.gif); background-size:100% auto;}
+.bg{ height:2.5rem; background-image:url(../images/bg.gif); background-size:100% auto; background-repeat:no-repeat}
 .text{ font-size:0.24rem; background:#fffac6; border:solid 1px #f6d348; color:#333; padding:0.17rem; margin:0.14rem 0.11rem;}
 .tab{ background:#fff;}
 .tab_head{ border-bottom:solid 1px #e5e5e5; height:0.67rem; line-height:0.67rem; width:100%; float:left;}
