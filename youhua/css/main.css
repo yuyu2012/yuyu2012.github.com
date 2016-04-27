@@ -543,24 +543,26 @@ body {
 
 
 .circle {
-    width: 86px;
-    height: 86px;
+    width: 0.86rem;
+    height: 0.86rem;
     position: absolute;
     border-radius: 50%;
     background: #ff7474;
+	margin-top: 0.2rem;
+    margin-left: 0.2rem;
 }
 .pie_left,
 .pie_right {
-    width: 86px;
-    height: 86px;
+    width:  0.86rem;
+    height:  0.86rem;
     position: absolute;
     top: 0;
     left: 0;
 }
 .cic_left,
 .cic_right {
-    width: 86px;
-    height: 86px;
+    width:  0.86rem;
+    height:  0.86rem;
     background: #e4e4e4;
     border-radius: 50%;
     position: absolute;
@@ -574,23 +576,23 @@ body {
 }
 .pie_right,
 .cic_right {
-    clip: rect(0, auto, auto, 43px);/*圆的一半*/
+    clip: rect(0, auto, auto, 0.43rem);/*圆的一半*/
 }
 .pie_left,
 .cic_left {
-    clip: rect(0, 43px, auto, 0);/*圆的一半*/
+    clip: rect(0,0.43rem, auto, 0);/*圆的一半*/
 }
 .mask {
-    width: 56px;
-    height: 56px;
+    width: 0.56rem;
+    height: 0.56rem;
     border-radius: 50%;
-    left: 15px;
-    top: 15px;
+    left: 0.15rem;
+    top: 0.15rem;
     background: #fff;
     position: absolute;
     text-align: center;
-    line-height: 56px;
-    font-size: 20px;
+    line-height:0.56rem;
+    font-size: 0.2rem;
     font-weight: bold;
     color: #ff7474;
 }
