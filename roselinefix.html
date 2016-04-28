@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/echarts-all.js"></script>
+</head>
+
+<body>
+<button>切换</button>
+<div id="line" style="width: 600px;height:400px;"></div>
+<div id="rose" style="width: 600px;height:400px;"></div>
+
+<script>
+
+/*曲线图开始*/
+var lineChart = echarts.init(document.getElementById('line'));
+
+option = {
+	color:['#f56800','#00a0e9'], 
+    legend: {
+        data:['组合近1月走势','上证指数近1月走势'],
+    },
+    
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    yAxis: {
+        type: 'value',
+        axisLabel: {
+            formatter: '{value} %'
+        }
+    },
+    xAxis: {
+        type: 'category',
+        axisLine: {onZero: false},
+        boundaryGap: false,
+        data: ['0', '5', '10', '15', '20']
+    },
+    series: [
+        {
+            name: '组合近1月走势',
+            type: 'line',
+            smooth: true,
+            lineStyle: {
+                normal: {
+                    width: 3,
+                    shadowColor: '#f56800',
+                    shadowBlur: 10,
+                    shadowOffsetY: 10
+                }
+            },
+            data:[0, 0,0,0,0]
+        },
+		{
+            name: '上证指数近1月走势',
+            type: 'line',
+            smooth: true,
+            lineStyle: {
+                normal: {
+                    width: 3,
+                    shadowColor: '#00a0e9',
+                    shadowBlur: 10,
+                    shadowOffsetY: 10
+                }
+            },
+            data:[0,0,0,0,0]
+        }
+    ]
+};
+
+lineChart.setOption(option);
+
+
+
+/*南丁格尔玫瑰图开始*/
+var roseChart = echarts.init(document.getElementById('rose'));
+
+option = {
+	color:['#ff7474','#7cc3ff','#afec3a','#ffae00','#e880e2','#c9447f'], 
+    title : {
+        x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        x : 'center',
+        y : 'bottom',
+        data:['股票型','混合型','债券型','QDII','货币型','其它']
+    },
+    series : [
+	{
+            type:'pie',
+            radius : [50, 110],
+            center : ['50%', 200],
+            roseType : 'radius',
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {value:5, name:'股票型'},
+                {value:5, name:'混合型'},
+                {value:5, name:'债券型'},
+                {value:5, name:'QDII'},
+                {value:5, name:'货币型'},
+                {value:5, name:'其它'}
+            ]
+        }
+    ]
+};
+
+
+roseChart.setOption(option);
+
+/*ajax开始*/
+getChartData();
+
+function getChartData() {  
+
+	//获得图表的options对象  
+	var lineOptions = lineChart.getOption();
+	var roseOptions = roseChart.getOption();  
+	$.ajax({
+			type:"GET",
+			url:"http://yuyu2012.github.io/js/roselinefix.json",
+			dataType: "json",
+			success: function(result){
+				/*曲线图开始*/
+				lineOptions.series[0].data = result[0].line1; 
+				lineOptions.series[1].data = result[0].line2; 
+				myChart.setOption(lineOptions);  
+				$('button').click(function(){
+					lineOptions.series[0].data = result[1].line1; 
+					lineOptions.series[1].data = result[1].line2; 
+					myChart.setOption(lineOptions);  
+				});
+			},
+			error : function(errorMsg) {  
+                alert("报告大王，图表请求数据失败啦！");   
+            }  
+		})
+}
+
+
+</script>
+
+
+
+</body>
+</html>

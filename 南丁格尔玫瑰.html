@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<button></button>
+<button>切换</button>
 <div id="main" style="width: 600px;height:400px;"></div>
 <script>
 var myChart = echarts.init(document.getElementById('main'));
@@ -42,10 +42,10 @@ option = {
                 }
             },
             data:[
-                {value:150, name:'股票型'},
-                {value:20, name:'混合型'},
-                {value:10, name:'债券型'},
-                {value:10, name:'QDII'},
+                {value:5, name:'股票型'},
+                {value:5, name:'混合型'},
+                {value:5, name:'债券型'},
+                {value:5, name:'QDII'},
                 {value:5, name:'货币型'},
                 {value:5, name:'其它'}
             ]
@@ -63,27 +63,28 @@ function getChartData() {
 
 	//获得图表的options对象  
 	var options = myChart.getOption(); 
-	//options.series[0].data[0].value=rosenumber[0]
 	$.ajax({
 			type:"GET",
 			url:"http://yuyu2012.github.io/js/rose.json",
 			dataType: "json",
 			success: function(result){
-				$.each(result,function(i,item){
-					options.series[0].data[i].value=rosenumber[i];
-					options.series[0].data[i].name=rosename[i];
-				})
-				/*options.series[0].data[0] = result[0].line1; 
-				options.series[1].data = result[0].line2; 
-				myChart.setOption(options);  
+				for(i=0; i<6;i++){
+					options.series[0].data[i].value=result[0].rosenumber[i];
+					options.series[0].data[i].name=result[0].rosename[i];
+				}
+				myChart.setOption(options);
+ 
 				$('button').click(function(){
-					options.series[0].data = result[1].line1; 
-					options.series[1].data = result[1].line2; 
+					for(i=0; i<6;i++){
+						options.series[0].data[i].value=result[1].rosenumber[i];
+						options.series[0].data[i].name=result[1].rosename[i];
+					}
 					myChart.setOption(options);  
-				});*/
+				});
 			},
 			error : function(errorMsg) {  
                 alert("报告大王，图表请求数据失败啦！");   
+				myChart.hideLoading();  
             }  
 		})
 }
