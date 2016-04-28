@@ -4,9 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
 <script src="js/echarts-all.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
 </head>
 
 <body>
+<button></button>
 <div id="main" style="width: 600px;height:400px;"></div>
 <script>
 var myChart = echarts.init(document.getElementById('main'));
@@ -53,6 +55,39 @@ option = {
 
 
 myChart.setOption(option);
+
+getChartData();
+
+function getChartData() {  
+
+
+	//获得图表的options对象  
+	var options = myChart.getOption(); 
+	//options.series[0].data[0].value=rosenumber[0]
+	$.ajax({
+			type:"GET",
+			url:"http://yuyu2012.github.io/js/rose.json",
+			dataType: "json",
+			success: function(result){
+				$.each(result,function(i,item){
+					options.series[0].data[i].value=rosenumber[i];
+					options.series[0].data[i].name=rosename[i];
+				})
+				/*options.series[0].data[0] = result[0].line1; 
+				options.series[1].data = result[0].line2; 
+				myChart.setOption(options);  
+				$('button').click(function(){
+					options.series[0].data = result[1].line1; 
+					options.series[1].data = result[1].line2; 
+					myChart.setOption(options);  
+				});*/
+			},
+			error : function(errorMsg) {  
+                alert("报告大王，图表请求数据失败啦！");   
+            }  
+		})
+}
+
 </script>
 </body>
 </html>

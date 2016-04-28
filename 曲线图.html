@@ -8,6 +8,7 @@
 </head>
 
 <body>
+<button>切换</button>
 <div id="main" style="width: 600px;height:400px;"></div>
 
 <script>
@@ -81,13 +82,17 @@ function getChartData() {
 			url:"http://yuyu2012.github.io/js/quxianchart.json",
 			dataType: "json",
 			success: function(result){
-				alert(result[0].line1);
 				options.series[0].data = result[0].line1; 
 				options.series[1].data = result[0].line2; 
 				myChart.setOption(options);  
+				$('button').click(function(){
+					options.series[0].data = result[1].line1; 
+					options.series[1].data = result[1].line2; 
+					myChart.setOption(options);  
+				});
 			},
 			error : function(errorMsg) {  
-                alert("不好意思，大爷，图表请求数据失败啦!");   
+                alert("报告大王，图表请求数据失败啦！");   
             }  
 		})
 }
