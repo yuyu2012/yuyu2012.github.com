@@ -3,14 +3,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
+<script src="js/jquery-1.10.2.min.js"></script>
 <script src="js/echarts-all.js"></script>
 </head>
 
 <body>
 <div id="main" style="width: 600px;height:400px;"></div>
-<script>
 
-var cc=[2,4,1,6,14];
+<script>
 var myChart = echarts.init(document.getElementById('main'));
 
 option = {
@@ -50,7 +50,7 @@ option = {
                     shadowOffsetY: 10
                 }
             },
-            data:[4, 5,3,10,20]
+            data:[0, 0,0,0,0]
         },
 		{
             name: '上证指数近1月走势',
@@ -64,12 +64,29 @@ option = {
                     shadowOffsetY: 10
                 }
             },
-            data:[cc[0], cc[1],cc[2],cc[3],cc[4]]
+            data:[0,0,0,0,0]
         }
     ]
 };
 
 myChart.setOption(option);
+</script>
+
+<script>
+$.ajax({
+		//请求方式为get
+		type:"GET",
+		//json文件位置
+		url:"http://yuyu2012.github.io/js/quxianchart.json",
+		//返回数据格式为json
+		dataType: "json",
+		//请求成功完成后要执行的方法
+		success: function(result){
+            option.series[0].data = result.x; 
+			option.series[1].data = result.y; 
+			myChart.setOption(option);  
+		}
+	})
 </script>
 </body>
 </html>
