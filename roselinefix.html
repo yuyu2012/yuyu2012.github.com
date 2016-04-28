@@ -139,11 +139,11 @@ function getChartData() {
 				/*曲线图开始*/
 				lineOptions.series[0].data = result[0].line1; 
 				lineOptions.series[1].data = result[0].line2; 
-				myChart.setOption(lineOptions);  
+				lineChart.setOption(lineOptions);  
 				$('button').click(function(){
 					lineOptions.series[0].data = result[1].line1; 
 					lineOptions.series[1].data = result[1].line2; 
-					myChart.setOption(lineOptions);  
+					lineChart.setOption(lineOptions);  
 				});
 			},
 			error : function(errorMsg) {  
