@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+        *{margin: 0;padding: 0;}
+        .tab{
+            width: 375px;
+            margin: 25px auto;
+        }
+        .tabTit li{
+            float: left;
+            width: 123px;
+            height: 38px;
+            border: 1px solid #00f;
+            text-align: center;
+            background: #ccf;
+            line-height: 38px;
+            list-style: none;
+        }
+        .tabTit li:hover{
+            background: #aaf;
+            cursor: hand;
+            cursor: pointer;
+        }
+        .tabTit .select{
+            background: #99f;
+        }
+        .tabCon{
+            width: 373px;
+            height: 400px;
+            border: 1px solid #00f;
+            border-top: none;
+        }
+        .tabCon h1{
+            font-size: 24px;
+        }
+        .tabCon p{
+            text-indent: 2em;
+        }
+    </style>
+</head>
+
+<body>
+	<div id='tab' class='tab'>
+        <ul id='tabTit' class='tabTit'>
+            <li class='select'>标题一</li>
+            <li>标题二</li>
+            <li>标题三</li>
+        </ul>
+        <div class='tabCon'>
+            <h1 id='tabConTit'>独行冰海的博客</h1>
+            <p id='tabInf'>独行冰海的博客创建于2006年8月，那时申请博客似乎是在邮箱申请的时候误点误撞的。到了2009年才开始动手写博客。渐渐发现博客的重要作用。</p>
+        </div>
+    </div>
+    <script src="js/jquery-1.10.2.min.js"></script>
+<script>
+
+$.ajax({
+		//请求方式为get
+		type:"GET",
+		//json文件位置
+		url:"http://yuyu2012.github.io/js/tab.json",
+		//返回数据格式为json
+		dataType: "json",
+		//请求成功完成后要执行的方法
+		success: function(data){
+			$('#tabTit li').click(function(){
+				var index = $(this).index();
+				$('#tabConTit').html(data[index].tit);
+				$('#tabInf').html(data[index].con);
+				$(this).addClass('select').siblings().removeClass('select');
+			});
+			
+		}
+	})
+	
+    
+</script>
+</body>
+</body>
+</html>
