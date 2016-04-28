@@ -70,23 +70,27 @@ option = {
 };
 
 myChart.setOption(option);
-</script>
+getChartData();
 
-<script>
-$.ajax({
-		//请求方式为get
-		type:"GET",
-		//json文件位置
-		url:"http://yuyu2012.github.io/js/quxianchart.json",
-		//返回数据格式为json
-		dataType: "json",
-		//请求成功完成后要执行的方法
-		success: function(result){
-            option.series[0].data = result.x; 
-			option.series[1].data = result.y; 
-			myChart.setOption(option);  
-		}
-	})
+function getChartData() {  
+	//获得图表的options对象  
+	var options = myChart.getOption();  
+	$.ajax({
+			//请求方式为get
+			type:"GET",
+			//json文件位置
+			url:"http://yuyu2012.github.io/js/quxianchart.json",
+			//返回数据格式为json
+			dataType: "json",
+			//请求成功完成后要执行的方法
+			success: function(result){
+				//alert(result[0].line1);
+				options.series[0].data = result[0].line1; 
+				options.series[1].data = result[0].line2; 
+				myChart.setOption(options);  
+			}
+		})
+}
 </script>
 </body>
 </html>
