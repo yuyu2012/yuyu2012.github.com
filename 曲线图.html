@@ -8,7 +8,6 @@
 </head>
 
 <body>
-<button>切换数据</button>
 <div id="main" style="width: 600px;height:400px;"></div>
 
 <script>
@@ -74,27 +73,22 @@ myChart.setOption(option);
 getChartData();
 
 function getChartData() {  
+
 	//获得图表的options对象  
 	var options = myChart.getOption();  
 	$.ajax({
-			//请求方式为get
 			type:"GET",
-			//json文件位置
 			url:"http://yuyu2012.github.io/js/quxianchart.json",
-			//返回数据格式为json
 			dataType: "json",
-			//请求成功完成后要执行的方法
 			success: function(result){
-				//alert(result[0].line1);
+				alert(result[0].line1);
 				options.series[0].data = result[0].line1; 
 				options.series[1].data = result[0].line2; 
-				$('button').click(function(){
-					options.series[0].data = result[1].line1; 
-					options.series[1].data = result[1].line2;
-					myChart.setOption(options);
-			});
 				myChart.setOption(options);  
-			}
+			},
+			error : function(errorMsg) {  
+                alert("不好意思，大爷，图表请求数据失败啦!");   
+            }  
 		})
 }
 </script>
