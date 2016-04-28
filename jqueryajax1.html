@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	giveID(".result");
+    $.ajax({
+		//请求方式为get
+		type:"GET",
+		//json文件位置
+		url:"http://yuyu2012.github.io/js/user.json",
+		//返回数据格式为json
+		dataType: "json",
+		//请求成功完成后要执行的方法
+		success: function(data){
+			//使用$.each方法遍历返回的数据date,插入到id为#result中
+			$.each(data,function(i,item){
+				var content=item.name+","+item.email+","+item.gender+
+","+item.hobby[0]+","+item.hobby[1];
+				$("#result"+i).append(content);
+			})
+		}
+	})
+	
+	function giveID(x){
+        var className=x.substring(1);
+	$(x).each(function(i){
+		this.id=className+i;
+	})	
+    }
+});
+</script>
+</head>
+<body>
+
+<div class="result"></div>
+<div class="result"></div>
+
+</body>
+</html>

@@ -9,6 +9,8 @@
 <body>
 <div id="main" style="width: 600px;height:400px;"></div>
 <script>
+
+var cc=[2,4,1,6,14];
 var myChart = echarts.init(document.getElementById('main'));
 
 option = {
@@ -65,7 +67,7 @@ option = {
                     shadowOffsetY: 10
                 }
             },
-            data:[2, 4,1,6,14]
+            data:[cc[0], cc[1],cc[2],cc[3],cc[4]]
         }
     ]
 };
