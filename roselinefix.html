@@ -145,6 +145,21 @@ function getChartData() {
 					lineOptions.series[1].data = result[1].line2; 
 					lineChart.setOption(lineOptions);  
 				});
+				
+				/*玫瑰开始*/
+				for(i=0; i<6;i++){
+					roseOptions.series[0].data[i].value=result[0].rosenumber[i];
+					roseOptions.series[0].data[i].name=result[0].rosename[i];
+				}
+				roseChart.setOption(roseOptions);
+ 
+				$('button').click(function(){
+					for(i=0; i<6;i++){
+						roseOptions.series[0].data[i].value=result[1].rosenumber[i];
+						roseOptions.series[0].data[i].name=result[1].rosename[i];
+					}
+					roseChart.setOption(roseOptions);  
+				});
 			},
 			error : function(errorMsg) {  
                 alert("报告大王，图表请求数据失败啦！");   

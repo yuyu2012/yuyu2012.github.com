@@ -11,7 +11,19 @@
 <button>切换</button>
 <div id="main" style="width: 600px;height:400px;"></div>
 <script>
-var myChart = echarts.init(document.getElementById('main'));
+
+
+getChartData();
+
+
+
+function getChartData() {  
+
+
+	//获得图表的options对象  
+	
+	
+	
 
 option = {
 	color:['#ff7474','#7cc3ff','#afec3a','#ffae00','#e880e2','#c9447f'], 
@@ -53,16 +65,10 @@ option = {
     ]
 };
 
-
+var myChart = echarts.init(document.getElementById('main'));
 myChart.setOption(option);
+var options = myChart.getOption(); 
 
-getChartData();
-
-function getChartData() {  
-
-
-	//获得图表的options对象  
-	var options = myChart.getOption(); 
 	$.ajax({
 			type:"GET",
 			url:"http://yuyu2012.github.io/js/rose.json",
