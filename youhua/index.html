@@ -32,26 +32,7 @@
     }
     </script>
     
-    <!--圆形进度条-->
-    <script>
-	$(function() {
-		$('.circle').each(function(index, el) {
-		   var num = $(this).find('span').text() * 3.6;
-			if (num <= 180) {
-				$(this).find('.cic_right').css('transform', "rotate(" + num + "deg)");
-			} 
-			else {
-				$(this).find('.cic_right').css('transform', "rotate(180deg)");
-					var self = this;
-					/*setTimeout(function(){*/
-					  $(self).find('.cic_left').css('transform', "rotate(" + (num - 180) + "deg)");
-					/*}, 900);*/
-	
-				
-			}
-	});
-	});
-	</script>
+   
 
 </head>
 
@@ -63,122 +44,11 @@
     </div>
     <div class="tab">
     	<div class="tab_head">
-        	<a>积极型投资者</a>
-            <a class="checked">稳健型投资者</a>
-            <a>保守型投资者</a>
+        	<a id="jiji">积极型投资者</a>
+            <a id="wenjian" class="checked">稳健型投资者</a>
+            <a id="baoshou">保守型投资者</a>
         </div>
-        <div class="tab_main">
-        	<div class="tm_jj">
-            	<div class="tm_jj_left">
-                	<a href="#">景顺长城护身300增强</a>
-                    <ul>
-                    	<li class="fsli">
-                        	<span>近2年</span>
-                            <b>72.22%</b>
-                        </li>
-                        <li>
-                        	<span>购买手续费</span>
-                            <span><del>1.20%</del><a>0.12%</a></span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="tm_jj_right" >
-                	<span class="qg">1000元起购</span>
-                    <div class="circle">
-                        <div class="pie_left">
-                            <div class="cic_left"></div>
-                        </div>
-                        <div class="pie_right">
-                            <div class="cic_right"></div>
-                        </div>
-                        <div class="mask"><span>25</span>%</div>
-                    </div>
-                </div>
-            </div>
-            <div class="tm_jj">
-            	<div class="tm_jj_left">
-                	<a href="#">景顺长城护身300增强</a>
-                    <ul>
-                    	<li class="fsli">
-                        	<span>近2年</span>
-                            <b>72.22%</b>
-                        </li>
-                        <li>
-                        	<span>购买手续费</span>
-                            <span><a>0费率</a></span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="tm_jj_right" >
-                	<span class="qg">1000元起购</span>
-                    <div class="circle">
-                        <div class="pie_left">
-                            <div class="cic_left"></div>
-                        </div>
-                        <div class="pie_right">
-                            <div class="cic_right"></div>
-                        </div>
-                        <div class="mask"><span>50</span>%</div>
-                    </div>
-                </div>
-            </div>
-            <div class="tm_jj">
-            	<div class="tm_jj_left">
-                	<a href="#">景顺长城护身300增强</a>
-                    <ul>
-                    	<li class="fsli">
-                        	<span>近2年</span>
-                            <b>72.22%</b>
-                        </li>
-                        <li>
-                        	<span>购买手续费</span>
-                            <span><del>1.20%</del><a>0.12%</a></span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="tm_jj_right" >
-                	<span class="qg">1000元起购</span>
-                    <div class="circle">
-                        <div class="pie_left">
-                            <div class="cic_left"></div>
-                        </div>
-                        <div class="pie_right">
-                            <div class="cic_right"></div>
-                        </div>
-                        <div class="mask"><span>72</span>%</div>
-                    </div>
-                </div>
-            </div>
-            <div class="tm_jj">
-            	<div class="tm_jj_left">
-                	<a href="#">景顺长城护身300增强</a>
-                    <ul>
-                    	<li class="fsli">
-                        	<span>近2年</span>
-                            <b>72.22%</b>
-                        </li>
-                        <li>
-                        	<span>购买手续费</span>
-                            <span><del>1.20%</del><a>0.12%</a></span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="tm_jj_right" >
-                	<span class="qg">1000元起购</span>
-                    <div class="circle">
-                        <div class="pie_left">
-                            <div class="cic_left"></div>
-                        </div>
-                        <div class="pie_right">
-                            <div class="cic_right"></div>
-                        </div>
-                        <div class="mask"><span>33</span>%</div>
-                    </div>
-                </div>
-            </div>
-            
-            
-        </div>
+        <div class="tab_main"></div>
     </div>
     
     <div class="ctitle"><span>组合收益率走势</span></div>
@@ -197,67 +67,16 @@
       <tr>
         <td class="left">股票名称</td>
         <td class="right">持仓基金</td>
-        <td class="red right">涨跌幅</td>
+        <td class="right">涨跌幅</td>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td class="left"><a href="#">东方财富</a></td>
-        <td class="right">24.77%</td>
-        <td class="red right">1.09%</td>
-      </tr>
-      <tr>
-        <td class="left"><a href="#">乐视网</a></td>
-        <td class="right">9.58%</td>
-        <td class="green right">-1.09%</td>
-      </tr>
-      <tr>
-        <td class="left"><a href="#">万达信息</a></td>
-        <td class="right">9.58%</td>
-        <td class="red right">1.09%</td>
-      </tr>
-      <tr>
-        <td class="left"><a href="#">机器人</a></td>
-        <td class="right">9.58%</td>
-        <td class="red right">1.09%</td>
-      </tr>
-      <tr>
-        <td class="left"><a href="#">华谊兄弟</a></td>
-        <td class="right">9.58%</td>
-        <td class="red right">1.09%</td>
-      </tr>
-      <tr>
-        <td class="left"><a href="#">碧水源</a></td>
-        <td class="right">9.58%</td>
-        <td class="red right">1.09%</td>
-      </tr>
-      <tr>
-        <td class="left"><a href="#">卫宁软件</a></td>
-        <td class="right">9.58%</td>
-        <td class="red right">1.09%</td>
-      </tr>
-      <tr>
-        <td class="left"><a href="#">蓝色光标</a></td>
-        <td class="right">9.58%</td>
-        <td class="red right">1.09%</td>
-      </tr>
-      <tr>
-        <td class="left"><a href="#">网宿科技</a></td>
-        <td class="right">9.58%</td>
-        <td class="red right">1.09%</td>
-      </tr>
-      <tr>
-        <td class="left"><a href="#">汇川技术</a></td>
-        <td class="right">9.58%</td>
-        <td class="red right">1.09%</td>
-      </tr>
-    </tbody>
+    <tbody></tbody>
     </table>
 
     
     <div class="bottom">
-    数据来源：东方财富Choice数据<br />
-    截止日期：2016-03-21<br />
+    数据来源：东方财富Choice数据，银河证券<br />
+    截止日期：<span class="deadline"></span><br />
     免责声明：收益率数据仅供参考，过往业绩不预示未来表现，不构成投资建议。投资者据此操作，风险自担。市场有风险，投资需谨慎。
     </div>
 	<!--<a class="text_a"  onclick="CNT(4492)" href="https://fundzt.eastmoney.com/2016/hqb/"></a>
@@ -283,82 +102,78 @@ function CNT(id) {
 </script>
 
 <script>
-var myChart = echarts.init(document.getElementById('rose'));
+$(document).ready(function(){
+	getAjax("https://yuyu2012.github.io/js/jiji.json");
+	
+	/*tab切换*/
+	$(".tab_head a").click( function () {
+		$(".tab_head a").removeClass("checked");
+		 $(this).addClass("checked"); 
+		 var thisId=$(this).attr("id");
+		 if(thisId=="jiji"){getAjax("https://yuyu2012.github.io/js/jiji.json");};
+		 if(thisId=="wenjian"){getAjax("https://yuyu2012.github.io/js/wenjian.json");};
+		 if(thisId=="baoshou"){getAjax("https://yuyu2012.github.io/js/baoshou.json");};
+	});
 
-option = {
-	color:['#ff7474','#7cc3ff','#afec3a','#ffae00','#e880e2','#c9447f'], 
-    title : {
-        x:'center'
-    },
-    tooltip : {
-        trigger: 'item',
-        formatter: "{a} {b} : {c} ({d}%)"
-    },
-    legend: {
-        x : 'center',
-        y : 'bottom',
-        data:['股票型','混合型','债券型','QDII','货币型','其它']
-    },
-    series : [
-	{
-            type:'pie',
-            radius : [40, 80],
-            center : ['50%', 120],
-            roseType : 'radius',
-            label: {
-                normal: {
-                    show: false
-                },
-                emphasis: {
-                    show: true
-                }
-            },
-            data:[
-                {value:50, name:'股票型'},
-                {value:20, name:'混合型'},
-                {value:10, name:'债券型'},
-                {value:10, name:'QDII'},
-                {value:5, name:'货币型'},
-                {value:5, name:'其它'}
-            ]
-        }
-    ]
-};
-
-
-myChart.setOption(option);
-</script>
-
-<script>
+/*曲线图表开始*/
+function linechart(jsonData){
 var qxChart = echarts.init(document.getElementById('qx'));
 
+	
+
+var shangzheng = [];//series data的变量
+var shangzhengtime=[];
+    var ss=jsonData.data.C000001;
+	for(var dd in ss){ 
+		var shangzhengdata=ss[dd];
+		shangzheng.push(shangzhengdata);
+		//console.log(shangzheng);
+		/*x轴的时间*/
+		var ktime=dd;
+		shangzhengtime.push(ktime);
+	}
+	shangzhengtime.sort();
+	//console.log(shangzhengtime);
+var zuhe = [];//series data的变量
+    var s=jsonData.data.YXZH010;
+	for(var d in s){ 
+		var zuhedata=s[d];
+		zuhe.push(zuhedata);
+		
+	}//console.log(zuhe);
+	
+	
+	
+	
 option = {
 	color:['#f56800','#00a0e9'], 
     legend: {
+		y:"20px",
         data:['组合近1月走势','上证指数近1月走势'],
     },
-    
+
     grid: {
-        left: '3%',
-        right: '4%',
+        left: '1%',
+        right: '1%',
         bottom: '3%',
         containLabel: true
     },
     yAxis: {
         type: 'value',
+		axisLine:false,
         axisLabel: {
             formatter: '{value} %'
         }
     },
+
     xAxis: {
         type: 'category',
-        axisLine: {onZero: false},
-        axisLabel: {
-            formatter: '{value} '
-        },
+        axisLine:false,
         boundaryGap: false,
-        data: ['0', '5', '10', '15', '20']
+		//axisLabel:false,
+        data: shangzhengtime,
     },
+	
     series: [
         {
             name: '组合近1月走势',
@@ -372,7 +187,8 @@ option = {
                     shadowOffsetY: 10
                 }
             },
-            data:[4, 5,3,10,20]
+			data:zuhe
+           /* data:[0, 0.0034, 0.0068, 0.0567, 0.0601, 0.0635, 0.1072, 0.1111, 0.1207, 0.1649, 0.1708, 0.174, 0.1772, 0.147, 0.153, 0.1582, 0.2014, 0.2062, 0.221, 0.2288, 0.2369, 0.2443, 0.2481, 0.2693, 0.2731, 0.3179, 0.3216, 0.3326, 0.3363, 0.3026, 0.2661, 0.2693, 0.2792, 0.2824, 0.2856, 0.2888, 0.2522, 0.2221, 0.2254, 0.2287, 0.1922]*/
         },
 		{
             name: '上证指数近1月走势',
@@ -386,12 +202,226 @@ option = {
                     shadowOffsetY: 10
                 }
             },
-            data:[2, 4,1,6,14]
+			data:shangzheng
+            /*data:[0, 0.8586, 1.8144, -1.5775, 0.3445, 0.7281, 3.7011, 5.2526, 3.9053, 3.7948, 5.2976, 0.3536, 1.6724, 0.4518, -1.3817, 0.5154, 1.9353, 5.9347, 5.6245, 4.5532, 2.4617, 5.4123, 7.1371, 5.5704, 6.4665, 7.6134, 8.0162, 6.7777, 3.6218, 3.4035, 3.6492, 5.6094, 7.0503, 4.7471, 6.1047, 8.1652, 6.4561, 4.3129, 3.8446, 4.0362, 3.3656, 3.1106]*/
         }
     ]
 };
 
 qxChart.setOption(option);
+}
+/*曲线图表结束*/
+
+
+/*南丁格尔玫瑰开始*/	
+function renderPie(Fdata) {
+    var roseChart = echarts.init(document.getElementById('rose'));
+
+    var pieData = [];//series data的变量
+    $.each(Fdata.data.YXZHCC, function(index, val) {
+        var m = {
+            value: val.FRATIO,
+            name: val.FUNDTYPE
+        };
+         pieData.push(m);
+    });
+	var roseName=[];//legend data的变量
+	$.each(Fdata.data.YXZHCC, function(index, val) {
+        var n = {
+            name: val.FUNDTYPE
+        };
+         roseName.push(n);
+    });
+
+    var option = {
+        color:['#ff7474','#7cc3ff','#afec3a','#ffae00','#e880e2','#c9447f'], 
+        title : {
+            x:'center'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} {b} : {c} %"
+        },
+        legend: {
+            x : 'center',
+            y : 'bottom',
+            data:roseName
+        },
+        series : [
+        {
+                type:'pie',
+                radius : [40, 80],
+                center : ['50%', 120],
+                roseType : 'radius',
+                label: {
+                    normal: {
+                        show: false
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                data:pieData//data传了变量
+            }
+        ]
+    };
+
+
+    roseChart.setOption(option);
+
+}
+/*南丁格尔玫瑰结束*/
+
+
+function getAjax(jsonUrl){
+  $.ajax({
+		type:"GET",
+		url:jsonUrl,
+		dataType: "json",
+		success: function(data0){
+			
+			
+			/*南丁格尔玫瑰*/
+			// var roseOptions = roseChart.getOption();
+			
+			$.each(data0.data.YXZHCC,function(index, val){
+				
+				switch (val.FUNDTYPE)
+					{
+					case "001":
+					  val.FUNDTYPE="股票型";
+					  break;
+					case "002":
+					  val.FUNDTYPE="混合型";
+					  break;
+					case "003":
+					  val.FUNDTYPE="债券型";
+					  break;
+					case "005":
+					  val.FUNDTYPE="货币型";
+					  break;
+					case "007":
+					  val.FUNDTYPE="QDII";
+					  break;
+					case "205":
+					  val.FUNDTYPE="其他";
+					  break;
+					}
+			}) 
+
+            renderPie(data0);
+			linechart(data0);
+			
+			// roseChart.setOption(roseOptions);			
+			
+			
+			//alert(data0.data.YXZH[0].SHORTNAME); 基金名称
+			//alert(data0.data.YXZH[0].FSE); 基金收益率
+			//alert(data0.data.YXZH[0].FSENAME); 近两年
+			//alert(data0.data.YXZH[0].SOURCERATE); 原手续费
+			//alert(data0.data.YXZH[0].RATE); 现手续费
+			//alert(data0.data.YXZH[0].MINSG); 起购费
+			//alert(data0.data.YXZH[0].IRATIO); 进度条
+			//alert(data0.data.YXZH[0].FCODE); 基金代码
+			
+			/*截止时间*/
+			$.each(data0.data.YXZH,function(i){
+				 deadline=data0.data.YXZH[i].SYRQ.replace(/\-/g, "\/");
+				var ndl=new Date(deadline);
+				//alert(ndl);
+				var maxdata=new Date(2010/02/01);
+				
+				 if(deadline>maxdata){
+				   maxdata=deadline;
+				 }
+				
+			})
+			$(".deadline").empty();
+			$(".deadline").append(deadline);
+			
+			
+			$(".tab_main").empty();
+			$.each(data0.data.YXZH,function(i){
+				var tmjj="<div class='tm_jj'><div class='tm_jj_left'><a href='http://ttjj-normal-buy/?name="+data0.data.YXZH[i].SHORTNAME+"&id="+data0.data.YXZH[i].FCODE+"'>"+data0.data.YXZH[i].SHORTNAME+"</a><ul><li class='fsli'><span>"+data0.data.YXZH[i].FSENAME+"</span><b class='fse'>"+data0.data.YXZH[i].FSE+"%</b></li><li><span>购买手续费</span><span><del>"+data0.data.YXZH[i].SOURCERATE+"</del><a>"+data0.data.YXZH[i].RATE+"</a></span></li></ul></div><div class='tm_jj_right'><span class='qg'>"+data0.data.YXZH[i].MINSG+"元起购</span><div class='circle'><div class='pie_left'><div class='cic_left'></div></div><div class='pie_right'><div class='cic_right'></div></div><div class='mask'><span>"+data0.data.YXZH[i].IRATIO+"</span>%</div</div></div></div>";
+				
+				$(".tab_main").append(tmjj);
+			})
+			
+			/*FSE 去掉%，小数点后保留2位四舍五入*/
+			$(".fse").each(function() {
+				var fsetext=$(this).text();
+				var fsenum=parseFloat(fsetext.substring(0,fsetext.length-1));
+				var fsenum2=fsenum.toFixed(2);
+				$(this).text(fsenum2+"%");
+			  })
+			
+			/*假如原购买手续费与现购买手续费相同，则不显示原手续费*/
+				/*假如原购买手续费是0元，直接显示0费率*/
+				$(".tm_jj del").each(function() {
+					var yuan=$(this).text();
+					var xian=$(this).next("a").text();
+					if(yuan==xian){
+						$(this).hide();
+						if($(this).text()=="0.00%"){
+							$(this).next("a").text("0费率");
+						}
+					}
+					
+				})
+			
+			/*圆形进度条*/	
+			$('.circle').each(function(index, el) {
+				/*获取进度条里的数字，乘以100再显示*/
+				   var numtext = $(this).find('span').text();
+				   var num=numtext*360
+				   var nnum=numtext*100;
+					$(this).find('span').text(nnum);
+					if (num <= 180) {
+						$(this).find('.cic_right').css('transform', "rotate(" + num + "deg)");
+					} 
+					else {
+						$(this).find('.cic_right').css('transform', "rotate(180deg)");
+							var self = this;
+							  $(self).find('.cic_left').css('transform', "rotate(" + (num - 180) + "deg)");
+					}
+				});
+			
+			$("tbody").empty();
+			$.each(data0.data.YXZHCYGP,function(i){
+				//alert(data0.data.YXZHCYGP[i].SNAME); 持仓股票名称
+				//alert(data0.data.YXZHCYGP[i].RATIO); 持仓比率
+				//alert(data0.data.YXZHCYGP[i].CHG); 涨跌幅
+				//alert(data0.data.YXZHCYGP[i].CODE); 股票代码
+				var tr="<tr><td class='left'><a href='http://m.coop.eastmoney.com/ttjj/stock.html?code="+data0.data.YXZHCYGP[i].CODE+"'>"+data0.data.YXZHCYGP[i].SNAME+"</a></td><td class='right'>"+data0.data.YXZHCYGP[i].RATIO+"%</td><td class='right red'>"+data0.data.YXZHCYGP[i].CHG+"</td></tr>";
+				$("tbody").append(tr);
+			})
+			/*如果.red获取的text就是“-”那就变黑色，如果获得的text去掉%转成int后<0，就是绿色*/
+			$(".red").each(function() {
+				var zdf=$(this).text();		
+				if(zdf=="-"){$(this).addClass("black");}	
+				else{
+					var dfnum=zdf.substring(0, zdf.length-1);
+					if(dfnum<0){$(this).addClass("green");}
+					}
+			})
+			
+			
+		},
+		error : function(errorMsg) {  
+        	alert("报告大王，图表请求数据失败啦！");   
+        }  
+	})
+	/*ajax结束*/
+	}
+
+	
+	
+});
+
+
+
+ 
+
 </script>
 
  
