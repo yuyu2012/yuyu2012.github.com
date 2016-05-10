@@ -39,9 +39,9 @@
 <body>
 <div id="container">
 	<div class="bg"></div>
-    <div class="text">
+   <!-- <div class="text">
     	历经2015年股市的大起大落，越来越多投资者更深刻地认识到构建合理投资组合的重要性。大量研究数据表明，通过科学的基金组合配置可在降低市场风险的同时提高投资收益，相比投资单个基金和单一品种，基金组合的回报更为稳定。对于不同风险偏好的投资者来说，都可参考不同的比例配置来实现不同的投资目标。
-    </div>
+    </div>-->
     <div class="tab">
     	<div class="tab_head">
         	<a id="jiji">积极型投资者</a>
@@ -54,7 +54,7 @@
     <div class="ctitle"><span>组合收益率走势</span></div>
     <div id="qx"></div>
     
-    <div class="ctitle"><span>基金组合资产配置情况</span></div>
+    <div class="ctitle bt"><span>基金组合资产配置情况</span></div>
     <div id="rose"></div>
     
     
@@ -66,7 +66,7 @@
     <thead>
       <tr>
         <td class="left">股票名称</td>
-        <td class="right">持仓基金</td>
+        <td class="right">持仓占比</td>
         <td class="right">涨跌幅</td>
       </tr>
     </thead>
@@ -103,17 +103,18 @@ function CNT(id) {
 
 <script>
 $(document).ready(function(){
-	getAjax("https://yuyu2012.github.io/js/jiji.json");
+	getAjax("js/json20.json");
 	
 	/*tab切换*/
 	$(".tab_head a").click( function () {
 		$(".tab_head a").removeClass("checked");
 		 $(this).addClass("checked"); 
 		 var thisId=$(this).attr("id");
-		 if(thisId=="jiji"){getAjax("https://yuyu2012.github.io/js/jiji.json");};
-		 if(thisId=="wenjian"){getAjax("https://yuyu2012.github.io/js/wenjian.json");};
-		 if(thisId=="baoshou"){getAjax("https://yuyu2012.github.io/js/baoshou.json");};
+		 if(thisId=="jiji"){getAjax("js/json10.json");};
+		 if(thisId=="wenjian"){getAjax("js/json20.json");};
+		 if(thisId=="baoshou"){getAjax("js/json30.json");};
 	});
+
 
 /*曲线图表开始*/
 function linechart(jsonData){
@@ -151,11 +152,10 @@ option = {
 		y:"20px",
         data:['组合近1月走势','上证指数近1月走势'],
     },
-
-    grid: {
-        left: '1%',
-        right: '1%',
-        bottom: '3%',
+	grid: {
+        x: '12%',
+        y: '60px',
+		width:'78%',
         containLabel: true
     },
     yAxis: {
@@ -188,7 +188,6 @@ option = {
                 }
             },
 			data:zuhe
-           /* data:[0, 0.0034, 0.0068, 0.0567, 0.0601, 0.0635, 0.1072, 0.1111, 0.1207, 0.1649, 0.1708, 0.174, 0.1772, 0.147, 0.153, 0.1582, 0.2014, 0.2062, 0.221, 0.2288, 0.2369, 0.2443, 0.2481, 0.2693, 0.2731, 0.3179, 0.3216, 0.3326, 0.3363, 0.3026, 0.2661, 0.2693, 0.2792, 0.2824, 0.2856, 0.2888, 0.2522, 0.2221, 0.2254, 0.2287, 0.1922]*/
         },
 		{
             name: '上证指数近1月走势',
@@ -203,7 +202,6 @@ option = {
                 }
             },
 			data:shangzheng
-            /*data:[0, 0.8586, 1.8144, -1.5775, 0.3445, 0.7281, 3.7011, 5.2526, 3.9053, 3.7948, 5.2976, 0.3536, 1.6724, 0.4518, -1.3817, 0.5154, 1.9353, 5.9347, 5.6245, 4.5532, 2.4617, 5.4123, 7.1371, 5.5704, 6.4665, 7.6134, 8.0162, 6.7777, 3.6218, 3.4035, 3.6492, 5.6094, 7.0503, 4.7471, 6.1047, 8.1652, 6.4561, 4.3129, 3.8446, 4.0362, 3.3656, 3.1106]*/
         }
     ]
 };
@@ -238,6 +236,7 @@ function renderPie(Fdata) {
         title : {
             x:'center'
         },
+		animation:false,
         tooltip : {
             trigger: 'item',
             formatter: "{a} {b} : {c} %"
@@ -251,7 +250,7 @@ function renderPie(Fdata) {
         {
                 type:'pie',
                 radius : [40, 80],
-                center : ['50%', 120],
+                center : ['50%', 140],
                 roseType : 'radius',
                 label: {
                     normal: {
@@ -326,10 +325,10 @@ function getAjax(jsonUrl){
 			
 			/*截止时间*/
 			$.each(data0.data.YXZH,function(i){
-				 deadline=data0.data.YXZH[i].SYRQ.replace(/\-/g, "\/");
+				 deadline=data0.data.YXZH[i].SYRQ;
 				var ndl=new Date(deadline);
 				//alert(ndl);
-				var maxdata=new Date(2010/02/01);
+				var maxdata=new Date(2010-02-01);
 				
 				 if(deadline>maxdata){
 				   maxdata=deadline;
@@ -342,18 +341,36 @@ function getAjax(jsonUrl){
 			
 			$(".tab_main").empty();
 			$.each(data0.data.YXZH,function(i){
-				var tmjj="<div class='tm_jj'><div class='tm_jj_left'><a href='http://ttjj-normal-buy/?name="+data0.data.YXZH[i].SHORTNAME+"&id="+data0.data.YXZH[i].FCODE+"'>"+data0.data.YXZH[i].SHORTNAME+"</a><ul><li class='fsli'><span>"+data0.data.YXZH[i].FSENAME+"</span><b class='fse'>"+data0.data.YXZH[i].FSE+"%</b></li><li><span>购买手续费</span><span><del>"+data0.data.YXZH[i].SOURCERATE+"</del><a>"+data0.data.YXZH[i].RATE+"</a></span></li></ul></div><div class='tm_jj_right'><span class='qg'>"+data0.data.YXZH[i].MINSG+"元起购</span><div class='circle'><div class='pie_left'><div class='cic_left'></div></div><div class='pie_right'><div class='cic_right'></div></div><div class='mask'><span>"+data0.data.YXZH[i].IRATIO+"</span>%</div</div></div></div>";
+				var tmjj="<div class='tm_jj'><div class='tm_jj_left'><a href='http://ttjj-funddetail/?name="+data0.data.YXZH[i].SHORTNAME+"&id="+data0.data.YXZH[i].FCODE+"'>"+data0.data.YXZH[i].SHORTNAME+"</a><ul><li class='fsli'><span>"+data0.data.YXZH[i].FSENAME+"</span><b class='fse'>"+data0.data.YXZH[i].FSE+"%</b></li><li><span>购买手续费</span><span><del>"+data0.data.YXZH[i].SOURCERATE+"</del><a class='black'>"+data0.data.YXZH[i].RATE+"</a></span></li></ul></div><div class='tm_jj_right'><span class='qg'>"+data0.data.YXZH[i].MINSG+"元起购</span><div class='circle'><div class='pie_left'><div class='cic_left'></div></div><div class='pie_right'><div class='cic_right'></div></div><div class='mask'><span>"+data0.data.YXZH[i].IRATIO+"</span>%</div</div></div></div>";
 				
 				$(".tab_main").append(tmjj);
 			})
 			
-			/*FSE 去掉%，小数点后保留2位四舍五入*/
-			$(".fse").each(function() {
-				var fsetext=$(this).text();
-				var fsenum=parseFloat(fsetext.substring(0,fsetext.length-1));
-				var fsenum2=fsenum.toFixed(2);
-				$(this).text(fsenum2+"%");
+			$(".tm_jj").click(function(){ 
+				var srch=$(this).find(".tm_jj_left a").attr("href");
+				//alert(srch);
+				window.location.href=srch;
+			})
+			
+			
+			
+			/*FSE 去掉%，小数点后保留2位四舍五入，如果7日年化就保留四位小数*/
+			$(".fsli").each(function() {
+				var yueOr7=$(this).find("span").text();
+				var yuannn=$(this).find("b").text();
+				var ynopec=yuannn.substring(0,yuannn.length-1);
+				var yfloat=parseFloat(ynopec);
+				var noyuan;
+				if(yueOr7=="7日年化收益"){//如果7日就保留4位小数
+					noyuan=yfloat.toFixed(4);
+				}
+				else{//否则就保留2位小数
+					noyuan=yfloat.toFixed(2);
+					}
+				$(this).find("b").text(noyuan+"%");
+				if(yfloat<0){$(this).find("b").addClass("fsegreen");}
 			  })
+			  
 			
 			/*假如原购买手续费与现购买手续费相同，则不显示原手续费*/
 				/*假如原购买手续费是0元，直接显示0费率*/
@@ -366,6 +383,10 @@ function getAjax(jsonUrl){
 							$(this).next("a").text("0费率");
 						}
 					}
+					else if($(this).text()=="null"){
+						$(this).hide();
+						$(this).next("a").text("0费率");
+						}
 					
 				})
 			
@@ -392,18 +413,45 @@ function getAjax(jsonUrl){
 				//alert(data0.data.YXZHCYGP[i].RATIO); 持仓比率
 				//alert(data0.data.YXZHCYGP[i].CHG); 涨跌幅
 				//alert(data0.data.YXZHCYGP[i].CODE); 股票代码
-				var tr="<tr><td class='left'><a href='http://m.coop.eastmoney.com/ttjj/stock.html?code="+data0.data.YXZHCYGP[i].CODE+"'>"+data0.data.YXZHCYGP[i].SNAME+"</a></td><td class='right'>"+data0.data.YXZHCYGP[i].RATIO+"%</td><td class='right red'>"+data0.data.YXZHCYGP[i].CHG+"</td></tr>";
+				var tr="<tr><td class='left'><a href='http://m.coop.eastmoney.com/ttjj/stock.html?code="+data0.data.YXZHCYGP[i].CODE+"'>"+data0.data.YXZHCYGP[i].SNAME+"</a></td><td class='ratio right'>"+data0.data.YXZHCYGP[i].RATIO+"%</td><td class='right red chg'>"+data0.data.YXZHCYGP[i].CHG+"</td></tr>";
 				$("tbody").append(tr);
 			})
+			
+			/*持仓占比保留2位小数*/
+			$(".ratio").each(function() {
+				var zbText=$(this).text();
+				var zbTextnopec=zbText.substring(0,zbText.length-1);
+				var zbfloat=parseFloat(zbTextnopec);
+				var zb=zbfloat.toFixed(2);
+				$(this).text(zb+"%");
+			  })
+			  
+			  floatNumber( ".ratio" , 2);
+			 // floatNumber( ".chg" , 2);
+			  
+		   function floatNumber( eachobj , num){
+			   $(eachobj).each(function() {
+				var zbText=$(this).text();
+				var zbTextnopec=zbText.substring(0,zbText.length-1);
+				var zbfloat=parseFloat(zbTextnopec);
+				var zb=zbfloat.toFixed(num);
+				$(this).text(zb+"%");
+			  })
+		   }
+			
+			
 			/*如果.red获取的text就是“-”那就变黑色，如果获得的text去掉%转成int后<0，就是绿色*/
 			$(".red").each(function() {
 				var zdf=$(this).text();		
 				if(zdf=="-"){$(this).addClass("black");}	
+				else if(zdf=="0.00%"){$(this).addClass("gray");}
 				else{
 					var dfnum=zdf.substring(0, zdf.length-1);
 					if(dfnum<0){$(this).addClass("green");}
 					}
 			})
+			
+			
 			
 			
 		},

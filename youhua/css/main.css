@@ -12,6 +12,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, blockquote, ul, ol, li, dl, dt, dd, form,
   font: inherit;
   font-size: 100%;
   vertical-align: baseline;
+ 
 }
 html {
   line-height: 1;
@@ -506,7 +507,7 @@ body {
 .tab_head a{ font-size:0.28rem; color:#666666; display:inline-block; width:33%; text-align:center; float:left; cursor:pointer}
 .tab_head .checked{ color:#ff7474; border-bottom:solid 0.03rem #ff7474;}
 .tab_main{ font-size:0.24rem;float: left;width: 100%; }
-.tm_jj{padding:0.27rem 0;border-bottom:solid 1px #e5e5e5; float: left;width: 100%;}
+.tm_jj{padding:0.27rem 0;border-bottom:solid 1px #e5e5e5; float: left;width: 100%; display:block}
 .tm_jj_left{ float:left; margin-left:0.27rem;}
 .tm_jj_left a{ font-size:0.28rem; color:#242424; padding-bottom:0.25rem; text-decoration:none; float:left;min-width: 2rem;}
 .tm_jj_right{float: right;width: 30%;
@@ -529,7 +530,7 @@ body {
     width: 100%;border-bottom:solid 1px #e3e2e7;}
 .jjcctable thead{ height:0.6rem; line-height:0.6rem;border-bottom:solid 1px #e3e2e7;}
 .jjcctable tbody{ color:#000; font-size:0.28rem;}
-.jjcctable tbody td{ padding:0.35rem 0}
+.jjcctable tbody td{     padding-top: 0.35rem;}
 .jjcctable tbody td a{ color:#000; text-decoration:none;}
 .red{ color:#ff4b4b;}
 .green{ color:#64d564}
@@ -540,9 +541,9 @@ body {
 .ctitle span{ padding-left:0.3rem;}
 #rose{ width:100%; height:300px;float: left; border-bottom:solid 1px #e3e2e7;}
 #rose *{ font-size:0.20rem;}
-#qx{ width:100%; height:300px;float: left; border-bottom:solid 1px #e3e2e7;}
+#qx{ width:100%; height:300px;float: left; position: relative;}
 
-
+.bt{border-top: solid 1px #e3e2e7;}
 .circle {
     width: 0.86rem;
     height: 0.86rem;
@@ -564,7 +565,7 @@ body {
 .cic_right {
     width:  0.86rem;
     height:  0.86rem;
-    background: #e4e4e4;
+    background: #F9BBBB;
     border-radius: 50%;
     position: absolute;
     top: 0;
@@ -598,3 +599,8 @@ body {
     color: #ff7474;
 }
 .black{ color:#000;}
+.tm_jj_left li .fsegreen{color: #64d564;}
+.black{ color:#242424 !important}
+
+tbody tr:last-child td{ padding-bottom:0.35rem;}
+.gray{color:#92a0ad !important}
