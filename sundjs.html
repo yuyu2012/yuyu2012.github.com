@@ -4,6 +4,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
 <script src="js/soundjs-0.6.2.min.js"></script>
+</head>
+
+<body>
+<div>  
+    <h1 id="status">开始</h1>  
+</div> 
+
 <script>
 var displayStatus;  
 displayStatus = document.getElementById("status");  
@@ -16,14 +23,9 @@ displayStatus.innerHTML="等待资源加载";
   
 function playSound(event){  
     soundInstance = createjs.Sound.play(event.src);  
-    displayStatus.innerHTML="播放:"+ e.src;
+    displayStatus.innerHTML="播放:"+ event.src;
 }  
 </script>
-</head>
-
-<body>
-<div>  
-    <h1 id="status">开始</h1>  
-</div>  
+ 
 </body>
 </html>
