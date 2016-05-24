@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="js/soundjs-0.6.2.min.js"></script>
+<script>
+var displayStatus;  
+displayStatus = document.getElementById("status");  
+src = "cjml.mp3";  
+createjs.Sound.alternateExtensions=["mp3"];//确定播放mp3  
+createjs.Sound.addEventListener("fileload",playSound);//资源准备好触发  
+createjs.Sound.registerSound(src);//加载资源
+  
+displayStatus.innerHTML="等待资源加载";  
+  
+function playSound(event){  
+    soundInstance = createjs.Sound.play(event.src);  
+    displayStatus.innerHTML="播放:"+ e.src;
+}  
+</script>
+</head>
+
+<body>
+<div>  
+    <h1 id="status">开始</h1>  
+</div>  
+</body>
+</html>
