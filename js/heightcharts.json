@@ -1,0 +1,1020 @@
+{
+  "Datas": [
+    {
+      "PDATE": "2015-06-08",
+      "PERCENTPRICE": "4431.52"
+    },
+    {
+      "PDATE": "2015-06-09",
+      "PERCENTPRICE": "4427.61"
+    },
+    {
+      "PDATE": "2015-06-10",
+      "PERCENTPRICE": "4485.46"
+    },
+    {
+      "PDATE": "2015-06-11",
+      "PERCENTPRICE": "4488.47"
+    },
+    {
+      "PDATE": "2015-06-12",
+      "PERCENTPRICE": "4453.79"
+    },
+    {
+      "PDATE": "2015-06-15",
+      "PERCENTPRICE": "4432.92"
+    },
+    {
+      "PDATE": "2015-06-16",
+      "PERCENTPRICE": ""
+    },
+    {
+      "PDATE": "2015-06-17",
+      "PERCENTPRICE": "4468.98"
+    },
+    {
+      "PDATE": "2015-06-18",
+      "PERCENTPRICE": "4531.85"
+    },
+    {
+      "PDATE": "2015-06-19",
+      "PERCENTPRICE": "4513.42"
+    },
+    {
+      "PDATE": "2015-06-22",
+      "PERCENTPRICE": "4544.04"
+    },
+    {
+      "PDATE": "2015-06-23",
+      "PERCENTPRICE": "4548.74"
+    },
+    {
+      "PDATE": "2015-06-24",
+      "PERCENTPRICE": "4524.6"
+    },
+    {
+      "PDATE": "2015-06-25",
+      "PERCENTPRICE": "4514.01"
+    },
+    {
+      "PDATE": "2015-06-26",
+      "PERCENTPRICE": "4484.28"
+    },
+    {
+      "PDATE": "2015-06-29",
+      "PERCENTPRICE": "4379.87"
+    },
+    {
+      "PDATE": "2015-06-30",
+      "PERCENTPRICE": "4396.76"
+    },
+    {
+      "PDATE": "2015-07-01",
+      "PERCENTPRICE": "4429.23"
+    },
+    {
+      "PDATE": "2015-07-02",
+      "PERCENTPRICE": "4433.39"
+    },
+    {
+      "PDATE": "2015-07-06",
+      "PERCENTPRICE": "4418.66"
+    },
+    {
+      "PDATE": "2015-07-07",
+      "PERCENTPRICE": "4429.06"
+    },
+    {
+      "PDATE": "2015-07-08",
+      "PERCENTPRICE": "4351.58"
+    },
+    {
+      "PDATE": "2015-07-09",
+      "PERCENTPRICE": "4352.03"
+    },
+    {
+      "PDATE": "2015-07-10",
+      "PERCENTPRICE": "4420.15"
+    },
+    {
+      "PDATE": "2015-07-13",
+      "PERCENTPRICE": "4494.47"
+    },
+    {
+      "PDATE": "2015-07-14",
+      "PERCENTPRICE": "4523.47"
+    },
+    {
+      "PDATE": "2015-07-15",
+      "PERCENTPRICE": "4528.36"
+    },
+    {
+      "PDATE": "2015-07-16",
+      "PERCENTPRICE": "4594.9"
+    },
+    {
+      "PDATE": "2015-07-17",
+      "PERCENTPRICE": "4661.6"
+    },
+    {
+      "PDATE": "2015-07-20",
+      "PERCENTPRICE": "4679.68"
+    },
+    {
+      "PDATE": "2015-07-21",
+      "PERCENTPRICE": "4674.41"
+    },
+    {
+      "PDATE": "2015-07-22",
+      "PERCENTPRICE": "4623.24"
+    },
+    {
+      "PDATE": "2015-07-23",
+      "PERCENTPRICE": "4602.83"
+    },
+    {
+      "PDATE": "2015-07-24",
+      "PERCENTPRICE": "4557.38"
+    },
+    {
+      "PDATE": "2015-07-27",
+      "PERCENTPRICE": "4519.09"
+    },
+    {
+      "PDATE": "2015-07-28",
+      "PERCENTPRICE": "4560.23"
+    },
+    {
+      "PDATE": "2015-07-29",
+      "PERCENTPRICE": "4581.6"
+    },
+    {
+      "PDATE": "2015-07-30",
+      "PERCENTPRICE": "4598.59"
+    },
+    {
+      "PDATE": "2015-07-31",
+      "PERCENTPRICE": "4588.91"
+    },
+    {
+      "PDATE": "2015-08-03",
+      "PERCENTPRICE": "4580.46"
+    },
+    {
+      "PDATE": "2015-08-04",
+      "PERCENTPRICE": "4567.47"
+    },
+    {
+      "PDATE": "2015-08-05",
+      "PERCENTPRICE": "4602.24"
+    },
+    {
+      "PDATE": "2015-08-06",
+      "PERCENTPRICE": "4528.51"
+    },
+    {
+      "PDATE": "2015-08-07",
+      "PERCENTPRICE": "4520.08"
+    },
+    {
+      "PDATE": "2015-08-10",
+      "PERCENTPRICE": "4573.11"
+    },
+    {
+      "PDATE": "2015-08-11",
+      "PERCENTPRICE": "4513.99"
+    },
+    {
+      "PDATE": "2015-08-12",
+      "PERCENTPRICE": "4528.19"
+    },
+    {
+      "PDATE": "2015-08-13",
+      "PERCENTPRICE": "4519.32"
+    },
+    {
+      "PDATE": "2015-08-14",
+      "PERCENTPRICE": "4530.74"
+    },
+    {
+      "PDATE": "2015-08-17",
+      "PERCENTPRICE": "4566.37"
+    },
+    {
+      "PDATE": "2015-08-18",
+      "PERCENTPRICE": "4542.07"
+    },
+    {
+      "PDATE": "2015-08-19",
+      "PERCENTPRICE": "4510.9"
+    },
+    {
+      "PDATE": "2015-08-20",
+      "PERCENTPRICE": "4385.13"
+    },
+    {
+      "PDATE": "2015-08-21",
+      "PERCENTPRICE": "4197.27"
+    },
+    {
+      "PDATE": "2015-08-24",
+      "PERCENTPRICE": "4038.6"
+    },
+    {
+      "PDATE": "2015-08-25",
+      "PERCENTPRICE": "4016.32"
+    },
+    {
+      "PDATE": "2015-08-26",
+      "PERCENTPRICE": "4219.6"
+    },
+    {
+      "PDATE": "2015-08-27",
+      "PERCENTPRICE": "4324.82"
+    },
+    {
+      "PDATE": "2015-08-28",
+      "PERCENTPRICE": "4329.12"
+    },
+    {
+      "PDATE": "2015-08-31",
+      "PERCENTPRICE": "4274.58"
+    },
+    {
+      "PDATE": "2015-09-01",
+      "PERCENTPRICE": "4142.63"
+    },
+    {
+      "PDATE": "2015-09-02",
+      "PERCENTPRICE": "4256.23"
+    },
+    {
+      "PDATE": "2015-09-03",
+      "PERCENTPRICE": "4234.65"
+    },
+    {
+      "PDATE": "2015-09-04",
+      "PERCENTPRICE": "4184.72"
+    },
+    {
+      "PDATE": "2015-09-08",
+      "PERCENTPRICE": "4303.53"
+    },
+    {
+      "PDATE": "2015-09-09",
+      "PERCENTPRICE": "4253.45"
+    },
+    {
+      "PDATE": "2015-09-10",
+      "PERCENTPRICE": "4296.3"
+    },
+    {
+      "PDATE": "2015-09-11",
+      "PERCENTPRICE": "4323.23"
+    },
+    {
+      "PDATE": "2015-09-14",
+      "PERCENTPRICE": "4308.76"
+    },
+    {
+      "PDATE": "2015-09-15",
+      "PERCENTPRICE": "4360.28"
+    },
+    {
+      "PDATE": "2015-09-16",
+      "PERCENTPRICE": "4383.67"
+    },
+    {
+      "PDATE": "2015-09-17",
+      "PERCENTPRICE": "4384.96"
+    },
+    {
+      "PDATE": "2015-09-18",
+      "PERCENTPRICE": "4323.86"
+    },
+    {
+      "PDATE": "2015-09-21",
+      "PERCENTPRICE": "4336.13"
+    },
+    {
+      "PDATE": "2015-09-22",
+      "PERCENTPRICE": "4274.1"
+    },
+    {
+      "PDATE": "2015-09-23",
+      "PERCENTPRICE": "4273.53"
+    },
+    {
+      "PDATE": "2015-09-24",
+      "PERCENTPRICE": "4261.1"
+    },
+    {
+      "PDATE": "2015-09-25",
+      "PERCENTPRICE": "4224.74"
+    },
+    {
+      "PDATE": "2015-09-28",
+      "PERCENTPRICE": "4103.47"
+    },
+    {
+      "PDATE": "2015-09-29",
+      "PERCENTPRICE": "4083.37"
+    },
+    {
+      "PDATE": "2015-09-30",
+      "PERCENTPRICE": "4181.06"
+    },
+    {
+      "PDATE": "2015-10-01",
+      "PERCENTPRICE": "4192.96"
+    },
+    {
+      "PDATE": "2015-10-02",
+      "PERCENTPRICE": "4267.45"
+    },
+    {
+      "PDATE": "2015-10-05",
+      "PERCENTPRICE": "4331.43"
+    },
+    {
+      "PDATE": "2015-10-06",
+      "PERCENTPRICE": "4306.7"
+    },
+    {
+      "PDATE": "2015-10-07",
+      "PERCENTPRICE": "4333.46"
+    },
+    {
+      "PDATE": "2015-10-08",
+      "PERCENTPRICE": "4350.15"
+    },
+    {
+      "PDATE": "2015-10-09",
+      "PERCENTPRICE": "4370.01"
+    },
+    {
+      "PDATE": "2015-10-12",
+      "PERCENTPRICE": "4382.56"
+    },
+    {
+      "PDATE": "2015-10-13",
+      "PERCENTPRICE": "4352.94"
+    },
+    {
+      "PDATE": "2015-10-14",
+      "PERCENTPRICE": "4346.92"
+    },
+    {
+      "PDATE": "2015-10-15",
+      "PERCENTPRICE": "4418.22"
+    },
+    {
+      "PDATE": "2015-10-16",
+      "PERCENTPRICE": "4438.62"
+    },
+    {
+      "PDATE": "2015-10-19",
+      "PERCENTPRICE": "4462.07"
+    },
+    {
+      "PDATE": "2015-10-20",
+      "PERCENTPRICE": "4438.18"
+    },
+    {
+      "PDATE": "2015-10-21",
+      "PERCENTPRICE": "4413.52"
+    },
+    {
+      "PDATE": "2015-10-22",
+      "PERCENTPRICE": "4503.22"
+    },
+    {
+      "PDATE": "2015-10-23",
+      "PERCENTPRICE": "4624.09"
+    },
+    {
+      "PDATE": "2015-10-26",
+      "PERCENTPRICE": "4630.85"
+    },
+    {
+      "PDATE": "2015-10-27",
+      "PERCENTPRICE": "4639.23"
+    },
+    {
+      "PDATE": "2015-10-28",
+      "PERCENTPRICE": "4678.58"
+    },
+    {
+      "PDATE": "2015-10-29",
+      "PERCENTPRICE": "4670.76"
+    },
+    {
+      "PDATE": "2015-10-30",
+      "PERCENTPRICE": "4648.83"
+    },
+    {
+      "PDATE": "2015-11-02",
+      "PERCENTPRICE": "4703.92"
+    },
+    {
+      "PDATE": "2015-11-03",
+      "PERCENTPRICE": "4719.05"
+    },
+    {
+      "PDATE": "2015-11-04",
+      "PERCENTPRICE": "4717.55"
+    },
+    {
+      "PDATE": "2015-11-05",
+      "PERCENTPRICE": "4702.9"
+    },
+    {
+      "PDATE": "2015-11-06",
+      "PERCENTPRICE": "4707.23"
+    },
+    {
+      "PDATE": "2015-11-09",
+      "PERCENTPRICE": "4655.52"
+    },
+    {
+      "PDATE": "2015-11-10",
+      "PERCENTPRICE": "4641.73"
+    },
+    {
+      "PDATE": "2015-11-11",
+      "PERCENTPRICE": "4636.94"
+    },
+    {
+      "PDATE": "2015-11-12",
+      "PERCENTPRICE": "4588.93"
+    },
+    {
+      "PDATE": "2015-11-13",
+      "PERCENTPRICE": "4502.14"
+    },
+    {
+      "PDATE": "2015-11-16",
+      "PERCENTPRICE": "4565.47"
+    },
+    {
+      "PDATE": "2015-11-17",
+      "PERCENTPRICE": "4565.82"
+    },
+    {
+      "PDATE": "2015-11-18",
+      "PERCENTPRICE": "4653.44"
+    },
+    {
+      "PDATE": "2015-11-19",
+      "PERCENTPRICE": "4655.35"
+    },
+    {
+      "PDATE": "2015-11-20",
+      "PERCENTPRICE": "4686.36"
+    },
+    {
+      "PDATE": "2015-11-23",
+      "PERCENTPRICE": "4674.79"
+    },
+    {
+      "PDATE": "2015-11-24",
+      "PERCENTPRICE": "4669.41"
+    },
+    {
+      "PDATE": "2015-11-25",
+      "PERCENTPRICE": "4672.88"
+    },
+    {
+      "PDATE": "2015-11-27",
+      "PERCENTPRICE": "4680.47"
+    },
+    {
+      "PDATE": "2015-11-30",
+      "PERCENTPRICE": "4664.51"
+    },
+    {
+      "PDATE": "2015-12-01",
+      "PERCENTPRICE": "4716.16"
+    },
+    {
+      "PDATE": "2015-12-02",
+      "PERCENTPRICE": "4686.22"
+    },
+    {
+      "PDATE": "2015-12-03",
+      "PERCENTPRICE": "4606.76"
+    },
+    {
+      "PDATE": "2015-12-04",
+      "PERCENTPRICE": "4716.12"
+    },
+    {
+      "PDATE": "2015-12-07",
+      "PERCENTPRICE": "4693.62"
+    },
+    {
+      "PDATE": "2015-12-08",
+      "PERCENTPRICE": "4694.77"
+    },
+    {
+      "PDATE": "2015-12-09",
+      "PERCENTPRICE": "4622.14"
+    },
+    {
+      "PDATE": "2015-12-10",
+      "PERCENTPRICE": "4643.05"
+    },
+    {
+      "PDATE": "2015-12-11",
+      "PERCENTPRICE": "4537.56"
+    },
+    {
+      "PDATE": "2015-12-14",
+      "PERCENTPRICE": "4570.16"
+    },
+    {
+      "PDATE": "2015-12-15",
+      "PERCENTPRICE": "4597.33"
+    },
+    {
+      "PDATE": "2015-12-16",
+      "PERCENTPRICE": "4664.56"
+    },
+    {
+      "PDATE": "2015-12-17",
+      "PERCENTPRICE": "4598.14"
+    },
+    {
+      "PDATE": "2015-12-18",
+      "PERCENTPRICE": "4514.83"
+    },
+    {
+      "PDATE": "2015-12-21",
+      "PERCENTPRICE": "4560.55"
+    },
+    {
+      "PDATE": "2015-12-22",
+      "PERCENTPRICE": "4589.26"
+    },
+    {
+      "PDATE": "2015-12-23",
+      "PERCENTPRICE": "4624.59"
+    },
+    {
+      "PDATE": "2015-12-24",
+      "PERCENTPRICE": "4622.77"
+    },
+    {
+      "PDATE": "2015-12-28",
+      "PERCENTPRICE": "4621.35"
+    },
+    {
+      "PDATE": "2015-12-29",
+      "PERCENTPRICE": "4691.08"
+    },
+    {
+      "PDATE": "2015-12-30",
+      "PERCENTPRICE": "4652.01"
+    },
+    {
+      "PDATE": "2015-12-31",
+      "PERCENTPRICE": "4593.27"
+    },
+    {
+      "PDATE": "2016-01-04",
+      "PERCENTPRICE": "4497.86"
+    },
+    {
+      "PDATE": "2016-01-05",
+      "PERCENTPRICE": "4484.18"
+    },
+    {
+      "PDATE": "2016-01-06",
+      "PERCENTPRICE": "4443.99"
+    },
+    {
+      "PDATE": "2016-01-07",
+      "PERCENTPRICE": "4305.72"
+    },
+    {
+      "PDATE": "2016-01-08",
+      "PERCENTPRICE": "4270.78"
+    },
+    {
+      "PDATE": "2016-01-11",
+      "PERCENTPRICE": "4283.55"
+    },
+    {
+      "PDATE": "2016-01-12",
+      "PERCENTPRICE": "4333.72"
+    },
+    {
+      "PDATE": "2016-01-13",
+      "PERCENTPRICE": "4183.12"
+    },
+    {
+      "PDATE": "2016-01-14",
+      "PERCENTPRICE": "4272.97"
+    },
+    {
+      "PDATE": "2016-01-15",
+      "PERCENTPRICE": "4141.08"
+    },
+    {
+      "PDATE": "2016-01-19",
+      "PERCENTPRICE": "4147.08"
+    },
+    {
+      "PDATE": "2016-01-20",
+      "PERCENTPRICE": "4136.28"
+    },
+    {
+      "PDATE": "2016-01-21",
+      "PERCENTPRICE": "4142.6"
+    },
+    {
+      "PDATE": "2016-01-22",
+      "PERCENTPRICE": "4259.77"
+    },
+    {
+      "PDATE": "2016-01-25",
+      "PERCENTPRICE": "4196.53"
+    },
+    {
+      "PDATE": "2016-01-26",
+      "PERCENTPRICE": "4233.85"
+    },
+    {
+      "PDATE": "2016-01-27",
+      "PERCENTPRICE": "4128.86"
+    },
+    {
+      "PDATE": "2016-01-28",
+      "PERCENTPRICE": "4186.06"
+    },
+    {
+      "PDATE": "2016-01-29",
+      "PERCENTPRICE": "4279.17"
+    },
+    {
+      "PDATE": "2016-02-01",
+      "PERCENTPRICE": "4286.56"
+    },
+    {
+      "PDATE": "2016-02-02",
+      "PERCENTPRICE": "4193.1"
+    },
+    {
+      "PDATE": "2016-02-03",
+      "PERCENTPRICE": "4171.97"
+    },
+    {
+      "PDATE": "2016-02-04",
+      "PERCENTPRICE": "4167.77"
+    },
+    {
+      "PDATE": "2016-02-05",
+      "PERCENTPRICE": "4024.47"
+    },
+    {
+      "PDATE": "2016-02-08",
+      "PERCENTPRICE": "3960.67"
+    },
+    {
+      "PDATE": "2016-02-09",
+      "PERCENTPRICE": "3947.8"
+    },
+    {
+      "PDATE": "2016-02-10",
+      "PERCENTPRICE": "3966.28"
+    },
+    {
+      "PDATE": "2016-02-11",
+      "PERCENTPRICE": "3962.22"
+    },
+    {
+      "PDATE": "2016-02-12",
+      "PERCENTPRICE": "4019.19"
+    },
+    {
+      "PDATE": "2016-02-16",
+      "PERCENTPRICE": "4104.33"
+    },
+    {
+      "PDATE": "2016-02-17",
+      "PERCENTPRICE": "4199.1"
+    },
+    {
+      "PDATE": "2016-02-18",
+      "PERCENTPRICE": "4151.49"
+    },
+    {
+      "PDATE": "2016-02-19",
+      "PERCENTPRICE": "4164.09"
+    },
+    {
+      "PDATE": "2016-02-22",
+      "PERCENTPRICE": "4231.27"
+    },
+    {
+      "PDATE": "2016-02-23",
+      "PERCENTPRICE": "4162.54"
+    },
+    {
+      "PDATE": "2016-02-24",
+      "PERCENTPRICE": "4200.66"
+    },
+    {
+      "PDATE": "2016-02-25",
+      "PERCENTPRICE": "4241.06"
+    },
+    {
+      "PDATE": "2016-02-26",
+      "PERCENTPRICE": "4235.62"
+    },
+    {
+      "PDATE": "2016-02-29",
+      "PERCENTPRICE": "4201.12"
+    },
+    {
+      "PDATE": "2016-03-01",
+      "PERCENTPRICE": "4333.61"
+    },
+    {
+      "PDATE": "2016-03-02",
+      "PERCENTPRICE": "4334.39"
+    },
+    {
+      "PDATE": "2016-03-03",
+      "PERCENTPRICE": "4325.86"
+    },
+    {
+      "PDATE": "2016-03-04",
+      "PERCENTPRICE": "4329"
+    },
+    {
+      "PDATE": "2016-03-07",
+      "PERCENTPRICE": "4303.33"
+    },
+    {
+      "PDATE": "2016-03-08",
+      "PERCENTPRICE": "4265.51"
+    },
+    {
+      "PDATE": "2016-03-09",
+      "PERCENTPRICE": "4293.23"
+    },
+    {
+      "PDATE": "2016-03-10",
+      "PERCENTPRICE": "4286.97"
+    },
+    {
+      "PDATE": "2016-03-11",
+      "PERCENTPRICE": "4361.83"
+    },
+    {
+      "PDATE": "2016-03-14",
+      "PERCENTPRICE": "4367.33"
+    },
+    {
+      "PDATE": "2016-03-15",
+      "PERCENTPRICE": "4367.08"
+    },
+    {
+      "PDATE": "2016-03-16",
+      "PERCENTPRICE": "4404.2"
+    },
+    {
+      "PDATE": "2016-03-17",
+      "PERCENTPRICE": "4400.26"
+    },
+    {
+      "PDATE": "2016-03-18",
+      "PERCENTPRICE": "4410.83"
+    },
+    {
+      "PDATE": "2016-03-21",
+      "PERCENTPRICE": "4426.98"
+    },
+    {
+      "PDATE": "2016-03-22",
+      "PERCENTPRICE": "4437.62"
+    },
+    {
+      "PDATE": "2016-03-23",
+      "PERCENTPRICE": "4402.56"
+    },
+    {
+      "PDATE": "2016-03-24",
+      "PERCENTPRICE": "4405.53"
+    },
+    {
+      "PDATE": "2016-03-28",
+      "PERCENTPRICE": "4398.07"
+    },
+    {
+      "PDATE": "2016-03-29",
+      "PERCENTPRICE": "4467.72"
+    },
+    {
+      "PDATE": "2016-03-30",
+      "PERCENTPRICE": "4490.88"
+    },
+    {
+      "PDATE": "2016-03-31",
+      "PERCENTPRICE": "4483.66"
+    },
+    {
+      "PDATE": "2016-04-01",
+      "PERCENTPRICE": "4532.08"
+    },
+    {
+      "PDATE": "2016-04-04",
+      "PERCENTPRICE": "4511.7"
+    },
+    {
+      "PDATE": "2016-04-05",
+      "PERCENTPRICE": "4470.75"
+    },
+    {
+      "PDATE": "2016-04-06",
+      "PERCENTPRICE": "4543.78"
+    },
+    {
+      "PDATE": "2016-04-07",
+      "PERCENTPRICE": "4475.29"
+    },
+    {
+      "PDATE": "2016-04-08",
+      "PERCENTPRICE": "4474.93"
+    },
+    {
+      "PDATE": "2016-04-11",
+      "PERCENTPRICE": "4458.71"
+    },
+    {
+      "PDATE": "2016-04-12",
+      "PERCENTPRICE": "4496.05"
+    },
+    {
+      "PDATE": "2016-04-13",
+      "PERCENTPRICE": "4554.72"
+    },
+    {
+      "PDATE": "2016-04-14",
+      "PERCENTPRICE": "4554.63"
+    },
+    {
+      "PDATE": "2016-04-15",
+      "PERCENTPRICE": "4543.16"
+    },
+    {
+      "PDATE": "2016-04-18",
+      "PERCENTPRICE": "4569.31"
+    },
+    {
+      "PDATE": "2016-04-19",
+      "PERCENTPRICE": "4537.09"
+    },
+    {
+      "PDATE": "2016-04-20",
+      "PERCENTPRICE": "4540.44"
+    },
+    {
+      "PDATE": "2016-04-21",
+      "PERCENTPRICE": "4540.8"
+    },
+    {
+      "PDATE": "2016-04-22",
+      "PERCENTPRICE": "4474.19"
+    },
+    {
+      "PDATE": "2016-04-25",
+      "PERCENTPRICE": "4474.13"
+    },
+    {
+      "PDATE": "2016-04-26",
+      "PERCENTPRICE": "4452.97"
+    },
+    {
+      "PDATE": "2016-04-27",
+      "PERCENTPRICE": "4416.64"
+    },
+    {
+      "PDATE": "2016-04-28",
+      "PERCENTPRICE": "4363.99"
+    },
+    {
+      "PDATE": "2016-04-29",
+      "PERCENTPRICE": "4341.3"
+    },
+    {
+      "PDATE": "2016-05-02",
+      "PERCENTPRICE": "4381.3"
+    },
+    {
+      "PDATE": "2016-05-03",
+      "PERCENTPRICE": "4341.39"
+    },
+    {
+      "PDATE": "2016-05-04",
+      "PERCENTPRICE": "4312.01"
+    },
+    {
+      "PDATE": "2016-05-05",
+      "PERCENTPRICE": "4309.48"
+    },
+    {
+      "PDATE": "2016-05-06",
+      "PERCENTPRICE": "4330.17"
+    },
+    {
+      "PDATE": "2016-05-09",
+      "PERCENTPRICE": "4341.23"
+    },
+    {
+      "PDATE": "2016-05-10",
+      "PERCENTPRICE": "4402.04"
+    },
+    {
+      "PDATE": "2016-05-11",
+      "PERCENTPRICE": "4361.03"
+    },
+    {
+      "PDATE": "2016-05-12",
+      "PERCENTPRICE": "4342.81"
+    },
+    {
+      "PDATE": "2016-05-13",
+      "PERCENTPRICE": "4326.53"
+    },
+    {
+      "PDATE": "2016-05-16",
+      "PERCENTPRICE": "4380.48"
+    },
+    {
+      "PDATE": "2016-05-17",
+      "PERCENTPRICE": "4322.56"
+    },
+    {
+      "PDATE": "2016-05-18",
+      "PERCENTPRICE": "4338.23"
+    },
+    {
+      "PDATE": "2016-05-19",
+      "PERCENTPRICE": "4315.58"
+    },
+    {
+      "PDATE": "2016-05-20",
+      "PERCENTPRICE": "4362.9"
+    },
+    {
+      "PDATE": "2016-05-23",
+      "PERCENTPRICE": "4355.1"
+    },
+    {
+      "PDATE": "2016-05-24",
+      "PERCENTPRICE": "4444.3"
+    },
+    {
+      "PDATE": "2016-05-25",
+      "PERCENTPRICE": "4476.43"
+    },
+    {
+      "PDATE": "2016-05-26",
+      "PERCENTPRICE": "4487.96"
+    },
+    {
+      "PDATE": "2016-05-27",
+      "PERCENTPRICE": "4512.54"
+    },
+    {
+      "PDATE": "2016-05-31",
+      "PERCENTPRICE": "4523.89"
+    },
+    {
+      "PDATE": "2016-06-01",
+      "PERCENTPRICE": "4520.07"
+    },
+    {
+      "PDATE": "2016-06-02",
+      "PERCENTPRICE": "4531.35"
+    },
+    {
+      "PDATE": "2016-06-03",
+      "PERCENTPRICE": "4509.79"
+    },
+    {
+      "PDATE": "2016-06-06",
+      "PERCENTPRICE": "4523.63"
+    },
+    {
+      "PDATE": "2016-06-07",
+      "PERCENTPRICE": "4513.09"
+    }
+  ],
+  "ErrCode": 0,
+  "ErrMsg": null,
+  "TotalCount": 253,
+  "Expansion": null
+}

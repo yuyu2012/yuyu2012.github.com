@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/highcharts.js"></script>
+<script>
+
+</script>
+</head>
+
+<body>
+<div id="container" style="min-width:800px;height:400px"></div>
+
+<script>
+$(document).ready(function(){
+	
+	Highcharts.setOptions({
+		global: {
+			useUTC: false
+		}
+	});
+	function getTimeSpan(dateStr) {
+		dateStr = dateStr.replace(/-/g, "/");
+		return new Date(dateStr).getTime();
+	}
+
+	$.ajax({
+		type:"GET",
+		url:"js/heightcharts.json",
+		dataType: "json",
+		success: function(jsonData){
+			
+			
+			
+			$(function () {
+			//console.log(jsonData.Datas[0].PERCENTPRICE);
+			var xlineNum = [];
+			var timeNum=[];//时间
+			$.each(jsonData.Datas, function(index, val) {
+				var n = parseFloat(jsonData.Datas[index].PERCENTPRICE);
+				var t=jsonData.Datas[index].PDATE;
+				xlineNum.push([getTimeSpan(t),n?n:null]);
+				//xlineNum.push([t,n]);
+			});
+console.log(xlineNum);
+				$('#container').highcharts({
+					
+					chart: {
+						zoomType: 'x',
+						spacingRight: 20
+					},
+					title: {
+						text: '('+jsonData.Datas[0].PDATE+'至'+jsonData.Datas[jsonData.Datas.length-1].PDATE+')'
+					},
+					/*subtitle: {
+						text: document.ontouchstart === undefined ?
+							'Click and drag in the plot area to zoom in' :
+							'Pinch the chart to zoom in'
+					},*/
+					xAxis: {
+						data:timeNum,
+						labels: { 
+                			formatter: function() { 
+                               return  Highcharts.dateFormat('%Y-%m-%d', this.value); 
+                			} 
+                		} 
+					},
+					yAxis: {
+						title: {
+							text: '指数'
+						}
+					},
+					
+					tooltip: {
+						//enabled: false,
+						shared: true,
+						//xDateFormat: '%Y-%m-%d',
+						formatter: function() { 
+								var content=Highcharts.dateFormat('%Y-%m-%d', this.x)+"<br/>指数："+this.y+"点";
+                               return content; 
+                			} 
+						
+					},
+					legend: {
+						enabled: false
+					},
+					plotOptions: {
+						area: {
+							fillColor: {
+								linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
+								stops: [
+									[0, Highcharts.getOptions().colors[0]],
+									[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+								]
+							},
+							lineWidth: 1,
+							marker: {
+								enabled: false
+							},
+							shadow: false,
+							states: {
+								hover: {
+									lineWidth: 1
+								}
+							},
+							threshold: null
+						}
+					},
+			
+					series: [{
+						type: 'area',
+						name: '指数',
+						data: xlineNum
+					}]
+					
+					
+					
+				});
+				
+				//console.log(xlineNum);
+			});
+		}
+		
+	})
+})
+</script>
+</body>
+</html>
