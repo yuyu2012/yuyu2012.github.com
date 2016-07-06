@@ -1,0 +1,885 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+    <title>天天基金网</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="keywords" content="天天基金网优选基金" />
+    <meta name="description" content="专业理财，智能优选，为您提供更专业的理财服务" />
+    <!--禁用手机号码链接(for iPhone)-->
+    <meta name="format-detection" content="telephone=no" />
+    <!--控制全屏时顶部状态栏的外，默认白色-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--是否允许全屏显，只有在桌面启动时可用-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="css/red.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.10.2.min.js"  type="text/javascript"></script>
+    <script src="js/icheck.min.js" type="text/javascript"></script>
+    <script src="js/TouchSlide.1.1.source.js" type="text/javascript"></script>
+    <script src="js/echarts-all.js"  type="text/javascript"></script>
+   <script type="text/javascript">
+    //auto adaptation
+    var calculate_size = function() {
+        var docEl = document.documentElement;
+		clientWidth1 = document.querySelector("#container").clientWidth; 
+		//alert(clientWidth1);
+        if (!clientWidth1) return;
+        docEl.style.fontSize = 100*(clientWidth1 /640) + 'px';
+    };
+    // Abort if browser does not support addEventListener
+    if (document.addEventListener) {
+        var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+        window.addEventListener(resizeEvt, calculate_size, false);
+        document.addEventListener('DOMContentLoaded', calculate_size, false);
+        calculate_size();
+    }
+    </script>
+
+</head>
+
+<body>
+<div id="container" class="deadheight">
+	<!-- 首页 Start ================================ -->
+	<div class="home" >
+    	<img class="home_top" src="images/home_top.jpg" />
+        <span class="home_text">选择您的风险偏好</span>
+        <a class="fxlx_a" id="ha_bs" ><img src="images/home_baoshou.png" /></a>
+        <a class="fxlx_a" id="ha_wj" ><img src="images/home_wenjian.png" /></a>
+        <a class="fxlx_a" id="ha_jj" ><img src="images/home_jijin.png" /></a>
+        <a class="home_test" >更精确地测试您的风险偏好</a>
+    </div>
+    <!-- 首页 End ================================ -->
+    
+    
+	<!-- 答题页 Start ================================ -->
+    <div class="test" style="display:none">
+    	<ul class="test_link"><li class="checked" id="link1">1</li><li id="link2">2</li><li id="link3">3</li><li id="link4">4</li><li id="link5">5</li><li id="link6">6</li></ul>
+        
+        <!--第一题-->
+        <div class="testmain" id="test1" >
+        	<div class="question">您的年龄介于</div>
+            <div class="answer">
+            	<label><input type="radio" name="test1" alt="5"><span>小于30 岁</span></label>
+                <label><input type="radio" name="test1" alt="4"><span>30（含）—39岁</span></label>
+                <label><input type="radio" name="test1" alt="3"><span>40（含）—49岁</span></label>
+                <label><input type="radio" name="test1" alt="2"><span>50（含）—59岁</span></label>
+                <label><input type="radio" name="test1" alt="1"><span>大于60岁（含）</span></label>
+            </div>
+        </div>
+
+        
+        <!--第二题-->
+        <div class="testmain"  id="test2"  style="display:none">
+        	<div class="question">您家庭一年的可支配收入大概是多少？</div>
+            <div class="answer">
+            	<label><input type="radio" name="test2" alt="1"><span>小于10万 </span></label>
+                <label><input type="radio" name="test2" alt="2"><span>10万（含）—30万</span></label>
+                <label><input type="radio" name="test2" alt="3"><span>30万（含）—50万</span></label>
+                <label><input type="radio" name="test2" alt="4"><span>50万（含）—100万</span></label>
+                <label><input type="radio" name="test2" alt="5"><span>大于100万（含100万）</span></label>
+            </div>
+        </div>
+        
+        <!--第三题-->
+        <div class="testmain"  id="test3"  style="display:none">
+        	<div class="question">您当前家庭的可投资金额大概是多少？</div>
+            <div class="answer">
+            	<label><input type="radio" name="test3" alt="1"><span>小于10万</span></label>
+                <label><input type="radio" name="test3" alt="2"><span>10万（含）—30万</span></label>
+                <label><input type="radio" name="test3" alt="3"><span>30万（含）—50万</span></label>
+                <label><input type="radio" name="test3" alt="4"><span>50万（含）—100万</span></label>
+                <label><input type="radio" name="test3" alt="5"><span>大于100万（含100万）</span></label>
+            </div>
+        </div>
+        
+        <!--第四题-->
+        <div class="testmain"  id="test4"  style="display:none">
+        	<div class="question"><span>您有多少年投资基金、股票、信托、私募证券或金融衍生品等风险投资品的经验</span></div>
+            <div class="answer">
+            	<label><input type="radio" name="test4" alt="1"><span>没有经验</span></label>
+                <label><input type="radio" name="test4" alt="2"><span>1年以内</span></label>
+                <label><input type="radio" name="test4" alt="3"><span>1-3年</span></label>
+                <label><input type="radio" name="test4" alt="4"><span>3-5年</span></label>
+                <label><input type="radio" name="test4" alt="5"><span>5年以上</span></label>
+            </div>
+        </div>
+        
+        <!--第五题-->
+        <div class="testmain"  id="test5"  style="display:none">
+        	<div class="question"><span>假设有两种不同的投资：投资A平均获得5%的收益，将承担较小的损失；投资B平均获得25%的收益，但有可能面临10%甚至更高的亏损。您将如何分配您的投资资产？</span></div>
+            <div class="answer">
+            	<label><input type="radio" name="test5" alt="1"><span>全部投资于A</span></label>
+                <label><input type="radio" name="test5" alt="2"><span>80%投资于A，20%投资于B</span></label>
+                <label><input type="radio" name="test5" alt="3"><span>两种投资各一半</span></label>
+                <label><input type="radio" name="test5" alt="4"><span>20%投资于A，80%投资于B</span></label>
+                <label><input type="radio" name="test5" alt="5"><span>全部投资于B</span></label>
+            </div>
+        </div>
+        
+                
+        <!--第六题-->
+        <div class="testmain"  id="test6"  style="display:none" >
+        	<div class="question"><span>假如您的投资资金由于市场因素损失10%，您会怎么操作？</span></div>
+            <div class="answer">
+            	<label class="test_button"><input type="radio" name="test6" alt="1"><span>卖掉止损</span></label>
+                <label class="test_button"><input type="radio" name="test6" alt="2"><span>卖出大部分</span></label>
+                <label class="test_button"><input type="radio" name="test6" alt="3"><span>卖出小部分</span></label>
+                <label class="test_button"><input type="radio" name="test6" alt="4"><span>继续持有，等待反弹</span></label>
+                <label class="test_button"><input type="radio" name="test6" alt="5"><span>追加投资以摊平成本</span></label>
+            </div>
+        </div>
+        
+    </div>
+    <!-- 答题页 End ================================ -->
+    
+    <!-- 结果页 Start ================================ -->
+    <div class="finally" style="opacity:0">
+    <!--结果页头部-->
+	<div class="finally_head">
+    	<img class="arrow_button" id="undoleft" src="images/finally_udo_left.png" />
+        <img class="arrow_button" id="left" src="images/flinally_left.png" style="display:none" />
+        <div class="kuang">
+            <div class="truewidht">
+                <img src="images/finally_bs.gif" />
+                <img src="images/finally_wj.gif"/>
+                <img src="images/finally_jj.gif"/>
+            </div>
+        </div>
+		<img class="arrow_button" id="right" src="images/finally_right.png" />
+        <img class="arrow_button" id="undoright" src="images/finally_udo_right.png" style="display:none"/>
+    </div>
+    
+    <!--结果页导航-->
+    <div class="finally_link">
+    	<span>我的组合</span>
+        <a class="p0a p0ablue"></a>
+        <a class="p1a"></a>
+        <a class="p2a"></a>
+        <a class="p3a"></a>
+    </div>
+    
+    <!--结果main-->
+    <div id="slideBox" class="slideBox">
+
+				<div class="bd">
+					<div class="finally_main">
+                    	<!--第一页-->
+						<div class="funddiv">
+                        <!--<a href="#" class="fund">
+							<table  border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td colspan="2" class="fundname">景顺长城沪深300增强</td>
+                                <td>1000元起购</td>
+                              </tr>
+                              <tr>
+                                <td class="syltime">近2年</td>
+                                <td>购买手续费</td>
+                                <td rowspan="2">
+                                	<div class='circle'>
+                                        <div class='pie_left'>
+                                            <div class='cic_left'></div>
+                                        </div>
+                                        <div class='pie_right'>
+                                            <div class='cic_right'></div>
+                                        </div>
+                                        <div class='mask'>
+                                            <span>0.5</span>%
+                                        </div>
+                                    </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="syl">72.22%</td>
+                                <td><del>1.20%</del> <b>0.12%</b></td>
+                              </tr>
+                            </table>
+                         </a>-->
+						</div>
+                        
+                        <!--第二页-->
+						<div>
+							<span class="xxxccpz">保守型持仓配置</span>
+                            <div id="rose"></div>
+						</div>
+                        
+                        <!--第三页-->
+						<div>
+                        	<div class="linechart_tab" id="linebtn_10">
+                            	<a class="checked" id="type103y">近3月</a><a id="type101n">近1年</a><a id="type102n">近2年</a><a  id="type103n">近3年</a>
+                            </div>
+                            
+                            <div class="linechart_tab" id="linebtn_20">
+                            	<a class="checked" id="type203y">近3月</a><a id="type201n">近1年</a><a id="type202n">近2年</a><a id="type203n">近3年</a>
+                            </div>
+                            
+                            <div class="linechart_tab" id="linebtn_30">
+                            	<a class="checked" id="type303y">近3月</a><a id="type301n">近1年</a><a id="type302n">近2年</a><a id="type303n">近3年</a>
+                            </div>
+                            
+							<div id="line_chart"></div>
+                            <table class="linechart_table" border="0" cellpadding="0" cellspacing="0">
+                              <tr>
+                                <td class="mysyl"></td>
+                                <td class="szsyl"></td>
+                              </tr>
+                              <tr>
+                                <td>收益率</td>
+                                <td>收益率</td>
+                              </tr>
+                            </table>
+						</div>
+                        
+                        <!--第四页-->
+						<div>
+							<table class="jjcc" border="0" cellpadding="0" cellspacing="0">
+                            <thead>
+                              <tr>
+                                <td>股票名称</td>
+                                <td>持仓占比</td>
+                                <td>涨跌幅</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <!--<tr>
+                                <td>东方财富</td>
+                                <td>12.22%</td>
+                                <td class="zdf">1.09%</td>
+                              </tr>-->
+                            </tbody>
+                            </table>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="hd">
+					<ul></ul>
+				</div>
+			</div>
+			<script type="text/javascript">
+				TouchSlide({ 
+					slideCell:"#slideBox",
+					titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+					mainCell:".bd .finally_main", 
+					effect:"leftLoop", 
+					autoPage:true //自动分页
+				});
+			</script>
+    
+    <!-- 结果页 End ================================ -->
+</div>
+
+
+
+<div class="bottom">
+    数据来源：东方财富Choice数据，银河证券<br>
+    截止日期：<span class="deadline"></span><br>
+    免责声明：收益率数据仅供参考，过往业绩不预示未来表现，不构成投资建议。投资者据此操作，风险自担。市场有风险，投资需谨慎。
+    </div>
+  
+       <div class="about" style="    margin-bottom: 0;">        <h2 class="title">关于天天基金网</h2>        <p class="para" style="     text-indent: 0;   text-align: justify;">天天基金是中国A股首家财经门户网站--东方财富网（股票代码：300059）旗下的全资子公司，同时也是证监会批准的首批独立基金销售机构。天天基金网凭借其专业、及时、全面、权威的财经平台优势，为广大投资者提供一站式金融理财服务。截至2015年底，天天基金网基金累计销量超10000亿元。</p>        <ul class="feature">            <li>                <h3><span class="icon icon-1">1</span>安全可靠</h3>                <p>民生银行保障</p>            </li>            <li>                <h3><span class="icon icon-2">2</span>轻松理财</h3>                <p>随时随地交易</p>            </li>            <li>                <h3><span class="icon icon-3">3</span>费率超低</h3>                <p>费率1折起</p>            </li>        </ul>    </div>       
+           
+
+
+
+
+    <script>
+      $.get('https://fundsctest.eastmoney.com/webapp/bugao/index.html', function (data, status) { 
+      
+                                            $('body').append(data);
+
+                                   $(".close").click(function(){
+                                                                event.preventDefault();
+
+                                                    $("#bugaodown_bugaohtml").hide();
+                                                                
+                                                                 $('.about').css('margin-bottom',0);
+                                                         });
+                                                                setTimeout(function(){
+                                                                    
+                                                                    },400);
+                        });    
+                        
+    </script>   
+
+
+<script src="js/jweixin_20150119133544.js"  type="text/javascript"></script>
+<script src="js/wxshare.js"  type="text/javascript"></script>
+<script type="text/javascript">
+/*CNT(1234);*/
+function CNT(id) {
+                $.ajax({
+                    url: "https://fundhd.eastmoney.com/fundapiweb/count.ashx?id=" + id + "&t=" +new Date().valueOf(),
+                    data: {},
+                    dataType: "jsonp",
+                    success: function() {}
+                });
+            }
+</script>
+
+<script>
+$(document).ready(function(){
+	
+	
+	/*曲线图表开始*/
+function linechart(jsonData){
+var qxChart = echarts.init(document.getElementById('line_chart'));
+
+	
+
+var shangzheng = [];//series data的变量
+var shangzhengtime=[];
+    var ss=jsonData.Data.index;
+	for(var dd in ss){ 
+		var shangzhengdata=ss[dd];
+		shangzheng.push(shangzhengdata);
+		//console.log(shangzheng);
+		/*x轴的时间*/
+		var ktime=dd;
+		shangzhengtime.push(ktime);
+	}
+	shangzhengtime.sort();
+	//console.log(shangzhengtime);
+var zuhe = [];//series data的变量
+    var s=jsonData.Data.zh;
+	for(var d in s){ 
+		var zuhedata=s[d];
+		zuhe.push(zuhedata);
+		
+	}//console.log(zuhe);
+	
+	
+	
+	
+option = {
+	color:['#f56800','#00a0e9'], 
+    legend: {
+		y:"bottom",
+        data:['我的组合','沪深300'],
+    },
+	animation:false,
+	grid: {
+        x: '16%',
+        y: '60px',
+		width:'78%',
+        containLabel: true
+    },
+    yAxis: {
+        type: 'value',
+		axisLine:false,
+        axisLabel: {
+            formatter: '{value} %'
+        }
+    },
+
+    xAxis: {
+        type: 'category',
+        axisLine:false,
+        boundaryGap: false,
+		//axisLabel:false,
+        data: shangzhengtime,
+    },
+	
+    series: [
+        {
+            name: '沪深300',
+            type: 'line',
+            smooth: true,
+            lineStyle: {
+                normal: {
+                    width: 3,
+                    shadowColor: '#f56800',
+                    shadowBlur: 10,
+                    shadowOffsetY: 10
+                }
+            },
+			data:shangzheng
+        },
+		{
+            name: '我的组合',
+            type: 'line',
+            smooth: true,
+            lineStyle: {
+                normal: {
+                    width: 3,
+                    shadowColor: '#00a0e9',
+                    shadowBlur: 10,
+                    shadowOffsetY: 10
+                }
+            },
+			data:zuhe
+        }
+    ]
+};
+
+qxChart.setOption(option);
+}
+/*曲线图表结束*/
+	
+	
+	
+	/*3y 1n 2n 3n 点击事件*/
+	$(".linechart_tab a").click( function () { 
+		var cc=$(this).parent("div").attr("id");
+		$("#"+cc+" a").removeClass("checked");
+		$(this).addClass("checked");
+		var linesoused=$(this).attr("id");
+		
+		lineChartAjax(linesoused);
+	});
+	
+	
+	/*线图的ajax开始*/
+	function lineChartAjax(linesousedata){
+		$.ajax({
+			type:"GET",
+			url:"js/"+linesousedata+".json",
+			//https://fundexh5.eastmoney.com/FundOpenApi/OpenApiHander.ashx?api=FUNDZT&m=PreferenceFund&action=GetLJSE&indexcode=000300&type=10&syl=3Y
+			dataType: "json",
+			success: function(dataqx){
+				linechart(dataqx);
+				var mysyl=parseFloat(dataqx.Data.zhsyl);
+				var szsyl=parseFloat(dataqx.Data.indexsyl);
+				$(".mysyl").text(mysyl.toFixed(2)+"%");
+				$(".szsyl").text(szsyl.toFixed(2)+"%");
+				
+			}
+		})
+	}
+	/*线图的ajax结束*/
+	
+<!--基金ajax开始-->	
+
+function fundajax(ajaxsourse){
+	$.ajax({
+		type:"GET",
+		url:"js/"+ajaxsourse+".json",
+		//https://fundexh5.eastmoney.com/FundOpenApi/OpenApiHander.ashx?api=FUNDZT&m=PreferenceFund&action=GetCommonData&type=10
+		dataType: "json",
+		//请求成功完成后要执行的方法
+		success: function(data0){
+			
+			/*基金*/
+			var fundData=data0.Data.YXZH;
+			var zhjj='';
+			$.each(fundData,function(i){
+				
+				zhjj +="<a href='http://d.eastmoney.cn/fund_xz.aspx?t=1' class='fund'>";
+				zhjj +="<table  border='0' cellspacing='0' cellpadding='0'><tr>";
+				zhjj +="<td colspan='2' class='fundname'>"+fundData[i].SHORTNAME+"</td>";
+				zhjj +="<td>"+fundData[i].MINSG+"元起购</td></tr><tr>";
+				zhjj +="<td class='syltime'>"+fundData[i].FSENAME+"</td>";
+				zhjj +="<td>购买手续费</td><td class='tdwidth' rowspan='2'><div class='circle'><div class='pie_left'><div class='cic_left'></div></div><div class='pie_right'><div class='cic_right'></div></div>";
+				zhjj +="<div class='mask'><span>"+fundData[i].IRATIO+"</span>%</div></div></td></tr>";
+				zhjj +="<tr><td class='syl'>"+fundData[i].FSE.toFixed(2)+"%</td>";
+				zhjj +="<td><del>"+fundData[i].SOURCERATE+"</del> <b class='sxf'>"+fundData[i].RATE+"</b></td>";
+				zhjj +="</tr></table></a>";
+			})
+			$(".funddiv").append(zhjj);
+			
+			
+			/*基金持仓*/
+			var ccData=data0.Data.YXZHCYGP;
+			var jjcc='';
+			$.each(ccData,function(i){
+				jjcc +="<tr><td>"+ccData[i].SNAME+"</td>";
+				jjcc +="<td>"+ccData[i].RATIO.toFixed(2)+"%</td>";
+				jjcc +="<td class='zdf'>"+ccData[i].CHG+"</td></tr>";
+			})
+			$(".jjcc tbody").append(jjcc);
+			
+			
+			/*圆形进度条*/	
+			$('.circle').each(function(index, el) {
+				/*获取进度条里的数字，乘以100再显示*/
+				   var numtext = $(this).find('span').text();
+				   var num=numtext*360
+				   var nnum=numtext*100;
+					$(this).find('span').text(nnum);
+					if (num <= 180) {
+						$(this).find('.cic_right').css('transform', "rotate(" + num + "deg)");
+					} 
+					else {
+						$(this).find('.cic_right').css('transform', "rotate(180deg)");
+							var self = this;
+							  $(self).find('.cic_left').css('transform', "rotate(" + (num - 180) + "deg)");
+					}
+				});
+			/*圆形进度条end*/	
+			
+			/*截止日期*/
+			ztl=fundData[0].SYRQ;
+		//alert(ztl);
+		$(".deadline").text(ztl);
+		
+		/*手续费0费率*/
+		$(".sxf").each(function() {
+			if($(this).text()=="0.00%"){
+				$(this).text("0费率");
+				$(this).prev("del").hide();
+			}
+		})
+		
+		/*收益率绿色*/
+		$(".syl").each(function() {
+			var testn=$(this).text();
+			var nunn=testn.substring(0, testn.length-1);
+			var num=parseFloat(nunn);
+			if(num<0){
+				$(this).addClass("green");
+			}
+				
+		})
+		
+		/*如果.red获取的text就是“-”那就变黑色，如果获得的text去掉%转成int后<0，就是绿色*/
+			$(".zdf").each(function() {
+				var zdf=$(this).text();		
+				if(zdf=="-"){$(this).addClass("black");}	
+				else if(zdf=="0.00%"){$(this).addClass("gray");}
+				else{
+					var dfnum=zdf.substring(0, zdf.length-1);
+					if(dfnum<0){$(this).addClass("green");}
+					}
+			})
+			
+			
+			/*南丁格尔玫瑰*/
+			// var roseOptions = roseChart.getOption();
+			
+			$.each(data0.Data.YXZHCC,function(index, val){
+				switch (val.FUNDTYPE)
+					{
+					case "001":
+					  val.FUNDTYPE="股票型";
+					  break;
+					case "002":
+					  val.FUNDTYPE="混合型";
+					  break;
+					case "003":
+					  val.FUNDTYPE="债券型";
+					  break;
+					case "005":
+					  val.FUNDTYPE="货币型";
+					  break;
+					case "007":
+					  val.FUNDTYPE="QDII";
+					  break;
+					case "205":
+					  val.FUNDTYPE="其他";
+					  break;
+					}
+			}) 
+
+            renderPie(data0);
+		}
+})
+
+}
+<!--基金ajax结束-->
+
+
+
+/*南丁格尔玫瑰开始*/	
+function renderPie(Fdata) {
+    var roseChart = echarts.init(document.getElementById('rose'));
+
+    var pieData = [];//series data的变量
+    $.each(Fdata.Data.YXZHCC, function(index, val) {
+        var m = {
+            value: val.FRATIO,
+            name: val.FUNDTYPE
+        };
+         pieData.push(m);
+    });
+	var roseName=[];//legend data的变量
+	$.each(Fdata.Data.YXZHCC, function(index, val) {
+        var n = {
+            name: val.FUNDTYPE
+        };
+         roseName.push(n);
+    });
+
+    var option = {
+        color:['#ff7474','#7cc3ff','#afec3a','#ffae00','#e880e2','#c9447f'], 
+        title : {
+            x:'center'
+        },
+		animation:false,
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} {b} : {c} %"
+        },
+        legend: {
+            x : 'center',
+            y : 'bottom',
+            data:roseName
+        },
+        series : [
+        {
+                type:'pie',
+                radius : [40, 80],
+                center : ['50%', 140],
+                roseType : 'radius',
+                label: {
+                    normal: {
+                        show: false
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                data:pieData//data传了变量
+            }
+        ]
+    };
+
+
+    roseChart.setOption(option);
+
+}
+/*南丁格尔玫瑰结束*/
+
+
+
+	
+	
+  /*左右按钮状态*/
+  /*保守型*/
+  function baoshouBtn(){
+	  transx=0;$(".truewidht").css("transform","translateX("+transx+"px)"); 
+	  $("#left").hide(); 
+	  $("#right").show();
+	  $("#undoleft").show();
+	  $("#undoright").hide(); 
+	  $(".xxxccpz").text("保守型持仓配置");
+	  fundajax("jj30");//调用fundajax
+	  lineChartAjax("type303y");
+	  $("#linebtn_30").show();
+  }
+  
+  /*稳健型*/
+  function wenjianBtn(){
+	 transx=-clientWidth1;$(".truewidht").css("transform","translateX("+transx+"px)"); 
+	 $("#left").show();
+	 $("#right").show();
+	 $("#undoleft").hide(); 
+	 $("#undoright").hide();
+	 $(".xxxccpz").text("稳健型持仓配置");
+	 fundajax("jj20");//调用fundajax
+	 lineChartAjax("type203y");
+	 $("#linebtn_20").show();
+  }
+  
+  /*激进型*/
+  function jijinBtn(){
+	 transx=-clientWidth1*2;$(".truewidht").css("transform","translateX("+transx+"px)"); 
+	 $("#left").show();
+	 $("#right").hide();
+	 $("#undoleft").hide(); 
+	 $("#undoright").show();  
+	 $(".xxxccpz").text("激进型持仓配置");
+	 fundajax("jj10");//调用fundajax
+	 lineChartAjax("type103y");
+	 $("#linebtn_10").show();
+  } 	
+	
+	
+  /*首页点击三个大按钮，首页隐藏结果页显示*/
+  /*点击保守型按钮，transx=0*/
+  /*点击文件型按钮，transx=-clientWidth1;*/
+  /*点击保守型按钮，transx=-clientWidth1*2;*/
+  $(".fxlx_a").click( function () { 
+  	$(this).parents(".home").hide();
+	$(".finally").css("opacity",1);
+	$("#container").removeClass("deadheight");
+	var aId=$(this).attr("id");
+	if(aId=="ha_bs"){baoshouBtn()}
+	else if(aId=="ha_wj"){wenjianBtn();}
+	else if(aId=="ha_jj"){jijinBtn();}
+  });
+  
+  /*点击测试，隐藏首页，出测试页*/
+  $(".home_test").click( function () { 
+  	$(this).parents(".home").hide();
+	$(".test").show();
+  });
+  	
+	
+  /*改变radio样式*/
+  $('input').iCheck({
+    checkboxClass: 'icheckbox_square-red',  // 注意square和blue的对应关系,用于type=checkbox
+    radioClass: 'iradio_square-red', // 用于type=radio
+  });
+  
+  /*建一个数组把答案记录进数组里*/
+  answerArr=new Array(6) ;
+  testindex=1;
+  
+  /*一个答案被选中了，跳到下一题，该答案计入数组，link变*/
+	  $(".testmain input").click(function(){
+		  if(testindex<=6){
+			  //alert(testindex);
+			  
+				/*答案记录数组*/
+				var answer=$(this).attr("alt");
+				var cc=testindex-1;
+				answerArr[cc]=answer;
+				
+				//alert(answerArr[cc]);
+				
+				/*2秒后隐藏自身,显示下一题*/
+				setTimeout(nextTest,500); 
+				
+				/*做到第六题了，我们要跳到结果页去了*/
+				if(testindex==6){goType()}
+				
+				
+				function nextTest(){
+					//alert(testindex)
+				  
+				  var dd=1+testindex;
+				  if(dd<=6){
+				  //alert(dd);
+ 				  $("#test"+testindex).hide();
+				  $("#test"+dd).show();
+				  /*link变*/
+				  $(".test_link li").removeClass("checked");
+				  $("#link"+dd).addClass("checked");
+				  testindex+=1;}
+			  }
+		  }
+		
+		
+	  })
+	  
+	  
+	  /*计算分数属于什么类型*/
+	  function goType(){
+	  	var getscroll=answerArr[0]*0.05+answerArr[1]*0.05+answerArr[2]*0.05+answerArr[3]*0.1+answerArr[4]*0.6+answerArr[5]*0.15;
+		/*测试隐藏，结果页显示，再改变参数*/
+		$(".test").hide();
+		$(".finally").css("opacity",1);
+		$("#container").removeClass("deadheight");
+		if(getscroll<=2.3){
+			//alert("保守型");
+			baoshouBtn();
+		}
+		else if(getscroll<=3.7){
+			//alert("稳健型");
+			wenjianBtn();
+		}
+		else if(getscroll<=5){
+			//alert("激进型");
+			jijinBtn();
+		}
+	  }
+	  
+	 transx=0; 
+	   /*结果页头部左右点击*/
+	$("#right").click( function () {
+		beEmpenty();
+		$(".truewidht").addClass("donghua");
+		transx-=clientWidth1;
+		$("#left").show();
+		
+		$("#undoleft").hide();
+		
+		
+		if(transx==-clientWidth1*2){$("#undoright").show();$("#right").hide();$("#left").show();$("#undoleft").hide();$(".xxxccpz").text("激进型持仓配置");
+		fundajax("jj10");
+		$("#linebtn_10").show();
+		/*判断linebtn_20当前选中的是哪一个*/
+			/*each #linebtn_20 的a，判断哪个class==checked,获取它的id进行传参*/
+			$("#linebtn_10 a").each(function(i){
+   					if($(this).attr("class")=="checked"){
+					var lincchartpd=$(this).attr("id");	
+					lineChartAjax(lincchartpd);
+					}
+ 			});
+		}
+		else{
+			$(".xxxccpz").text("稳健型持仓配置");
+			fundajax("jj20");
+			
+			$("#linebtn_20").show();
+			
+			/*判断linebtn_20当前选中的是哪一个*/
+			/*each #linebtn_20 的a，判断哪个class==checked,获取它的id进行传参*/
+			$("#linebtn_20 a").each(function(i){
+   					if($(this).attr("class")=="checked"){
+					var lincchartpd=$(this).attr("id");	
+					lineChartAjax(lincchartpd);
+					}
+ 			});
+			
+			
+		}
+		$(".truewidht").css("transform","translateX("+transx+"px)")
+	});
+	
+	
+	/*向左按钮点击*/
+	$("#left").click( function () {
+		$(".truewidht").addClass("donghua");
+		transx+=clientWidth1;
+		$("#right").show();
+		
+		beEmpenty();
+		
+		if(transx==0){$("#left").hide(); $("#right").show();$("#undoleft").show();$("#undoright").hide();$(".xxxccpz").text("保守型持仓配置");
+		fundajax("jj30");
+		$("#linebtn_30").show();
+		/*判断linebtn_20当前选中的是哪一个*/
+			/*each #linebtn_20 的a，判断哪个class==checked,获取它的id进行传参*/
+			$("#linebtn_30 a").each(function(i){
+   					if($(this).attr("class")=="checked"){
+					var lincchartpd=$(this).attr("id");	
+					lineChartAjax(lincchartpd);
+					}
+ 			});
+		}
+		else{
+			$(".xxxccpz").text("稳健型持仓配置");
+			fundajax("jj20");
+			
+			$("#linebtn_20").show();
+			/*判断linebtn_20当前选中的是哪一个*/
+			/*each #linebtn_20 的a，判断哪个class==checked,获取它的id进行传参*/
+			$("#linebtn_20 a").each(function(i){
+   					if($(this).attr("class")=="checked"){
+					var lincchartpd=$(this).attr("id");	
+					lineChartAjax(lincchartpd);
+					}
+ 			});
+			
+			$("#undoright").hide();
+			}
+		$(".truewidht").css("transform","translateX("+transx+"px)")
+	});
+	
+	function beEmpenty(){
+		$(".linechart_tab").hide();
+		$(".jjcc tbody").empty();
+		$(".funddiv").empty();
+	}
+	
+	
+	
+	  
+	  
+	  
+	 
+});
+
+
+
+</script>
+
+
+
+
+</script>
+
+</body>
+</html>
