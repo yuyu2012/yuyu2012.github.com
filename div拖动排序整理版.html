@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+div{ width:100px; height:100px; border:solid 1px #ddd;}
+.daniu{ position:absolute}
+</style>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+$(document).ready(function(){
+	
+  $("div").mousedown(function(ev){
+	 $(this).addClass("daniu");
+	 
+      var offset = $(this).offset();
+	  var x = ev.pageX-offset.left;
+	  var y = ev.pageY-offset.top;
+	
+	  $(document).bind("mousemove",function(e){
+			$(".daniu").css({"top":e.pageY-y+"px","left":e.pageX-x+"px"});
+	 });
+  });
+  
+  $("div").mouseup(function(){
+	$(this).unbind("mousemove");
+	
+	/*拖动到的高度*/
+	var dy=$(".daniu").css('top');//拖动的y
+	var dynumjq=dy.substring(0,dy.length-2);
+	var dynum=parseInt(dynumjq);
+
+	var sz=[];//之后用来做排序的数组
+	var xingxing=[];//保存大家位置顺序的数组
+	
+	/*获取离的最近的*/	
+	/*最近的就是div减去拖动高度，绝对值最小的*/	
+	$("div").each(function(i) {
+		sz[i]=Math.abs($(this).offset().top-dynum);
+		xingxing[i]=Math.abs($(this).offset().top-dynum);
+	});
+								
+	/*数组排序*/
+	function sequence(a,b){return a - b;}
+	var sortArr=sz.sort(sequence);
+	
+	minnum=sortArr[1];
+				
+				
+	/*遍历数组，获取第几个div是最小的*/
+	$.each(xingxing, function(i,val){     
+		  if(xingxing[i]==minnum){
+			$(".daniu").insertBefore($("div:eq("+i+")"));//向下拖在后面插入
+		  }
+	});  
+	
+	$("div").removeClass("daniu");
+    })
+});
+</script>
+</head>
+
+<body>
+<div class="">111</div>
+<div class="">222</div>
+<div class="">333</div>
+<div class="">444</div>
+<div class="">555</div>
+<div class="">666</div>
+</body>
+</html>
