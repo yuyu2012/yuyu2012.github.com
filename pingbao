@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			html,body{
+				height: 100%;
+				width: 100%;
+				display: block;
+				/*overflow: hidden;*/
+			}
+			canvas{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+		<script type="text/javascript">
+		
+			var t = 0;
+			var oCanvas = document.querySelector('canvas');
+			oCanvas.width = window.innerWidth;
+			oCanvas.height = window.innerHeight;
+			var ctx = oCanvas.getContext('2d');
+			var zcg = '♥❤☻☺☼';
+			zcg = zcg.split('');
+			
+			var font_size = 20;
+			var columns = oCanvas.width/font_size;
+			var drops = [];
+			for (var x= 0 ; x < columns ; x++){
+				drops[x] = 1;
+			}
+			//获取随机颜色
+			var aColor = ["red" , "lightblue" , "green" , "lightgreen" , "lightyellow"]
+			//画画了
+			function draw () {
+				ctx.fillStyle = 'rgba(0,0,0,0.04)';
+				ctx.fillRect(0,0,oCanvas.width,oCanvas.height);
+				ctx.fillStyle = aColor[Math.floor(Math.random() * aColor.length)];
+				ctx.font=font_size + "px Arial";
+				for (var i = 0 ; i < drops.length ; i++){
+					var text = zcg[Math.floor(Math.random() * zcg.length)];
+					ctx.fillText(text,i * font_size , drops[i] * font_size);
+					if( drops[i] * font_size > oCanvas.height && Math.random() > 0.975){
+						drops[i] = 0;
+					}
+					drops[i]++;
+				}
+			}
+			
+			//再画
+			function biu () {
+				ctx.globalCompositeOperation = 'source-over';
+				ctx.fillStyle = 'hsla(0,0%,0%,.1)';
+				ctx.fillRect(0,0,oCanvas.width,oCanvas.height);
+				var foo , i , j , r;
+				foo = Math.sin(t) * 2 * Math.PI;
+				for (var i = 0; i < 400 ; i++ ){
+					r = 400 * Math.sin(i * foo);
+					console.log(1)
+					ctx.globalCompositeOperation = '';
+					ctx.fillStyle = 'hsla(' + i + 12 + ',100%,60%,1)';
+					ctx.beginPath();
+					ctx.arc(Math.sin(i) * r + (oCanvas.width/2),Math.cos(i) * r + (oCanvas.height/2),1.5,0,Math.PI * 2,true);
+					ctx.fill();
+				}
+				t += 0.000005;
+				return t %= 2 * Math.PI;
+			}
+			function run () {
+				window.requestAnimationFrame(run);
+				biu()
+			}
+			
+			//run();
+			
+			//定时运动
+			setInterval(draw,35);
+			window.onresize = () => {
+				oCanvas.width = window.innerWidth;
+				oCanvas.height = window.innerHeight;
+			}
+			
+			
+				ctx.fillStyle = '#FF0000';
+				ctx.fillRect(0,0,150,75); 
+			ctx.moveTo(10,10);
+			ctx.lineTo(150,50);
+			ctx.lineTo(10,50);
+			ctx.stroke();
+			
+		</script>
+	</body>
+</html>
